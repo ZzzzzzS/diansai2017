@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+  <pass>
+    <loader>$PROJ_DIR$\config files\FlashK60Fxxx128K.flash</loader>
+    <range>CODE 0x8000 0xfffffff</range>
+  </pass>
+</flash_board>
+
+
