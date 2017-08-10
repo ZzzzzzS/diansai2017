@@ -27,7 +27,7 @@ SysTick 设定初值并使能后，每经过 1 个系统时钟周期，计数值就减 1。
 
 /*!
  *  @brief      SysTick延时函数
- *  @param      time          SysTick延时时间(0~65535)
+ *  @param      time          LPTMR延时时间(0~65535)
  *  @since      v5.0
  *  Sample usage:       systick_delay(32);     // systick 延时32 个系统周期
  */

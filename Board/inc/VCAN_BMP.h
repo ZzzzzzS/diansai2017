@@ -67,7 +67,7 @@ typedef struct tagRGBQUAD {
 
 
 
-int8 SD2LCD_BMP(Site_t site,char *file);        //从SD卡获取bmp文件，并显示 (目前支持 BMP 图像的 24位真彩色/RGB555/单色)
+int8 SD2LCD_BMP(char *file,Site_t site);        //从SD卡获取bmp文件，并显示 (目前支持 BMP 图像的 24位真彩色/RGB555/单色)
 
 
 #endif  //_VCAN_BMP_H_

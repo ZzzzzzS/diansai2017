@@ -17,7 +17,6 @@
 #ifndef __MK60_CONF_H__
 #define __MK60_CONF_H__
 
-
 /*
  * 定义平台[放在工程选项里定义]
  */
@@ -34,7 +33,6 @@
 
 #define USE_LCD         LCD_ILI9325             //选择使用的 LCD
 
-#define USE_FWD_CHINESE     1            //是否使用 固件汉字
 /*
  * 选择是否输出调试信息，不输出则注释下面的宏定义
  */
@@ -52,7 +50,7 @@
  * K60 KL26 主频和总线频率的关系 - 智能车资料区 - 山外论坛
  * http://www.vcan123.com/forum.php?mod=viewthread&tid=81&page=1&extra=#pid419
  */
-#if defined(MK60DZ10)           //以下为 MK60DZ10 的超频配置
+#if defined(MK60DZ10)			//以下为 MK60DZ10 的超频配置
 /*
  * 定义 PLL 超频 频率
  */
@@ -137,6 +135,15 @@ void assert_failed(char *, int);
 #define DEBUG_PRINTF(FORMAT,...)
 #endif
 
+/*
+ * 启动前检测，防止 复用下载口
+ */
+void start_check();
+#ifdef DEBUG
+#define SRART_CHECK()       start_check()
+#else
+#define SRART_CHECK()
+#endif
 
 
 #endif /* __MK60_CONF_H__  */

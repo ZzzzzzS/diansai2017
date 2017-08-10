@@ -432,7 +432,7 @@ typedef enum
 #include "intrinsics.h"
 #endif
 
-#include   "enter.h"
+
 
 
 /**

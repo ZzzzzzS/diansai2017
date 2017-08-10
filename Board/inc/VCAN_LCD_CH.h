@@ -2,8 +2,8 @@
 #define _VCAN_LCD_CH_H_
 
 //根据字库来定 （需要在 SD卡 根目录 下 放入 HZLIB.bin 字符文件 ）
-#define LCD_CH_H    12
-#define LCD_CH_W    12
+#define LCD_CH_H    16
+#define LCD_CH_W    16
 
 #define LCD_CH_SIZE     (((LCD_CH_W+7)/8)*LCD_CH_H)         //汉字占用空间大小
 

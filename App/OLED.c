@@ -1,7 +1,5 @@
 #include "include.h"
-#include "OLED.h"
 #include "OLED_Fonts.h"
-
 #define XLevelL		0x00
 #define XLevelH		0x10
 #define XLevel		((XLevelH&0x0F)*16+XLevelL)
@@ -19,44 +17,44 @@
 void OLED_WrDat(uint8 data)
 {
 	byte i = 8;
-	DC = 1;
+	gpio_set(DC, 1);
 	asm("nop");
-	D0 = 0;
+	gpio_set(D0, 0);
 	asm("nop");
 	while (i--)
 	{
 		if (data & 0x80)
 		{
-			D1 = 1;
+			gpio_set(D1, 1);
 		}
 		else
 		{
-			D1 = 0;
+			gpio_set(D1, 0);
 		}
-		D0 = 1;
+		gpio_set(D0, 1);
 		asm("nop");
-		D0 = 0;
+		gpio_set(D0, 0);
 		data <<= 1;
 	}
 }
 void OLED_WrCmd(byte cmd)
 {
 	byte i = 8;
-	DC = 0;
-	D0 = 0;
+	gpio_set(DC, 0);
+	gpio_set(D0, 0);
 	while (i--)
 	{
 		if (cmd & 0x80)
 		{
-			D1 = 1;
+			gpio_set(D1, 1);
 		}
 		else
 		{
-			D1 = 0;
+			gpio_set(D1, 0);
 		}
-		D0 = 1;
+		gpio_set(D0, 1);
 		asm("nop");
-		D0 = 0;
+		gpio_set(D0, 0);
 		cmd <<= 1;
 	}
 }
@@ -105,13 +103,13 @@ void OLED_DLY_ms(word ms)
 
 void OLED_Init(void)
 {
-	gpio_init(PTC10, GPO, 0);
-	gpio_init(PTC12, GPO, 0);
-	gpio_init(PTC14, GPO, 1);
-	gpio_init(PTC16, GPO, 0);
-	RESET = 0;
+	gpio_init(RESET, GPO, 0);
+	gpio_init(DC, GPO, 0);
+	gpio_init(D1, GPO, 1);
+	gpio_init(D0, GPO, 0);
+	gpio_set(RESET, 0);
 	OLED_DLY_ms(50);
-	RESET = 1;
+	gpio_set(RESET, 1);
 	OLED_WrCmd(0xae);//--turn off oled panel
 	OLED_WrCmd(0x00);//---set low column address
 	OLED_WrCmd(0x10);//---set high column address

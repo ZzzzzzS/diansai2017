@@ -47,7 +47,7 @@ typedef enum
 #include  "VCAN_SCCB.h"
 #include  "VCAN_OV7725_Eagle.h"
 
-
+extern void img_extract(void *dst, void *src, uint32_t srclen);
 
 
 // 摄像头 接口统一改成 如下模式

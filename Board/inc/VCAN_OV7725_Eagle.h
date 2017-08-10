@@ -20,7 +20,7 @@
 #include "VCAN_OV7725_REG.h"
 
 #if ( USE_CAMERA == CAMERA_OV7725_EAGLE )
-//配置摄像头的特性（PS：这里是根据硬件来配置，方便标识，并非改动代码就可以修改功能，请勿改动）
+//配置摄像头的特性
 #define CAMERA_USE_HREF     0               //是否使用 行中断 (0 为 不使用，1为使用)
 #define CAMERA_COLOR        0               //摄像头输出颜色 ， 0 为 黑白二值化图像 ，1 为 灰度 图像 ，2 为 RGB565 图像
 #define CAMERA_POWER        0               //摄像头 电源选择， 0 为 3.3V ,1 为 5V

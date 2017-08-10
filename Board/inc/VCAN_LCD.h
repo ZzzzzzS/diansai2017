@@ -23,7 +23,7 @@
 
 #include "VCAN_ASCII.h"
 #include "VCAN_LCD_CH.h"                        //汉字显示
-#include "enter.h"
+
 
 /******常用颜色*****/
 #define RED     0XF800    //红色
@@ -85,8 +85,8 @@
 
 
 //根据字库定义 英文字母的 宽高。
-#define LCD_EN_W        6
-#define LCD_EN_H        12
+#define LCD_EN_W        8
+#define LCD_EN_H        16
 #define LED_EN_SIZE     (((LCD_EN_W+7)/8)*LCD_EN_H)
 
 

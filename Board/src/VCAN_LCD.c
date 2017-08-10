@@ -179,7 +179,7 @@ void LCD_char(Site_t site, uint8 ascii, uint16 Color, uint16 bkColor)
             ascii = ' ';
         }
 
-        temp = ASCII[((ascii-0x20)*LED_EN_SIZE)+pos];
+        temp = ascii_8x16[((ascii-0x20)*LED_EN_SIZE)+pos];
 
 
         for(t = 0; t < 8; t++)

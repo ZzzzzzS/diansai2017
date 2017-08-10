@@ -19,7 +19,7 @@
 #include "MK60_uart.h"
 #include "MK60_wdog.h"
 #include "MK60_gpio.h"
-
+#include "include.h"
 
 
 int core_clk_khz;
@@ -37,7 +37,9 @@ void main(void){};
 void start(void)
 {
 #if MK60F15
+
     SCB->CPACR |=((3UL << 10*2)|(3UL << 11*2));     /* set CP10 and CP11 Full Access */
+
 #endif
     wdog_disable();     // 关闭看门狗
 
@@ -45,12 +47,17 @@ void start(void)
 
     sysinit();          // 系统初始化，设置系统频率，初始化printf端口
 
+    //为了防止 main 函数 里 复用了 下载口，导致 下载失败，此处增加 按下 KEY_A 就进入死循环
+    SRART_CHECK();
+
     gpio_init(PTA4,GPO,1);  //初始化为输出1，即 禁用了 NMI 中断
-    
+
+    led_init(LED0);
+    led(LED0,0);
     SystemInit();
     
     GetSystemReady();
-    
+
     while(1)
     {
       SystemUpdate();

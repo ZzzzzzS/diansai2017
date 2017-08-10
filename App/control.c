@@ -21,8 +21,8 @@ void PIDInit()
 }
 void ControlInit()
 {
-  ftm_pwm_init(Servo_FTM,Servo_W_FTM,Serv0_HZ,0);//舵机初始化，这个0待定
-  ftm_pwm_init(Servo_FTM,Servo_H_FTM,Serv0_HZ,0);
+  ftm_pwm_init(Servo_FTM,Servo_W_FTM,Serv0_HZ,500);//舵机初始化，这个0待定
+  ftm_pwm_init(Servo_FTM,Servo_H_FTM,Serv0_HZ,500);
 }
 
 
@@ -59,7 +59,7 @@ void ControlOut()
   else if(ServoBase[H].PidBase.PIDOutPosition<=MIN_POSITION_H)
     ServoBase[H].PidBase.PIDOutPosition=MIN_POSITION_H;
   
-  ftm_pwm_duty(Servo_FTM, Servo_W_FTM, ServoBase[W].PidBase.PIDOutPosition);
-  ftm_pwm_duty(Servo_FTM, Servo_H_FTM, ServoBase[H].PidBase.PIDOutPosition);
+  ftm_pwm_duty(Servo_FTM, Servo_W_FTM, MIDDLE_W+ServoBase[W].PidBase.PIDOutPosition);
+  ftm_pwm_duty(Servo_FTM, Servo_H_FTM, MIDDLE_H+ServoBase[H].PidBase.PIDOutPosition);
   
 }

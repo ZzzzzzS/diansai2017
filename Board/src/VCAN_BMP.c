@@ -20,7 +20,7 @@
 uint8 BMP_Buffer[MAX_BMP_LINE_BYTE];
 
 
-int8 SD2LCD_BMP(Site_t site0,char *file)
+int8 SD2LCD_BMP(char *file,Site_t site0)
 {
     //文件系统相关的 变量
     FATFS fs={0};

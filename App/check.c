@@ -14,7 +14,7 @@ void PORTA_IRQHandler()
     flag = PORTA_ISFR;
     PORTA_ISFR  = ~0;                                   //清中断标志位
 
-    n = 29;                                             //场中断
+    n = 28;                                             //场中断
     if(flag & (1 << n))                                 //PTA29触发中断
     {
         camera_vsync();
@@ -56,14 +56,14 @@ void GetPosition()
   MainBall.LastBallPosition=MainBall.CurrentBallPosition;
   MainBall.LastBallSpeed=MainBall.CurrentBallSpeed;
   
-  int H=0;
-  int W=0;
-  int count=0;
+  unsigned int H=0;
+  unsigned int W=0;
+  unsigned int count=0;
   for(char i=0;i<CAMERA_H;i++)
   {
     for(char j=0;j<CAMERA_W;j++)
     {
-      if(img[i][j])//当前是黑板白球
+      if(img[i][j]==255)
       {
         H+=i;
         W+=j;

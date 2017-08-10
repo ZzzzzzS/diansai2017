@@ -5,10 +5,13 @@
 #include "ff.h"
 
 
-FATFS myfs;                     // Work area (file system object) for logical drive
-FIL myfsrc;                     // file objects
-FRESULT myres;                  // FatFs function common result code
-uint32 mybr;                    // File R/W count
+
+
+
+FATFS myfs;                    // Work area (file system object) for logical drive
+FIL myfsrc;            // file objects
+FRESULT myres;                 // FatFs function common result code
+uint32 mybr;               // File R/W count
 
 /*******************************************************************************
 * Function Name  : GetGBKCode_from_sd
@@ -26,7 +29,7 @@ int GetGBKCode_from_sd(unsigned char* pBuffer,const unsigned char * c)
     High8bit=*c;     /* 取高8位数据 */
     Low8bit=*(c+1);  /* 取低8位数据 */
 
-    pos = ((High8bit-0xb0)*94+Low8bit-0xa1)*LCD_CH_SIZE ;
+    pos = ((High8bit-0xb0)*94+Low8bit-0xa1)*LCD_CH_SIZE ;	
     f_mount(0, &myfs);
     myres = f_open(&myfsrc , "0:/HZLIB.bin", FA_OPEN_EXISTING | FA_READ);
 
@@ -73,10 +76,9 @@ void LCD_Char_CH(Site_t site,const uint8 *str,uint16 Color,uint16 bkColor)
     High8bit=*str;     /* 取高8位数据 */
     Low8bit=*(str+1);  /* 取低8位数据 */
 
-    pos = ((High8bit-0xb0)*94+Low8bit-0xa1)*LCD_CH_SIZE ;
+    pos = ((High8bit-0xb0)*94+Low8bit-0xa1)*LCD_CH_SIZE ;	
 
     pbuf =  pos + CHINESE;
-
 #else
     GetGBKCode_from_sd(buffer,str);  /* 取字模数据 */
 #endif
@@ -113,7 +115,7 @@ void LCD_Str_CH(Site_t site,const uint8 *str  , uint16 Color ,uint16 bkColor) 		
     while(*str != '\0')
     {
         if(site.x>(LCD_W-16))
-        {
+            {	
              /*换行*/
             site.x =0;
             site.y +=LCD_CH_H;
@@ -126,7 +128,7 @@ void LCD_Str_CH(Site_t site,const uint8 *str  , uint16 Color ,uint16 bkColor) 		
         }
         LCD_Char_CH(site,str,Color,bkColor);
         str += 2 ;
-        site.x += LCD_CH_W ;
+        site.x += LCD_CH_W ;	
     }
 }
 
@@ -138,7 +140,7 @@ void LCD_Str_ENCH(Site_t site,const uint8 *str  , uint16 Color ,uint16 bkColor) 
         if( *str < 0x80)       //英文
         {
             if(site.x>(LCD_W-LCD_EN_W))
-            {
+            {	
                  /*换行*/
                 site.x =0;
                 site.y +=LCD_EN_H;
@@ -172,13 +174,13 @@ void LCD_Str_ENCH(Site_t site,const uint8 *str  , uint16 Color ,uint16 bkColor) 
             {
                 LCD_char(site,*str,Color,bkColor);
                 str += 1 ;
-                site.x += LCD_EN_W ;
+                site.x += LCD_EN_W ;	
             }
         }
         else
         {
             if(site.x>(LCD_W-LCD_CH_W))
-            {
+            {	
                  /*换行*/
                 site.x =0;
                 site.y +=LCD_CH_H;
@@ -191,7 +193,7 @@ void LCD_Str_ENCH(Site_t site,const uint8 *str  , uint16 Color ,uint16 bkColor) 
             }
             LCD_Char_CH(site,str,Color,bkColor);
             str += 2 ;
-            site.x += LCD_CH_W ;
+            site.x += LCD_CH_W ;	
         }
     }
 }

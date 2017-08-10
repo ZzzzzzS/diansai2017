@@ -53,16 +53,16 @@ uint8 ov7725_eagle_init(uint8 *imgaddr)
 void ov7725_eagle_port_init()
 {
     //DMA通道0初始化，PTA27触发源(默认上升沿)，源地址为PTB_B0_IN，目的地址为：IMG_BUFF，每次传输1Byte
-    dma_portx2buff_init(CAMERA_DMA_CH, (void *)&PTB_B0_IN, (void *)ov7725_eagle_img_buff, PTA27, DMA_BYTE1, CAMERA_DMA_NUM, DADDR_KEEPON);
+    dma_portx2buff_init(CAMERA_DMA_CH, (void *)&PTB_B0_IN, (void *)ov7725_eagle_img_buff, PTA29, DMA_BYTE1, CAMERA_DMA_NUM, DADDR_KEEPON);
 
     DMA_DIS(CAMERA_DMA_CH);
     disable_irq(PORTA_IRQn);                        //关闭PTA的中断
     DMA_IRQ_CLEAN(CAMERA_DMA_CH);                   //清除通道传输中断标志位
     DMA_IRQ_EN(CAMERA_DMA_CH);
 
-    port_init(PTA27, ALT1 | DMA_FALLING | PULLDOWN );         //PCLK
+    port_init(PTA29, ALT1 | DMA_FALLING | PULLDOWN );         //PCLK
 
-    port_init(PTA29, ALT1 | IRQ_RISING  | PULLDOWN | PF);     //场中断，上拉，上降沿触发中断，带滤波
+    port_init(PTA28, ALT1 | IRQ_RISING  | PULLDOWN | PF);     //场中断，上拉，上降沿触发中断，带滤波
 
 }
 
@@ -81,10 +81,10 @@ void ov7725_eagle_vsync(void)
 
 #if 1
 
-        PORTA_ISFR = 1 <<  PT27;            //清空PCLK标志位
+        PORTA_ISFR = 1 <<  PT29;            //清空PCLK标志位
 
         DMA_EN(CAMERA_DMA_CH);                  //使能通道CHn 硬件请求
-        PORTA_ISFR = 1 <<  PT27;            //清空PCLK标志位
+        PORTA_ISFR = 1 <<  PT29;            //清空PCLK标志位
         DMA_DADDR(CAMERA_DMA_CH) = (uint32)ov7725_eagle_img_buff;    //恢复地址
 
 #else

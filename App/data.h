@@ -87,9 +87,11 @@ typedef enum
 #define MIN_POSITION_W  0
 #define MIN_POSITION_H  0
 
-#define Servo_FTM FTM0
+#define MIDDLE_W 100
+#define MIDDLE_H 100
+#define Servo_FTM FTM2
 #define Servo_W_FTM FTM_CH1
-#define Servo_H_FTM FTM_CH2
+#define Servo_H_FTM FTM_CH0
 #define Serv0_HZ    50
 
 typedef struct
@@ -102,10 +104,11 @@ extern servo ServoBase[2];
 /*============================================
 OLED显示相关定义
 ==========================================*/
-#define RESET	PTC14_OUT						//OLED相关宏定义
-#define DC	PTC16_OUT						//OLED相关宏定义
-#define D1	PTC12_OUT						//OLED相关宏定义
-#define D0	PTC10_OUT						//OLED相关宏定义
+						//OLED相关宏定义
+#define DC	PTC3
+#define RESET	PTC2						//OLED相关宏定义
+#define D1	PTC1						//OLED相关宏定义
+#define D0	PTC0						//OLED相关宏定义
 
 #define Position(OLED_Line)		0,(OLED_Line)	//坐标定义
 
@@ -126,10 +129,10 @@ typedef enum OLED_Line			//定义OLED显示位置
 #define bool char
 #define true  1
 #define false 0
-#define Key1   PTC5		//按键管脚定义
-#define Key2   PTC11		//按键管脚定义
-#define Key3   PTC9		//按键管脚定义
-#define Key4   PTC7		//按键管脚定义
+#define Key1   PTE26		//按键管脚定义
+#define Key2   PTE25		//按键管脚定义
+#define Key3   PTE24		//按键管脚定义
+#define Key4   PTA9		//按键管脚定义
 
 
 extern char BlueToothReceiveAera[20];
