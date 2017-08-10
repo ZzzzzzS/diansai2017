@@ -1,0 +1,6 @@
+*.bat
+/settings/*
+*.o
+*.a
+settings/*
+FN15_Debug/*
