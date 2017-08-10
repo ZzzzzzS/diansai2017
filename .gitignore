@@ -4,3 +4,6 @@
 *.a
 settings/*
 FN15_Debug/*
+Prj/IAR/FN15_DeBug/Obj/*
+Prj/IAR/FN15_Debug/*
+Prj/IAR/settings/*

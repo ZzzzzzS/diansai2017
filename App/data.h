@@ -82,13 +82,13 @@ typedef enum
 }servo_enum;
 
 
-#define MAX_POSITION_W  100
-#define MAX_POSITION_H  100
-#define MIN_POSITION_W  0
-#define MIN_POSITION_H  0
+#define MAX_POSITION_W  1080
+#define MAX_POSITION_H  1080
+#define MIN_POSITION_W  400
+#define MIN_POSITION_H  420
 
-#define MIDDLE_W 100
-#define MIDDLE_H 100
+#define MIDDLE_W 750
+#define MIDDLE_H 750
 #define Servo_FTM FTM2
 #define Servo_W_FTM FTM_CH1
 #define Servo_H_FTM FTM_CH0
