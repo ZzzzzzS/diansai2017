@@ -51,6 +51,7 @@
 #include "check.h"
 #include "control.h"
 #include "PositionControl.h"
+#include "touch.h"
 
 
 #endif  //__INCLUDE_H__
