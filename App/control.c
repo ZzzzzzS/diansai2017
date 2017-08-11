@@ -75,6 +75,5 @@ void ControlOut()
   
   ftm_pwm_duty(Servo_FTM, Servo_W_FTM, OutW);
   ftm_pwm_duty(Servo_FTM, Servo_H_FTM, OutH);
-  printf("Out:%d %d \n",OutW,OutH);
   
 }

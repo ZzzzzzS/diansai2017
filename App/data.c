@@ -3,8 +3,8 @@
 
 uint8 imgbuff[CAMERA_SIZE];   
 uint8 img[CAMERA_H][CAMERA_W];
-
 position CurrentAimPosition;
+char BlueToothReceiveAera[20];
 position AimPosition[9];
 position path[9];
 ball MainBall;

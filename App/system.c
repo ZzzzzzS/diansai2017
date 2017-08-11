@@ -11,7 +11,8 @@ void SystemInit()
   OLED_Init();
   Init_Key();
   PathInit();
-  CheckInit();
+  UART_Init();
+  //CheckInit();
   lptmr_timing_ms(20);
   set_vector_handler(LPTMR_VECTORn, MainLoop);
   EnableInterrupts;
@@ -28,9 +29,10 @@ void GetSystemReady()
 
 void SystemUpdate()
 {
-  GetDeta();
-  //vcan_sendimg(img, sizeof(img));
-  printf("position: %d %d\n",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
+  //GetDeta();
+  //ConvertImg();
+  //vcan_sendimg(imgbuff, sizeof(imgbuff));
+  //printf("position: %d %d\n",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
   //DeBug_Interface();//²»ÒªË¢Í¼£¬Ë¢Í¼Ì«¿¨
   
 }

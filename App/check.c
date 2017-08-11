@@ -89,3 +89,22 @@ void GetPosition()
   MainBall.CurrentBallSpeed.H=(MainBall.CurrentBallPosition.H - MainBall.LastBallPosition.H);
   MainBall.CurrentBallSpeed.W=(MainBall.CurrentBallPosition.W - MainBall.LastBallPosition.W);
 }
+
+void  ConvertImg()
+{
+  /*float k1=0;
+  float k2=0;
+  
+  char x,y;
+  
+  for(char i=0;i<CAMERA_H;i++)
+  {
+    for(char j=0;j<CAMERA_W;j++)
+    {
+      x=j*(1+k1*(x-40)*(x-40)+k2*(y-30)*(y-30));
+      y=i*(1+k1*(x-40)*(x-40)+k2*(y-30)*(y-30));
+      ImgFixed[j][i]=img[x+40][y+30];
+      
+    }
+  }*/
+}

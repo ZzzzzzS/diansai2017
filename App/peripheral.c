@@ -2,40 +2,77 @@
 #include "peripheral.h"
 #include "stdlib.h"
 #include "string.h"
-
 /*============================================
 函数名：Receive_Data()
 作用：蓝牙串口接收
 ==========================================*/
 
 
-void Receive_Data()
+void uart4_handler(void)
 {
-	if (uart_querystr(VCAN_PORT, BlueToothReceiveAera, 19))
-	{
-          led(LED1, LED_ON);
-          if (hasData("STOP"))
-          {
-            System_Error(user_Stop);
-          }
+    static char buff[20];
+    static char count=0;
 
-          else if(hasData("L"))
-          {
-            char* i;
-            i=strstr(BlueToothReceiveAera,"L");
-            path[CurrentPath].H=*(i+1);
-            path[CurrentPath].W=*(i+2);
-          }
-       else
-       {
-         printf("ERROR COMMAND\n");
-       }  
-		memset(BlueToothReceiveAera, 0, 20);		//清零数组防止一些奇怪的情况
-	}
-	else
-		led(LED1, LED_OFF);
+    if(uart_query    (UART4) == 1)   //接收数据寄存器满
+    {
+        //用户需要处理接收数据
+        uart_getchar   (UART4, buff+count);
+        count++;
+        if(count==20)
+          count=0;
+    }
+    
+    
+    if (hasData("STOP"))
+    {
+      System_Error(user_Stop);
+    }
+
+    else if(hasData("L"))
+    {
+      char* i;
+      i=strstr(buff,"L");
+      path[CurrentPath].H=*(i+1);
+      path[CurrentPath].W=*(i+2);
+    }
+    
+    else if(hasData("WP"))
+    {
+      char* i;
+      i=strstr(buff,"WP");
+      int p=(*(i+2)-'0')*10+0*(*(i+3)-'0');
+      printf("Current WP%d\n",p);
+    }
+    else if(hasData("HP"))
+    {
+      char* i;
+      i=strstr(buff,"HP");
+      int p=(*(i+2)-'0')*10+0*(*(i+3)-'0');
+      printf("Current HP%d\n",p);
+    }
+    else if(hasData("WD"))
+    {
+      char* i;
+      i=strstr(buff,"WD");
+      int p=(*(i+2)-'0')*10+0*(*(i+3)-'0');
+      printf("Current WD%d\n",p);
+    }
+    else if(hasData("HD"))
+    {
+      char* i;
+      i=strstr(buff,"HD");
+      int p=(*(i+2)-'0')*10+0*(*(i+3)-'0');
+      printf("Current HD%d\n",p);
+    }
+          
 }
 
+void UART_Init()
+{
+  uart_init(VCAN_PORT,VCAN_BAUD);
+  set_vector_handler(UART4_RX_TX_VECTORn,uart4_handler);
+  uart_rx_irq_en (UART4);
+}
 /*============================================
 函数名：Key_Init()
 作用：初始化按键
@@ -78,8 +115,6 @@ void DeBug_Interface()
       }
     }
 }
-
-
 
 /*============================================
 函数名：System_Error(error Error_Number)

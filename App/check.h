@@ -6,5 +6,6 @@
 extern void CheckInit();
 extern void GetDeta();
 extern void GetPosition();
+extern void ConvertImg();
 
 #endif //CHECK_H

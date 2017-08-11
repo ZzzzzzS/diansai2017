@@ -87,10 +87,10 @@ typedef enum
 }servo_enum;
 
 
-#define MAX_POSITION_W  850
-#define MAX_POSITION_H  900
-#define MIN_POSITION_W  280
-#define MIN_POSITION_H  280
+#define MAX_POSITION_W  950
+#define MAX_POSITION_H  950
+#define MIN_POSITION_W  300
+#define MIN_POSITION_H  300
 
 #define MIDDLE_W 650
 #define MIDDLE_H 700
@@ -141,7 +141,7 @@ typedef enum OLED_Line			//定义OLED显示位置
 
 
 extern char BlueToothReceiveAera[20];
-#define   hasData(x)	strstr(BlueToothReceiveAera,(x))!=NULL
+#define   hasData(x)	strstr(buff,(x))!=NULL
 
 typedef enum	
 {
