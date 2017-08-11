@@ -7,7 +7,7 @@
 //解压的时候，里面有个数组，配置黑、白对应的值是多少。
 void img_extract(void *dst, void *src, uint32_t srclen)
 {
-    uint8_t colour[2] = {255, 0}; //0 和 1 分别对应的颜色
+    uint8_t colour[2] = {1, 0}; //0 和 1 分别对应的颜色
     uint8_t * mdst = dst;
     uint8_t * msrc = src;
     //注：山外的摄像头 0 表示 白色，1表示 黑色

@@ -49,17 +49,20 @@ void PIDControl(servo* Base)
 
 void ControlOut()
 {
-  if(ServoBase[W].PidBase.PIDOutPosition>=MAX_POSITION_W)
-    ServoBase[W].PidBase.PIDOutPosition=MAX_POSITION_W;
-  else if(ServoBase[W].PidBase.PIDOutPosition<=MIN_POSITION_W)
-    ServoBase[W].PidBase.PIDOutPosition=MIN_POSITION_W;
+  int OutW=MIDDLE_W+ServoBase[W].PidBase.PIDOutPosition;
+  int OutH=MIDDLE_H+ServoBase[H].PidBase.PIDOutPosition;
   
-  if(ServoBase[H].PidBase.PIDOutPosition>=MAX_POSITION_H)
-    ServoBase[H].PidBase.PIDOutPosition=MAX_POSITION_H;
-  else if(ServoBase[H].PidBase.PIDOutPosition<=MIN_POSITION_H)
-    ServoBase[H].PidBase.PIDOutPosition=MIN_POSITION_H;
+  if(OutW>=MAX_POSITION_W)
+    OutW=MAX_POSITION_W;
+  else if(OutW<=MIN_POSITION_W)
+    OutW=MIN_POSITION_W;
   
-  ftm_pwm_duty(Servo_FTM, Servo_W_FTM, MIDDLE_W+ServoBase[W].PidBase.PIDOutPosition);
-  ftm_pwm_duty(Servo_FTM, Servo_H_FTM, MIDDLE_H+ServoBase[H].PidBase.PIDOutPosition);
+  if(OutH>=MAX_POSITION_H)
+    OutH=MAX_POSITION_H;
+  else if(OutH<=MIN_POSITION_H)
+    OutH=MIN_POSITION_H;
+  
+  ftm_pwm_duty(Servo_FTM, Servo_W_FTM, OutW);
+  ftm_pwm_duty(Servo_FTM, Servo_H_FTM, OutH);
   
 }

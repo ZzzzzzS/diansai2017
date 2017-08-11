@@ -63,7 +63,7 @@ void GetPosition()
   {
     for(char j=0;j<CAMERA_W;j++)
     {
-      if(img[i][j]==255)
+      if(img[i][j])
       {
         H+=i;
         W+=j;

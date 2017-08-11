@@ -29,7 +29,7 @@ void GetSystemReady()
 void SystemUpdate()
 {
   GetDeta();
-  vcan_sendimg(imgbuff, sizeof(imgbuff));
+  vcan_sendimg(img, sizeof(img));
   //printf("position: %d %d\n",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
   //DeBug_Interface();//²»ÒªË¢Í¼£¬Ë¢Í¼Ì«¿¨
   
