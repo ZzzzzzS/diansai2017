@@ -55,7 +55,6 @@ void start(void)
     led_init(LED0);
     led(LED0,0);
     SystemInit();
-    
     GetSystemReady();
 
     while(1)

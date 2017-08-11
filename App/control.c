@@ -11,18 +11,18 @@ void PIDInit()
   ServoBase[W].PidBase.NowPosition=ServoBase[W].PidBase.AimPosition;
   ServoBase[H].PidBase.NowPosition=ServoBase[H].PidBase.AimPosition;
   
-  ServoBase[W].PidBase.P=0.05;
+  ServoBase[W].PidBase.P=10;
   ServoBase[W].PidBase.I=0;
   ServoBase[W].PidBase.D=0;
   
-  ServoBase[W].PidBase.P=0.05;
-  ServoBase[W].PidBase.I=0;
-  ServoBase[W].PidBase.D=0;
+  ServoBase[H].PidBase.P=10;
+  ServoBase[H].PidBase.I=0;
+  ServoBase[H].PidBase.D=0;
 }
 void ControlInit()
 {
-  ftm_pwm_init(Servo_FTM,Servo_W_FTM,Serv0_HZ,500);//舵机初始化，这个0待定
-  ftm_pwm_init(Servo_FTM,Servo_H_FTM,Serv0_HZ,500);
+  ftm_pwm_init(Servo_FTM,Servo_W_FTM,Serv0_HZ,MIDDLE_W);//舵机初始化，这个0待定
+  ftm_pwm_init(Servo_FTM,Servo_H_FTM,Serv0_HZ,MIDDLE_H);
 }
 
 
@@ -47,10 +47,21 @@ void PIDControl(servo* Base)
   
 }
 
+void PIDControlPositional(servo *Base)
+{
+  Base->PidBase.ErrorPosition[Now_Error]=Base->PidBase.AimPosition-Base->PidBase.NowPosition;
+  
+  int err_Delta=Base->PidBase.ErrorPosition[Now_Error]-Base->PidBase.ErrorPosition[last_Error];
+  Base->PidBase.ErrorPosition[last_Error]=Base->PidBase.ErrorPosition[Now_Error];
+  
+  Base->PidBase.PIDOutPosition=Base->PidBase.P*Base->PidBase.ErrorPosition[Now_Error];
+  Base->PidBase.PIDOutPosition+=Base->PidBase.D*err_Delta;
+}
+
 void ControlOut()
 {
   int OutW=MIDDLE_W+ServoBase[W].PidBase.PIDOutPosition;
-  int OutH=MIDDLE_H+ServoBase[H].PidBase.PIDOutPosition;
+  int OutH=MIDDLE_H-ServoBase[H].PidBase.PIDOutPosition;
   
   if(OutW>=MAX_POSITION_W)
     OutW=MAX_POSITION_W;
@@ -64,5 +75,6 @@ void ControlOut()
   
   ftm_pwm_duty(Servo_FTM, Servo_W_FTM, OutW);
   ftm_pwm_duty(Servo_FTM, Servo_H_FTM, OutH);
+  printf("Out:%d %d \n",OutW,OutH);
   
 }

@@ -11,6 +11,11 @@
 #define StableRange 5  //圆边界大小
 #define StableTimes 5  //在N周期内检测在范围内就认为稳定
 
+#define MAXW    65
+#define MINW    24
+#define MAXH    51
+#define MINH    8
+
 typedef struct
 {
   char H;
@@ -82,13 +87,13 @@ typedef enum
 }servo_enum;
 
 
-#define MAX_POSITION_W  1080
-#define MAX_POSITION_H  1080
-#define MIN_POSITION_W  400
-#define MIN_POSITION_H  420
+#define MAX_POSITION_W  850
+#define MAX_POSITION_H  900
+#define MIN_POSITION_W  280
+#define MIN_POSITION_H  280
 
-#define MIDDLE_W 750
-#define MIDDLE_H 750
+#define MIDDLE_W 650
+#define MIDDLE_H 700
 #define Servo_FTM FTM2
 #define Servo_W_FTM FTM_CH1
 #define Servo_H_FTM FTM_CH0
@@ -154,5 +159,6 @@ typedef enum
 
 extern void PIDControl(servo *Base);
 extern bool AtPosition(position base);
+extern void PIDControlPositional(servo *Base);
 
 #endif //DATA_H

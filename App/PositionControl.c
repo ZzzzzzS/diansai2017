@@ -4,32 +4,32 @@
 
 void AimPositionInit()
 {
-  AimPosition[Line1Left].H=0;
-  AimPosition[Line1Left].W=0;
+  AimPosition[Line1Left].H=48;
+  AimPosition[Line1Left].W=28;
   
-  AimPosition[Line1Middle].H=0;
-  AimPosition[Line1Middle].W=0;
+  AimPosition[Line1Middle].H=48;
+  AimPosition[Line1Middle].W=45;
   
-  AimPosition[Line1Right].H=0;
-  AimPosition[Line1Right].W=0;
+  AimPosition[Line1Right].H=48;
+  AimPosition[Line1Right].W=61;
   
-  AimPosition[Line2Left].H=0;
-  AimPosition[Line2Left].W=0;
+  AimPosition[Line2Left].H=32;
+  AimPosition[Line2Left].W=27;
   
-  AimPosition[Line2Middle].H=0;
-  AimPosition[Line2Middle].W=0;
+  AimPosition[Line2Middle].H=32;
+  AimPosition[Line2Middle].W=46;
   
-  AimPosition[Line2Right].H=0;
-  AimPosition[Line2Right].W=0;
+  AimPosition[Line2Right].H=32;
+  AimPosition[Line2Right].W=63;
   
-  AimPosition[Line3Left].H=0;
-  AimPosition[Line3Left].W=0;
+  AimPosition[Line3Left].H=14;
+  AimPosition[Line3Left].W=28;
   
-  AimPosition[Line3Middle].H=0;
-  AimPosition[Line3Middle].W=0;
+  AimPosition[Line3Middle].H=14;
+  AimPosition[Line3Middle].W=46;
   
-  AimPosition[Line3Right].H=0;
-  AimPosition[Line3Right].W=0;
+  AimPosition[Line3Right].H=15;
+  AimPosition[Line3Right].W=62;
   
 }
 
@@ -43,10 +43,8 @@ void PathInit()
 
 void CalculatePosition()
 {
-  //将当前位置转化成误差位置
-  //分段调节PID参数
-  ServoBase[W].PidBase.AimPosition=CurrentAimPosition.W;
-  ServoBase[H].PidBase.AimPosition=CurrentAimPosition.H;
+  ServoBase[W].PidBase.AimPosition=23;
+  ServoBase[H].PidBase.AimPosition=22;
   
   ServoBase[W].PidBase.NowPosition=MainBall.CurrentBallPosition.W;
   ServoBase[H].PidBase.NowPosition=MainBall.CurrentBallPosition.H;
@@ -76,6 +74,9 @@ bool AtPosition(position base)
 
 void SetAimPosition()
 {
+  CurrentAimPosition=AimPosition[Line2Middle];
+  return;
+  
   static int flag=0;
   if(path[CurrentPath+1].H==0&&path[CurrentPath+1].W==0)//没有下一个点就停止规划新的路径
   {

@@ -21,7 +21,7 @@ void SystemInit()
 void GetSystemReady()
 {
   OLED_Interface();											//设置用户参数
-  DELAY_MS(2000);
+  //DELAY_MS(2000);
   OLED_CLS();
   enable_irq(LPTMR_IRQn);
 }
@@ -29,8 +29,8 @@ void GetSystemReady()
 void SystemUpdate()
 {
   GetDeta();
-  vcan_sendimg(img, sizeof(img));
-  //printf("position: %d %d\n",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
+  //vcan_sendimg(img, sizeof(img));
+  printf("position: %d %d\n",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
   //DeBug_Interface();//不要刷图，刷图太卡
   
 }
@@ -40,8 +40,8 @@ void MainLoop()
   GetPosition();
   SetAimPosition();
   CalculatePosition();
-  PIDControl(&ServoBase[H]);
-  PIDControl(&ServoBase[W]);
+  PIDControlPositional(&ServoBase[W]);
+  PIDControlPositional(&ServoBase[H]);
   ControlOut();
   LPTMR_Flag_Clear();	
 }

@@ -59,11 +59,11 @@ void GetPosition()
   unsigned int H=0;
   unsigned int W=0;
   unsigned int count=0;
-  for(char i=0;i<CAMERA_H;i++)
+  for(char i=MINH;i<MAXH;i++)
   {
-    for(char j=0;j<CAMERA_W;j++)
+    for(char j=MINW;j<MAXW;j++)
     {
-      if(img[i][j])
+      if(!img[i][j])
       {
         H+=i;
         W+=j;
@@ -74,13 +74,16 @@ void GetPosition()
   
   if(count==0)
   {
-    MainBall.CurrentBallPosition.W=40;
-    MainBall.CurrentBallPosition.H=30;
+    MainBall.CurrentBallPosition.W=(MAXW+MINW)/2;
+    MainBall.CurrentBallPosition.H=(MAXH+MINH)/2;
   }
   else
   {
     MainBall.CurrentBallPosition.H=H/count;
     MainBall.CurrentBallPosition.W=W/count;
+    
+    MainBall.CurrentBallPosition.H-=MINH;
+    MainBall.CurrentBallPosition.W-=MINW;
   }
   
   MainBall.CurrentBallSpeed.H=(MainBall.CurrentBallPosition.H - MainBall.LastBallPosition.H);
