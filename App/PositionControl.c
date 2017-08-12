@@ -43,8 +43,8 @@ void PathInit()
 
 void CalculatePosition()
 {
-  ServoBase[W].PidBase.AimPosition=45*2;
-  ServoBase[H].PidBase.AimPosition=26*2;
+  ServoBase[W].PidBase.AimPosition=CurrentAimPosition.W;
+  ServoBase[H].PidBase.AimPosition=CurrentAimPosition.H;
   
   ServoBase[W].PidBase.NowPosition=MainBall.CurrentBallPosition.W;
   ServoBase[H].PidBase.NowPosition=MainBall.CurrentBallPosition.H;
@@ -59,6 +59,20 @@ void CalculatePosition()
   ServoBase[H].PidBase.I=ServoBase[H].PidBase.ISet;
   ServoBase[H].PidBase.D=ServoBase[H].PidBase.DSet;
   
+  if(ServoBase[W].PidBase.ErrorPosition[Now_Error]<2&&ServoBase[W].PidBase.ErrorPosition[Now_Error]>-2)
+  {
+    ServoBase[W].PidBase.D=0;
+    ServoBase[W].PidBase.P=0;
+  }
+    
+  
+  if(ServoBase[H].PidBase.ErrorPosition[Now_Error]<2&&ServoBase[H].PidBase.ErrorPosition[Now_Error]>-2)
+  {
+    ServoBase[H].PidBase.D=0;
+    ServoBase[H].PidBase.P=0;
+  }
+    
+    
   SetPID(&ServoBase[W]);
   SetPID(&ServoBase[H]);
   

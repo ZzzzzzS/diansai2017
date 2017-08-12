@@ -12,11 +12,11 @@ void PIDInit()
   ServoBase[H].PidBase.NowPosition=ServoBase[H].PidBase.AimPosition;
   
   ServoBase[W].PidBase.PSet=5;
-  ServoBase[W].PidBase.ISet=0;
+  ServoBase[W].PidBase.ISet=0.5;
   ServoBase[W].PidBase.DSet=75;
   
   ServoBase[H].PidBase.PSet=5;
-  ServoBase[H].PidBase.ISet=0;
+  ServoBase[H].PidBase.ISet=0.5;
   ServoBase[H].PidBase.DSet=75;
 }
 void ControlInit()
@@ -49,13 +49,25 @@ void PIDControl(servo* Base)
 
 void PIDControlPositional(servo *Base)
 {
-  Base->PidBase.IntergatePosition+=Base->PidBase.ErrorPosition[Now_Error];
+  if(Base->PidBase.ErrorPosition[Now_Error]<10&&Base->PidBase.ErrorPosition[Now_Error]>-10)
+    Base->PidBase.IntergatePosition+=Base->PidBase.ErrorPosition[Now_Error];
+  else
+    Base->PidBase.IntergatePosition=0;
   
   int err_Delta=Base->PidBase.ErrorPosition[Now_Error]-Base->PidBase.ErrorPosition[last_Error];
   Base->PidBase.ErrorPosition[last_Error]=Base->PidBase.ErrorPosition[Now_Error];
   
   Base->PidBase.PIDOutPosition=Base->PidBase.P*Base->PidBase.ErrorPosition[Now_Error];
-  Base->PidBase.PIDOutPosition+=Base->PidBase.D*err_Delta;
+  //Base->PidBase.PIDOutPosition+=Base->PidBase.D*err_Delta;
+  if(err_Delta>=0)
+  {
+    Base->PidBase.PIDOutPosition+=Base->PidBase.D*err_Delta*err_Delta;
+  }
+  else
+  {
+    Base->PidBase.PIDOutPosition-=Base->PidBase.D*err_Delta*err_Delta;
+  }
+  
   Base->PidBase.PIDOutPosition+=Base->PidBase.IntergatePosition*Base->PidBase.I;
 }
 

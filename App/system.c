@@ -6,6 +6,7 @@ void MainLoop();
 void SystemInit()
 {
   DisableInterrupts;
+  AimPositionInit();
   PIDInit();
   ControlInit();
   OLED_Init();
@@ -13,7 +14,7 @@ void SystemInit()
   PathInit();
   UART_Init();
   CheckInit();
-  lptmr_timing_ms(20);
+  lptmr_timing_ms(30);
   set_vector_handler(LPTMR_VECTORn, MainLoop);
   EnableInterrupts;
   disable_irq(LPTMR_IRQn);
@@ -21,9 +22,12 @@ void SystemInit()
 
 void GetSystemReady()
 {
-  CurrentAimPosition=AimPosition[Line2Middle];
+  CurrentAimPosition.H=AimPosition[Line2Middle].H;
+  CurrentAimPosition.W=AimPosition[Line2Middle].W;
   ServoBase[W].PidBase.NowPosition=CurrentAimPosition.W;
   ServoBase[H].PidBase.NowPosition=CurrentAimPosition.H;
+  MainBall.CurrentBallPosition=CurrentAimPosition;
+  MainBall.LastBallPosition=CurrentAimPosition;
   OLED_Interface();											//设置用户参数
   //DELAY_MS(2000);
   OLED_CLS();
@@ -36,25 +40,26 @@ void SystemUpdate()
   //ConvertImg();
   //vcan_sendimg(imgbuff, sizeof(imgbuff));
   //vcan_sendimg(img, sizeof(img));
-  //printf("position: %d %d\n",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
-  //printf("Error %d %d\n",ServoBase[H].PidBase.ErrorPosition[Now_Error],ServoBase[W].PidBase.ErrorPosition[Now_Error]);
-  GetPosition();
-  SetAimPosition();
+  printf("position: %d %d  ",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
+  printf("Error %d %d  ",ServoBase[H].PidBase.ErrorPosition[Now_Error],ServoBase[W].PidBase.ErrorPosition[Now_Error]);
+  printf("speed %d %d\n",MainBall.CurrentBallSpeed.H,MainBall.CurrentBallSpeed.W);
+  //GetPosition();
+  /*SetAimPosition();
   CalculatePosition();
   PIDControlPositional(&ServoBase[W]);
   PIDControlPositional(&ServoBase[H]);
-  ControlOut();
+  ControlOut();*/
   
   
 }
 
 void MainLoop()
 {
-  /*GetPosition();
+  GetPosition();
   SetAimPosition();
   CalculatePosition();
   PIDControlPositional(&ServoBase[W]);
   PIDControlPositional(&ServoBase[H]);
-  ControlOut();*/
+  ControlOut();
   LPTMR_Flag_Clear();	
 }
