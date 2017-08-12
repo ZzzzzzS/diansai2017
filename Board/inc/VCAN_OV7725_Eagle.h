@@ -46,8 +46,8 @@
 
 //配置摄像头 属性
 #define OV7725_EAGLE_DMA_CH       DMA_CH0                               //定义摄像头的DMA采集通道
-#define OV7725_EAGLE_W            80                                    //定义摄像头图像宽度
-#define OV7725_EAGLE_H            60                                    //定义摄像头图像高度
+#define OV7725_EAGLE_W            160                                    //定义摄像头图像宽度
+#define OV7725_EAGLE_H            120                                    //定义摄像头图像高度
 #define OV7725_EAGLE_SIZE         (OV7725_EAGLE_W * OV7725_EAGLE_H/8 )  //图像占用空间大小
 #define OV7725_EAGLE_DMA_NUM      (OV7725_EAGLE_SIZE )                  //DMA采集次数
 

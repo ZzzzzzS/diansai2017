@@ -18,7 +18,7 @@ void uart4_handler(void)
         //用户需要处理接收数据
         uart_getchar   (UART4, buff+count);
         count++;
-        if(count==20)
+        if(count==8)
           count=0;
     }
     
@@ -40,29 +40,57 @@ void uart4_handler(void)
     {
       char* i;
       i=strstr(buff,"WP");
-      int p=(*(i+2)-'0')*10+0*(*(i+3)-'0');
-      printf("Current WP%d\n",p);
+      int p=(*(i+2)-'0')*10+(*(i+3)-'0');
+      ServoBase[W].PidBase.PSet=p;
+      printf("Current WP%d\n",(int)ServoBase[W].PidBase.PSet);
+      memset(buff,0,sizeof(buff));
     }
     else if(hasData("HP"))
     {
       char* i;
       i=strstr(buff,"HP");
-      int p=(*(i+2)-'0')*10+0*(*(i+3)-'0');
-      printf("Current HP%d\n",p);
+      int p=(*(i+2)-'0')*10+(*(i+3)-'0');
+      ServoBase[H].PidBase.PSet=p;
+      printf("Current HP%d\n",(int)ServoBase[H].PidBase.PSet);
+      memset(buff,0,sizeof(buff));
     }
     else if(hasData("WD"))
     {
       char* i;
       i=strstr(buff,"WD");
-      int p=(*(i+2)-'0')*10+0*(*(i+3)-'0');
-      printf("Current WD%d\n",p);
+      int p=(*(i+2)-'0')*10+(*(i+3)-'0');
+      ServoBase[W].PidBase.DSet=p;
+      printf("Current WD%d\n",(int)ServoBase[W].PidBase.DSet);
+      memset(buff,0,sizeof(buff));
     }
     else if(hasData("HD"))
     {
       char* i;
       i=strstr(buff,"HD");
-      int p=(*(i+2)-'0')*10+0*(*(i+3)-'0');
-      printf("Current HD%d\n",p);
+      int p=(*(i+2)-'0')*10+(*(i+3)-'0');
+      ServoBase[H].PidBase.DSet=p;
+      printf("Current HD%d\n",(int)ServoBase[H].PidBase.DSet);
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("PP"))
+    {
+      char* i;
+      i=strstr(buff,"P");
+      int p=(*(i+1)-'0')*10+(*(i+2)-'0');
+      ServoBase[H].PidBase.PSet=p;
+      ServoBase[W].PidBase.PSet=p;
+      printf("Current P%d\n",(int)ServoBase[H].PidBase.PSet);
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("DD"))
+    {
+      char* i;
+      i=strstr(buff,"DD");
+      int p=(*(i+1)-'0')*10+(*(i+2)-'0');
+      ServoBase[H].PidBase.DSet=p;
+      ServoBase[W].PidBase.DSet=p;
+      printf("Current D%d\n",(int)ServoBase[H].PidBase.DSet);
+      memset(buff,0,sizeof(buff));
     }
           
 }

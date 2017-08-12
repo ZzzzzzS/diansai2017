@@ -74,16 +74,12 @@ void GetPosition()
   
   if(count==0)
   {
-    MainBall.CurrentBallPosition.W=(MAXW+MINW)/2;
-    MainBall.CurrentBallPosition.H=(MAXH+MINH)/2;
+    MainBall.CurrentBallPosition=MainBall.LastBallPosition;
   }
   else
   {
     MainBall.CurrentBallPosition.H=H/count;
     MainBall.CurrentBallPosition.W=W/count;
-    
-    MainBall.CurrentBallPosition.H-=MINH;
-    MainBall.CurrentBallPosition.W-=MINW;
   }
   
   MainBall.CurrentBallSpeed.H=(MainBall.CurrentBallPosition.H - MainBall.LastBallPosition.H);

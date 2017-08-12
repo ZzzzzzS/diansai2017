@@ -11,10 +11,10 @@
 #define StableRange 5  //圆边界大小
 #define StableTimes 5  //在N周期内检测在范围内就认为稳定
 
-#define MAXW    65
-#define MINW    24
-#define MAXH    51
-#define MINH    8
+#define MAXW    125
+#define MINW    46
+#define MAXH    93
+#define MINH    11
 
 typedef struct
 {
@@ -65,15 +65,18 @@ typedef enum						//PID误差枚举
 
 typedef struct
 {
-	float P;												//pid常量
-	float I;												//pid常量
-	float D;												//pid常量;
-	int16 AimPosition;								//pid目标速度
-	int16 NowPosition;								//pid当前速度
-	int16 ErrorPosition[3];							//pid误差速度
-	int16 IntergatePosition;						//定义积分速度
-	int16 IncrementPosition;						//速度增量
-	int16 PIDOutPosition;						//最终输出速度
+  float PSet;
+  float ISet;
+  float DSet;
+  float P;												//pid常量
+  float I;												//pid常量
+  float D;												//pid常量;
+  int16 AimPosition;								//pid目标速度
+  int16 NowPosition;								//pid当前速度
+  int16 ErrorPosition[3];							//pid误差速度
+  int16 IntergatePosition;						//定义积分速度
+  int16 IncrementPosition;						//速度增量
+  int16 PIDOutPosition;						//最终输出速度
 }pidbase;
 
 /*============================================
@@ -87,13 +90,13 @@ typedef enum
 }servo_enum;
 
 
-#define MAX_POSITION_W  950
-#define MAX_POSITION_H  950
+#define MAX_POSITION_W  1080
+#define MAX_POSITION_H  1080
 #define MIN_POSITION_W  300
 #define MIN_POSITION_H  300
 
-#define MIDDLE_W 650
-#define MIDDLE_H 700
+#define MIDDLE_W 680
+#define MIDDLE_H 760
 #define Servo_FTM FTM2
 #define Servo_W_FTM FTM_CH1
 #define Servo_H_FTM FTM_CH0
@@ -160,5 +163,6 @@ typedef enum
 extern void PIDControl(servo *Base);
 extern bool AtPosition(position base);
 extern void PIDControlPositional(servo *Base);
+extern void SetPID(servo* Base);
 
 #endif //DATA_H
