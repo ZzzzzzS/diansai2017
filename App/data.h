@@ -12,9 +12,9 @@
 #define StableTimes 5  //在N周期内检测在范围内就认为稳定
 
 #define MAXW    120
-#define MINW    47
-#define MAXH    90
-#define MINH    15
+#define MINW    35
+#define MAXH    100
+#define MINH    18
 
 typedef struct
 {
@@ -160,6 +160,7 @@ typedef enum
 	MAX_error
 }Error_Num;
 
+extern char sendflag;
 
 
 extern void PIDControl(servo *Base);

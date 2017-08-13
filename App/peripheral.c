@@ -88,6 +88,18 @@ void uart4_handler(void)
       CurrentAimPosition.W-=5;
       printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
     }
+    else if(hasData("H"))
+    {
+      sendflag=1;
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("h"))
+    {
+      sendflag=0;
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
           
 }
 

@@ -4,32 +4,32 @@
 
 void AimPositionInit()
 {
-  AimPosition[Line1Left].H=41*2;
-  AimPosition[Line1Left].W=29*2;
+  AimPosition[Line1Left].H=94;
+  AimPosition[Line1Left].W=43;
   
-  AimPosition[Line1Middle].H=41*2;
-  AimPosition[Line1Middle].W=44*2;
+  AimPosition[Line1Middle].H=97;
+  AimPosition[Line1Middle].W=77;
   
-  AimPosition[Line1Right].H=40*2;
-  AimPosition[Line1Right].W=59*2;
+  AimPosition[Line1Right].H=95;
+  AimPosition[Line1Right].W=111;
   
-  AimPosition[Line2Left].H=25*2;
-  AimPosition[Line2Left].W=29*2;
+  AimPosition[Line2Left].H=61;
+  AimPosition[Line2Left].W=42;
   
-  AimPosition[Line2Middle].H=26*2;
-  AimPosition[Line2Middle].W=45*2;
+  AimPosition[Line2Middle].H=59;
+  AimPosition[Line2Middle].W=77;
   
-  AimPosition[Line2Right].H=25*2;
-  AimPosition[Line2Right].W=59*2;
+  AimPosition[Line2Right].H=61;
+  AimPosition[Line2Right].W=112;
   
-  AimPosition[Line3Left].H=10*2;
-  AimPosition[Line3Left].W=29*2;
+  AimPosition[Line3Left].H=27;
+  AimPosition[Line3Left].W=43;
   
-  AimPosition[Line3Middle].H=10*2;
-  AimPosition[Line3Middle].W=45*2;
+  AimPosition[Line3Middle].H=25;
+  AimPosition[Line3Middle].W=77;
   
-  AimPosition[Line3Right].H=10*2;
-  AimPosition[Line3Right].W=57*2;
+  AimPosition[Line3Right].H=25;
+  AimPosition[Line3Right].W=111;
   
 }
 

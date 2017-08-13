@@ -39,9 +39,12 @@ void SystemUpdate()
   //ConvertImg();
   //vcan_sendimg(imgbuff, sizeof(imgbuff));
   //vcan_sendimg(img, sizeof(img));
+  if(sendflag)
+  {
   printf("position: %d %d  ",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
   printf("Error %d %d  ",ServoBase[H].PidBase.ErrorPosition[Now_Error],ServoBase[W].PidBase.ErrorPosition[Now_Error]);
   printf("speed %d %d\n",MainBall.CurrentBallSpeed.H,MainBall.CurrentBallSpeed.W);
+  }
   //GetPosition();
   /*SetAimPosition();
   CalculatePosition();
@@ -62,5 +65,6 @@ void MainLoop()
     ServoBase[W].OutPosition=ServoBase[W].PidBase.PIDOutPosition;
     ServoBase[H].OutPosition=ServoBase[H].PidBase.PIDOutPosition;
     ControlOut();
-  LPTMR_Flag_Clear();	
+  
+    LPTMR_Flag_Clear();	
 }

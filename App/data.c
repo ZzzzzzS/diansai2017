@@ -9,5 +9,5 @@ position AimPosition[9];
 position path[9];
 ball MainBall;
 int CurrentPath;//当前位置
-
+char sendflag;
 servo ServoBase[2];             //舵机控制结构体

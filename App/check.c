@@ -65,7 +65,7 @@ void GetPosition()
     {
       if(!img[i][j])
       {
-        printf("      %d %d\n",i,j);
+        //printf("      %d %d\n",i,j);
         H+=i;
         W+=j;
         count++;
