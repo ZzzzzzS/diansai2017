@@ -36,16 +36,16 @@ void GetSystemReady()
 void SystemUpdate()
 {
   GetDeta();
-  //ConvertImg();
+  ConvertImg(img,imgFixed);
   //vcan_sendimg(imgbuff, sizeof(imgbuff));
-  //vcan_sendimg(img, sizeof(img));
+  //vcan_sendimg(imgFixed, sizeof(imgFixed));
   if(sendflag)
   {
   printf("position: %d %d  ",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
   printf("Error %d %d  ",ServoBase[H].PidBase.ErrorPosition[Now_Error],ServoBase[W].PidBase.ErrorPosition[Now_Error]);
   printf("speed %d %d\n",MainBall.CurrentBallSpeed.H,MainBall.CurrentBallSpeed.W);
   }
-  //GetPosition();
+  GetPosition();
   /*SetAimPosition();
   CalculatePosition();
   PIDControlPositional(&ServoBase[W]);
@@ -57,7 +57,7 @@ void SystemUpdate()
 
 void MainLoop()
 {
-    GetPosition();
+    //GetPosition();
     SetAimPosition();
     CalculatePosition();
     PIDControlPositional(&ServoBase[W]);

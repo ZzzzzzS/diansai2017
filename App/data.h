@@ -11,10 +11,15 @@
 #define StableRange 5  //圆边界大小
 #define StableTimes 5  //在N周期内检测在范围内就认为稳定
 
-#define MAXW    120
+#define MAXW    125
+#define MINW    35
+#define MAXH    112
+#define MINH    10
+
+/*#define MAXW    120
 #define MINW    35
 #define MAXH    100
-#define MINH    18
+#define MINH    18*/
 
 typedef struct
 {
@@ -47,6 +52,7 @@ typedef struct
 
 extern uint8 imgbuff[CAMERA_SIZE];                             //定义存储接收图像的数组
 extern uint8 img[CAMERA_H][CAMERA_W];
+extern uint8 imgFixed[CAMERA_H][CAMERA_W];
 extern position CurrentAimPosition;
 extern position AimPosition[9];
 extern position path[9];
@@ -167,5 +173,6 @@ extern void PIDControl(servo *Base);
 extern bool AtPosition(position base);
 extern void PIDControlPositional(servo *Base);
 extern void SetPID(servo* Base);
+extern void ConvertImg(uint8 image1[CAMERA_H][CAMERA_W], uint8 image2[CAMERA_H][CAMERA_W]);
 
 #endif //DATA_H
