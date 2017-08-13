@@ -69,12 +69,14 @@ void PIDControlPositional(servo *Base)
   }
   
   Base->PidBase.PIDOutPosition+=Base->PidBase.IntergatePosition*Base->PidBase.I;
+  
+  Base->OutPosition=Base->PidBase.PIDOutPosition;
 }
 
 void ControlOut()
 {
-  int OutW=MIDDLE_W+ServoBase[W].PidBase.PIDOutPosition;
-  int OutH=MIDDLE_H-ServoBase[H].PidBase.PIDOutPosition;
+  int OutW=MIDDLE_W+ServoBase[W].OutPosition;
+  int OutH=MIDDLE_H-ServoBase[H].OutPosition;
   
   if(OutW>=MAX_POSITION_W)
     OutW=MAX_POSITION_W;

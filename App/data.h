@@ -105,6 +105,7 @@ typedef enum
 typedef struct
 {
   pidbase PidBase;
+  int OutPosition;
 }servo;
 
 extern servo ServoBase[2];
