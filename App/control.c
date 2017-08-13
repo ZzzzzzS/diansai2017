@@ -12,11 +12,11 @@ void PIDInit()
   ServoBase[H].PidBase.NowPosition=ServoBase[H].PidBase.AimPosition;
   
   ServoBase[W].PidBase.PSet=5;
-  ServoBase[W].PidBase.ISet=0.5;
+  ServoBase[W].PidBase.ISet=0.1;
   ServoBase[W].PidBase.DSet=30;
   
   ServoBase[H].PidBase.PSet=5;
-  ServoBase[H].PidBase.ISet=0.5;
+  ServoBase[H].PidBase.ISet=0.1;
   ServoBase[H].PidBase.DSet=30;
 }
 void ControlInit()
@@ -49,7 +49,7 @@ void PIDControl(servo* Base)
 
 void PIDControlPositional(servo *Base)
 {
-  if(Base->PidBase.ErrorPosition[Now_Error]<10&&Base->PidBase.ErrorPosition[Now_Error]>-10)
+  if(Base->PidBase.ErrorPosition[Now_Error]<20&&Base->PidBase.ErrorPosition[Now_Error]>-20)
     Base->PidBase.IntergatePosition+=Base->PidBase.ErrorPosition[Now_Error];
   else
     Base->PidBase.IntergatePosition=0;

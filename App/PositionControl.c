@@ -62,7 +62,7 @@ void CalculatePosition()
   ServoBase[H].PidBase.I=ServoBase[H].PidBase.ISet;
   ServoBase[H].PidBase.D=ServoBase[H].PidBase.DSet;
   
-  if(ServoBase[W].PidBase.ErrorPosition[Now_Error]<2&&ServoBase[W].PidBase.ErrorPosition[Now_Error]>-2)
+  /*if(ServoBase[W].PidBase.ErrorPosition[Now_Error]<2&&ServoBase[W].PidBase.ErrorPosition[Now_Error]>-2)
   {
     ServoBase[W].PidBase.D=0;
     ServoBase[W].PidBase.P=0;
@@ -73,9 +73,19 @@ void CalculatePosition()
   {
     ServoBase[H].PidBase.D=0;
     ServoBase[H].PidBase.P=0;
-  }
-    
-    
+  }*/
+  
+  if(ServoBase[W].PidBase.ErrorPosition[Now_Error]>0)
+    ServoBase[W].PidBase.P=ServoBase[W].PidBase.PSet*ServoBase[W].PidBase.ErrorPosition[Now_Error]*0.04;
+  else
+    ServoBase[W].PidBase.P=-ServoBase[W].PidBase.PSet*ServoBase[W].PidBase.ErrorPosition[Now_Error]*0.04;
+  
+  if(ServoBase[H].PidBase.ErrorPosition[Now_Error]>0)
+    ServoBase[H].PidBase.P=ServoBase[H].PidBase.PSet*ServoBase[H].PidBase.ErrorPosition[Now_Error]*0.04;
+  else
+    ServoBase[H].PidBase.P=-ServoBase[H].PidBase.PSet*ServoBase[H].PidBase.ErrorPosition[Now_Error]*0.04;
+  
+  
   SetPID(&ServoBase[W]);
   SetPID(&ServoBase[H]);
   
