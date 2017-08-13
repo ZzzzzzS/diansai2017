@@ -61,8 +61,8 @@ void PIDControlPositional(servo *Base)
 
 void ControlOut()
 {
-  int OutW=MIDDLE_W+ServoBase[W].PidBase.PIDOutPosition;
-  int OutH=MIDDLE_H-ServoBase[H].PidBase.PIDOutPosition;
+  int OutW=MIDDLE_W-ServoBase[W].PidBase.PIDOutPosition;
+  int OutH=MIDDLE_H+ServoBase[H].PidBase.PIDOutPosition;
   
   if(OutW>=MAX_POSITION_W)
     OutW=MAX_POSITION_W;

@@ -11,10 +11,10 @@
 #define StableRange 5  //圆边界大小
 #define StableTimes 5  //在N周期内检测在范围内就认为稳定
 
-#define MAXW    125
-#define MINW    46
-#define MAXH    93
-#define MINH    11
+#define MAXW    120
+#define MINW    35
+#define MAXH    102
+#define MINH    16
 
 typedef struct
 {
@@ -95,8 +95,8 @@ typedef enum
 #define MIN_POSITION_W  300
 #define MIN_POSITION_H  300
 
-#define MIDDLE_W 680
-#define MIDDLE_H 760
+#define MIDDLE_W 690
+#define MIDDLE_H 700
 #define Servo_FTM FTM2
 #define Servo_W_FTM FTM_CH1
 #define Servo_H_FTM FTM_CH0
