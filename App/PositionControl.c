@@ -4,32 +4,32 @@
 
 void AimPositionInit()
 {
-  AimPosition[Line1Left].H=98;
+  AimPosition[Line1Left].H=89;
   AimPosition[Line1Left].W=39;
   
-  AimPosition[Line1Middle].H=99;
-  AimPosition[Line1Middle].W=77;
+  AimPosition[Line1Middle].H=90;
+  AimPosition[Line1Middle].W=75;
   
-  AimPosition[Line1Right].H=99;
-  AimPosition[Line1Right].W=115;
+  AimPosition[Line1Right].H=90;
+  AimPosition[Line1Right].W=112;
   
-  AimPosition[Line2Left].H=62;
-  AimPosition[Line2Left].W=40;
+  AimPosition[Line2Left].H=52;
+  AimPosition[Line2Left].W=39;
   
-  AimPosition[Line2Middle].H=61;
+  AimPosition[Line2Middle].H=52;
   AimPosition[Line2Middle].W=76;
   
-  AimPosition[Line2Right].H=61;
-  AimPosition[Line2Right].W=115;
+  AimPosition[Line2Right].H=52;
+  AimPosition[Line2Right].W=112;
   
-  AimPosition[Line3Left].H=23;
-  AimPosition[Line3Left].W=42;
+  AimPosition[Line3Left].H=16;
+  AimPosition[Line3Left].W=39;
   
-  AimPosition[Line3Middle].H=22;
+  AimPosition[Line3Middle].H=16;
   AimPosition[Line3Middle].W=77;
   
-  AimPosition[Line3Right].H=24;
-  AimPosition[Line3Right].W=114;
+  AimPosition[Line3Right].H=16;
+  AimPosition[Line3Right].W=112;
   
 }
 
@@ -62,7 +62,7 @@ void CalculatePosition()
   ServoBase[H].PidBase.I=ServoBase[H].PidBase.ISet;
   ServoBase[H].PidBase.D=ServoBase[H].PidBase.DSet;
   
-  if(ServoBase[W].PidBase.ErrorPosition[Now_Error]<5&&ServoBase[W].PidBase.ErrorPosition[Now_Error]>-5)
+  /*if(ServoBase[W].PidBase.ErrorPosition[Now_Error]<5&&ServoBase[W].PidBase.ErrorPosition[Now_Error]>-5)
   {
     ServoBase[W].PidBase.D=ServoBase[W].PidBase.PSet/2;
   }
@@ -82,7 +82,7 @@ void CalculatePosition()
     ServoBase[H].PidBase.P=ServoBase[H].PidBase.PSet*ServoBase[H].PidBase.ErrorPosition[Now_Error]*0.02;
   else
     ServoBase[H].PidBase.P=-ServoBase[H].PidBase.PSet*ServoBase[H].PidBase.ErrorPosition[Now_Error]*0.02;
-  
+  */
   
   SetPID(&ServoBase[W]);
   SetPID(&ServoBase[H]);
@@ -127,7 +127,7 @@ bool AtPosition(position base)
 
 void SetAimPosition()
 {
-  CurrentAimPosition=AimPosition[Line2Middle];
+  CurrentAimPosition=AimPosition[Line1Middle];
   return;
   
   static int flag=0;

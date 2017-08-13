@@ -11,10 +11,10 @@
 #define StableRange 5  //圆边界大小
 #define StableTimes 5  //在N周期内检测在范围内就认为稳定
 
-#define MAXW    125
-#define MINW    35
-#define MAXH    112
-#define MINH    10
+#define MAXW    124
+#define MINW    27
+#define MAXH    105
+#define MINH    1
 
 /*#define MAXW    120
 #define MINW    35

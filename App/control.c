@@ -13,11 +13,11 @@ void PIDInit()
   
   ServoBase[W].PidBase.PSet=5;
   ServoBase[W].PidBase.ISet=0.00;
-  ServoBase[W].PidBase.DSet=30;
+  ServoBase[W].PidBase.DSet=75;
   
   ServoBase[H].PidBase.PSet=5;
   ServoBase[H].PidBase.ISet=0.00;
-  ServoBase[H].PidBase.DSet=30;
+  ServoBase[H].PidBase.DSet=75;
 }
 void ControlInit()
 {

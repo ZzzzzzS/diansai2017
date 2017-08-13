@@ -22,8 +22,8 @@ void SystemInit()
 
 void GetSystemReady()
 {
-  CurrentAimPosition.H=AimPosition[Line2Middle].H;
-  CurrentAimPosition.W=AimPosition[Line2Middle].W;
+  CurrentAimPosition.H=AimPosition[Line1Right].H;
+  CurrentAimPosition.W=AimPosition[Line1Right].W;
   ServoBase[W].PidBase.NowPosition=CurrentAimPosition.W;
   ServoBase[H].PidBase.NowPosition=CurrentAimPosition.H;
   MainBall.CurrentBallPosition=CurrentAimPosition;
@@ -46,11 +46,11 @@ void SystemUpdate()
   printf("speed %d %d\n",MainBall.CurrentBallSpeed.H,MainBall.CurrentBallSpeed.W);
   }
   GetPosition();
-  /*SetAimPosition();
+  SetAimPosition();
   CalculatePosition();
   PIDControlPositional(&ServoBase[W]);
   PIDControlPositional(&ServoBase[H]);
-  ControlOut();*/
+  ControlOut();
   
   
 }
@@ -58,13 +58,13 @@ void SystemUpdate()
 void MainLoop()
 {
     //GetPosition();
-    SetAimPosition();
+    /*SetAimPosition();
     CalculatePosition();
     PIDControlPositional(&ServoBase[W]);
     PIDControlPositional(&ServoBase[H]);
     ServoBase[W].OutPosition=ServoBase[W].PidBase.PIDOutPosition;
     ServoBase[H].OutPosition=ServoBase[H].PidBase.PIDOutPosition;
-    ControlOut();
+    ControlOut();*/
   
     LPTMR_Flag_Clear();	
 }
