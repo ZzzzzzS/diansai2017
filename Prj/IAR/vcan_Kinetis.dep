@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>3378581292</fileChecksum>
+  <fileChecksum>330557293</fileChecksum>
   <configuration>
     <name>DZ10_Debug</name>
     <outputs/>
@@ -22,6 +22,7 @@
   <configuration>
     <name>FN15_Debug</name>
     <outputs>
+<<<<<<< HEAD
       <file>$PROJ_DIR$\..\..\App\Inc\MK60_conf.h</file>
       <file>$PROJ_DIR$\..\..\App\MK60_conf.c</file>
       <file>$PROJ_DIR$\..\..\App\MK60_it.c</file>
@@ -316,13 +317,375 @@
       <file>$PROJ_DIR$\..\..\Lib\FatFs\diskio.h</file>
       <file>$PROJ_DIR$\..\..\Chip\inc\MK60_flash.h</file>
       <file>$PROJ_DIR$\..\..\Chip\inc\vectors.h</file>
+=======
+      <file>$PROJ_DIR$\..\..\Chip\inc\vectors.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_SCCB.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_ST7735S.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_gpio.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_SysTick.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\USB.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_dac.pbi</file>
+      <file>$PROJ_DIR$\..\..\Lib\USB\USB_CDC.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_flexbus.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_sdhc.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_computer.o</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_OV7725_Eagle.h</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tlf.a</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_RTC_count.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_rtc.pbi</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_ASCII.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_ST7735R.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\Vcan_touch.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_SCCB.o</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_mcg.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\peripheral.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\OLED.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\PositionControl.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\diskio.o</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_i2c.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_NRF24L0.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_key_event.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_it.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_usb.pbi</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_gpio.h</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_pit.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\USB_CDC.o</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_uart.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\system_MK60DZ10.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_can.o</file>
+      <file>$PROJ_DIR$\..\..\Lib\USB\usb.h</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_spi.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_spi.pbi</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\IAR\system_MK60DZ10.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\vcan_img2sd.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\system.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_OV7725_Wolf.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_ILI9325.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_port.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_key.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_camera.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_port.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_key_event.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\PositionControl.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_ftm.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\xtgmath.h</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_can.h</file>
+      <file>$PROJ_DIR$\..\..\App\touch.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\startup_MK60DZ10.o</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_key_event.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_i2c.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_PIT.pbi</file>
+      <file>$PROJ_DIR$\..\..\Lib\FatFs\ff.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_conf.o</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_lptmr.h</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_LCD_ILI9341.h</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\kinetis\MK60F15.h</file>
+      <file>$PROJ_DIR$\..\..\Lib\CMSIS\Inc\core_cm4.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_conf.pbi</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_LCD_ILI9325.h</file>
+      <file>$PROJ_DIR$\..\..\Lib\USB\USB_Desc.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_BMP.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_wdog.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_flash.pbi</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_TSL1401.h</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_BMP.h</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_computer.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LED.o</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_usb.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_usb.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_OV7725_Eagle.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\system_MK60DZ10.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD.pbi</file>
+      <file>$PROJ_DIR$\..\..\App\Inc\include.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\List\vcan_Kinetis.map</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_CH.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_ST7735S.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdarg.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_flash.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_uart.o</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_MMA7455.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_adc.o</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_wdog.h</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_flexbus.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\check.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_it.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\vcan_sd_app.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_TSL1401.pbi</file>
+      <file>$PROJ_DIR$\config files\vcan_ROM_K60N1M.icf</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\OLED.pbi</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\misc.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_RTC_count.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_ILI9325.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\ymath.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\USB.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\system.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$PROJ_DIR$\..\..\Lib\FatFs\integer.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_camera.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_UI_VAR.pbi</file>
+      <file>$PROJ_DIR$\..\..\Lib\CMSIS\Inc\core_cmFunc.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\control.pbi</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_NRF24L0.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_UI_VAR.o</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_SCCB.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\peripheral.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_OV7725_Eagle.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_gpio_cfg.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_NRF24L0.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_mcg.pbi</file>
+      <file>$PROJ_DIR$\..\..\Lib\CMSIS\Inc\arm_math.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Exe\vcan_Kinetis.bin</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_CH.o</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_LCD_ST7735R.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\USB_CDC.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_dma.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_NRF24L0_MSG.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_DWT.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\data.pbi</file>
+      <file>$PROJ_DIR$\..\..\Lib\CMSIS\iar_cortexM4l_math.a</file>
+      <file>$PROJ_DIR$\..\..\Lib\USB\FslTypes.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\ff.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_DWT.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\check.o</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_OV7725_REG.h</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_dma.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_MMA7455.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\misc.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_flexbus.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_wdog.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_key.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_ASCII.pbi</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_LCD_CH.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\vcan_sd_app.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\vcan_img2sd.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_i2c.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_NRF24L0_MSG.o</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_camera.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_adc.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_ILI9341.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_TSL1401.o</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_port.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_RTC_count.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_OV7725_Wolf.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_can.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_lptmr.o</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_UI_VAR.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Exe\vcan_Kinetis.out</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\data.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\misc.o</file>
+      <file>$PROJ_DIR$\..\..\App\Inc\MK60_conf.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_adc.h</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\Vcan_touch.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\vectors.o</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_dac.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_ftm.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\vcan_Kinetis.pbd</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\Vcan_touch.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\diskio.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_ST7735R.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_rtc.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_mcg.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_PIT.o</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_SysTick.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\math.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_ASCII.o</file>
+      <file>$PROJ_DIR$\..\..\Lib\FatFs\ffconf.h</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_key.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_dac.o</file>
+      <file>$PROJ_DIR$\..\..\Lib\FatFs\diskio.h</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_LED.H</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_computer.pbi</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_flash.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\vectors.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_gpio.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LED.pbi</file>
+      <file>$PROJ_DIR$\..\..\App\MK60_it.c</file>
+      <file>$PROJ_DIR$\..\..\App\MK60_conf.c</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\vcan_img2sd.h</file>
+      <file>$PROJ_DIR$\..\..\App\data.h</file>
+      <file>$PROJ_DIR$\..\..\App\check.h</file>
+      <file>$PROJ_DIR$\..\..\App\control.h</file>
+      <file>$PROJ_DIR$\..\..\App\data.c</file>
+      <file>$PROJ_DIR$\..\..\App\check.c</file>
+      <file>$PROJ_DIR$\..\..\App\control.c</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_uart.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_spi.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\control.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_lptmr.pbi</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_dma.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_MMA7455.o</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_LCD.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\vcan_sd_app.pbi</file>
+      <file>$PROJ_DIR$\..\..\Lib\USB\USB.c</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\ff.o</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_SysTick.o</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_sdhc.h</file>
+      <file>$PROJ_DIR$\..\..\Lib\CMSIS\Inc\core_cmInstr.h</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_NRF24L0_MSG.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$PROJ_DIR$\..\..\Lib\USB\USB_CDC.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_rtc.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\..\..\Board\inc\VCAN_LCD_ST7735S.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_BMP.o</file>
+      <file>$PROJ_DIR$\..\..\Lib\FatFs\ff.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_ILI9341.pbi</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\MK60_FTM.h</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\vectors.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_usb.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_SysTick.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_rtc.c</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_sdhc.pbi</file>
+      <file>$PROJ_DIR$\..\..\Lib\FatFs\diskio.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_can.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_adc.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_gpio.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_i2c.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_dma.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_DWT.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_flexbus.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_mcg.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_spi.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_PIT.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\IAR\startup_MK60DZ10.s</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_lptmr.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_port.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_dac.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_ftm.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_sdhc.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_wdog.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\IAR\system_MK60DZ10.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_flash.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\MK60_uart.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_TSL1401.c</file>
+      <file>$PROJ_DIR$\..\..\Lib\CMSIS\Inc\core_cm4_simd.h</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_LED.C</file>
+      <file>$PROJ_DIR$\..\..\Board\src\Vcan_touch.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_ST7735R.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_key.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_ST7735S.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\vcan_sd_app.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\inc\common.h</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_ILI9341.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_UI_VAR.c</file>
+      <file>$PROJ_DIR$\..\..\Chip\src\misc.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_RTC_count.C</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_camera.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_computer.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_LCD.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_BMP.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\vcan_img2sd.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_key_event.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_ILI9325.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_MMA7455.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_NRF24L0.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_CH.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_NRF24L0_MSG.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_OV7725_Eagle.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_OV7725_Wolf.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_SCCB.c</file>
+      <file>$PROJ_DIR$\..\..\Board\src\VCAN_ASCII.c</file>
+      <file>$PROJ_DIR$\..\..\App\peripheral.h</file>
+      <file>$PROJ_DIR$\..\..\App\system.h</file>
+      <file>$PROJ_DIR$\..\..\App\system.c</file>
+      <file>$PROJ_DIR$\..\..\App\OLED_Fonts.h</file>
+      <file>$PROJ_DIR$\..\..\App\peripheral.c</file>
+      <file>$PROJ_DIR$\..\..\App\Inc\PORT_cfg.h</file>
+      <file>$PROJ_DIR$\..\..\App\Inc\MK60_it.h</file>
+      <file>$PROJ_DIR$\..\..\App\OLED.c</file>
+      <file>$PROJ_DIR$\..\..\App\OLED.h</file>
+      <file>$PROJ_DIR$\..\..\App\PositionControl.c</file>
+      <file>$PROJ_DIR$\..\..\App\PositionControl.h</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_conf.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_it.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\peripheral.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\check.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\OLED.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\data.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\control.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_computer.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_ST7735S.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\system.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_ASCII.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_BMP.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\PositionControl.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\vcan_img2sd.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_key_event.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_ILI9341.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_ST7735R.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_key.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_ILI9325.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LCD_CH.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_camera.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_rtc.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_SysTick.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_ftm.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_uart.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_OV7725_Wolf.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_flexbus.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_i2c.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_OV7725_Eagle.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_TSL1401.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_UI_VAR.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_can.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_LED.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_NRF24L0_MSG.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\misc.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_DWT.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_mcg.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_port.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_adc.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_MMA7455.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_RTC_count.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_lptmr.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_sdhc.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\vcan_sd_app.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\Vcan_touch.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_dac.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_PIT.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_spi.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_NRF24L0.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_flash.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_gpio.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_dma.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\VCAN_SCCB.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\vectors.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_usb.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\USB_CDC.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\system_MK60DZ10.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\MK60_wdog.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\ff.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\diskio.__cstat.et</file>
+      <file>$PROJ_DIR$\FN15_Debug\Obj\USB.__cstat.et</file>
+>>>>>>> master
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
       <outputs>
         <tool>
           <name>ILINK</name>
+<<<<<<< HEAD
           <file> 158 288</file>
+=======
+          <file> 161 82</file>
+>>>>>>> master
         </tool>
       </outputs>
     </file>
@@ -330,22 +693,36 @@
       <name>$PROJ_DIR$\..\..\App\MK60_conf.c</name>
       <outputs>
         <tool>
+<<<<<<< HEAD
           <name>BICOMP</name>
           <file> 248</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 156</file>
+=======
+          <name>ILINK</name>
+          <file> 82</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 120</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
+<<<<<<< HEAD
           <name>BICOMP</name>
           <file> 99 94 111 84 93 90 121 81 91 118 107 98 108 75 85 87 82 83 140 132 134 292 80 77 0 88 44 112 100 53 136 114 129 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 118 134 81 292</file>
+=======
+          <name>ILINK</name>
+          <file> 96 133 205 162 24 213 163 89 35 60 184 208 126 86 8 170 3 57 28 159 177 178 48 221 9 204 214 87 77 69 22 113 50 55 103 79 5 32 181 224 106 10 41 46 49 206 121 100 153 16 2 75 209 117 150 114 43 156 19 94 17 154 111 168 128 138 145 12</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
@@ -354,25 +731,46 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 244</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 155</file>
+=======
+          <file> 93</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 28</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 295</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 45</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 45</file>
+=======
+          <file> 289</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 289</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\App\control.c</name>
       <outputs>
         <tool>
@@ -382,20 +780,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 162</file>
+=======
+      <name>$PROJ_DIR$\..\..\App\MK60_conf.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 60</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 294</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 144 99 84 129 6 111 90 148 143 141 112 53 138 128 142 145 94 136 114 154 3 123 131 147 130 134 133 135 139 40 37 107 98 108 100 82 151 152 95 7 86 118 120 102 79 119 101 122 81 117 103 76 89 96 115 97 42 125 80 77 0 88 44 75 91 85 93 87 121 83 140 132 146 150 124 127 153 113 110 106 116 109 78 104 126 92 149 105 137</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 95 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 86 123 146 118 120 131 102 138 79 147 119 143 101 130 122 128 109 148 150 81 134 117 144 103 133 124 78 104 76 126 127 92 151 149 153 152 142 105 154 89 135 96 137 141 115 139 97 145 3 40 42 6 7 37 125</file>
+=======
+          <file> 20 226 115 146 131 192 180 186 222 33 38 119 40 218 190 104 64 175 101 155 183 188 142 98 164 63 288 220 165 263 108 18 179 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 33 183 186 188</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\App\check.c</name>
       <outputs>
         <tool>
@@ -405,20 +827,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 159</file>
+=======
+      <name>$PROJ_DIR$\..\..\App\data.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 127</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 162</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 299</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 3 80 85 83 86 78 53 75 87 81 76 88 84 94 82 79 89 92 95 77 0 44 91 93 90 121 110 120 101 103 115 7 109 104 105 111 107 98 108 99 112 100 113 106 114 116 118 102 119 122 117 96 97 42 125 126 149 123 134 137 6 136 140 129 132 131 138 147 143 130 128 144 133 142 135 141 139 145 40 37 146 148 150 124 127 151 153 152 154</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 6 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 95 86 123 146 118 120 131 102 138 79 147 119 143 101 130 122 128 109 148 150 81 134 117 144 103 133 124 78 104 76 126 127 92 151 149 153 152 142 105 154 89 135 96 137 141 115 139 97 145 3 40 42 7 37 125</file>
+=======
+          <file> 210 62 142 190 218 104 18 37 54 263 160 81 63 146 226 64 215 167 98 164 288 222 131 192 180 216 70 52 33 166 88 217 291 36 15 30 183 11 115 38 119 40 20 220 165 256 175 90 61 31 135 186 13 72 196 197 199 134 223 105 108 101 179 155 25 228 176 169 53 76 110 151 59 56 73 147 74 284 198 293 116 129 7 112 66 122 144 91 182</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 197 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 81 90 30 116 33 61 25 37 228 31 176 166 169 135 53 215 76 36 129 7 186 183 88 110 13 151 112 11 134 210 62 66 223 122 15 144 91 59 105 182 72 56 217 160 73 196 147 167 74 284 291 198 199 293 54</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\App\data.c</name>
       <outputs>
         <tool>
@@ -428,20 +874,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 160</file>
+=======
+      <name>$PROJ_DIR$\..\..\App\check.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 92</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 133</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 297</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 76 126 75 87 95 80 85 114 102 125 53 137 88 84 94 82 122 97 77 0 44 91 93 90 121 113 106 116 118 119 117 96 42 109 149 123 134 78 111 107 98 108 99 112 100 110 83 86 120 79 101 81 103 89 115 3 7 104 92 105 136 140 129 132 131 138 147 143 130 128 144 133 142 135 141 139 145 40 6 37 146 148 150 124 127 151 153 152 154</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 3 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 95 86 123 146 118 120 131 102 138 79 147 119 143 101 130 122 128 109 148 150 81 134 117 144 103 133 124 78 104 76 126 127 92 151 149 153 152 142 105 154 89 135 96 137 141 115 139 97 145 40 42 6 7 37 125</file>
+=======
+          <file> 63 263 146 155 175 183 91 190 226 64 30 284 81 142 218 104 101 176 56 122 98 164 288 222 131 192 180 25 53 151 147 293 129 182 115 38 119 40 20 220 165 108 18 179 228 169 76 110 59 73 74 198 116 7 112 66 144 210 216 256 70 52 90 33 61 37 31 166 135 215 186 88 13 72 217 196 167 197 291 199 54 36 11 134 62 223 15 105 160</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 198 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 81 90 30 116 33 61 25 37 228 31 176 166 169 135 53 215 76 36 129 7 186 183 88 110 13 151 112 11 134 210 62 66 223 122 15 144 91 59 105 182 72 56 217 160 73 196 147 167 74 197 284 291 199 293 54</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Lib\USB\USB.c</name>
       <outputs>
         <tool>
@@ -451,20 +921,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 193</file>
+=======
+      <name>$PROJ_DIR$\..\..\App\control.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 109</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 205</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 300</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 107 98 100 129 148 108 94 84 80 114 53 111 99 90 112 136 290 150 77 0 88 44 75 91 85 93 87 82 121 83 140 132 109 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 109 148 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 150 290</file>
+=======
+          <file> 110 20 146 62 179 198 115 192 210 169 73 220 263 160 228 76 59 74 226 256 197 30 25 176 53 183 151 56 147 284 293 38 119 40 165 180 175 36 15 33 11 199 90 61 37 31 166 135 215 186 88 13 72 217 196 167 291 54 142 98 164 63 288 218 222 190 131 104 64 216 70 18 52 134 223 105 81 108 101 155 116 129 7 112 66 122 144 91 182</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 81 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 90 30 116 33 61 25 37 228 31 176 166 169 135 53 215 76 36 129 7 186 183 88 110 13 151 112 11 134 210 62 66 223 122 15 144 91 59 105 182 72 56 217 160 73 196 147 167 74 197 284 291 198 199 293 54</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Lib\USB\USB_CDC.c</name>
       <outputs>
         <tool>
@@ -474,20 +968,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 206</file>
+=======
+      <name>$PROJ_DIR$\..\..\Lib\USB\USB.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 102</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 355</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 112 53 90 111 99 84 94 109 107 98 108 100 80 83 140 132 148 150 77 0 88 44 75 91 85 93 87 82 121 136 114 129 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 150 109 148 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99</file>
+=======
+          <file> 38 119 165 179 129 40 226 146 142 18 263 115 20 192 220 108 67 7 98 164 63 288 218 222 190 131 104 64 180 175 101 155 36 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36 129 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 7 67</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Lib\FatFs\ff.c</name>
       <outputs>
         <tool>
@@ -497,20 +1015,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 195</file>
+=======
+      <name>$PROJ_DIR$\..\..\Lib\USB\USB_CDC.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 123</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 32</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 350</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 136 80 85 114 105 75 87 88 84 82 129 291 289 53 77 0 44 91 93 90 121 83 140 132 142 154 111 107 98 108 99 112 100 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 142 105 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 154 291</file>
+=======
+          <file> 220 263 192 115 20 146 226 36 38 119 40 165 142 175 101 155 129 7 98 164 63 288 218 222 190 131 104 64 180 108 18 179 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 7 36 129 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_wdog.c</name>
       <outputs>
         <tool>
@@ -520,20 +1062,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 205</file>
+=======
+      <name>$PROJ_DIR$\..\..\Lib\FatFs\ff.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 213</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 353</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 0 77 91 44 84 93 94 90 121 80 88 75 85 87 82 83 140 132 86 111 107 98 108 99 112 100 53 136 114 129 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 86</file>
+=======
+          <file> 226 108 38 18 182 119 165 40 146 142 179 105 185 115 20 192 220 263 175 101 155 59 85 98 164 63 288 218 222 190 131 104 64 180 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 105 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 182 185</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_SysTick.c</name>
       <outputs>
         <tool>
@@ -543,25 +1109,60 @@
         <tool>
           <name>ICCARM</name>
           <file> 219</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\vectors.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 189</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 168</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 348</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 84 110 111 99 90 112 53 107 98 108 100 80 83 129 77 0 88 44 75 91 85 93 87 82 121 113 106 114 116 136 140 132</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99</file>
+=======
+          <file> 146 98 222 256 164 288 131 226 192 180 263 142 63 218 190 104 64 175 289 115 38 119 40 20 220 165 216 70 18 52 0 108 101 179 155</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 289 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\IAR\startup_MK60DZ10.s</name>
       <outputs>
         <tool>
           <name>AARM</name>
           <file> 194</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_usb.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 77</file>
+>>>>>>> master
         </tool>
       </outputs>
     </file>
@@ -569,26 +1170,42 @@
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_dma.c</name>
       <outputs>
         <tool>
+<<<<<<< HEAD
           <name>BICOMP</name>
           <file> 281</file>
+=======
+          <name>__cstat</name>
+          <file> 349</file>
+>>>>>>> master
         </tool>
         <tool>
+<<<<<<< HEAD
           <name>ICCARM</name>
           <file> 197</file>
+=======
+          <name>BICOMP</name>
+          <file> 40 226 146 142 38 119 165 18 76 115 20 192 220 263 216 70 52 36 98 164 63 288 218 222 190 131 104 64 180 256 175 108 101 179 155 129 7</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
+<<<<<<< HEAD
           <name>BICOMP</name>
           <file> 77 91 83 0 44 84 93 94 90 121 123 80 88 75 85 87 82 110 132 101 111 107 98 108 99 112 100 53 113 106 114 116 146 136 140 129</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 101</file>
+=======
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 36 129 7 76</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_DWT.c</name>
       <outputs>
         <tool>
@@ -598,20 +1215,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 209</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_SysTick.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 214</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 317</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 112 84 90 110 111 99 53 94 107 98 108 100 80 83 77 0 88 44 75 91 85 93 87 82 121 113 106 114 116 136 140 129 132</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99</file>
+=======
+          <file> 226 146 256 115 20 192 220 263 38 119 40 165 142 175 179 98 164 63 288 218 222 190 131 104 64 180 216 70 18 52 108 101 155</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_ftm.c</name>
       <outputs>
         <tool>
@@ -621,20 +1262,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 202</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_rtc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 221</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 316</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 111 99 90 112 84 53 110 107 98 108 100 80 83 138 77 0 88 44 75 91 85 93 87 82 121 113 106 114 116 136 140 129 132</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 138</file>
+=======
+          <file> 190 64 226 63 146 142 218 104 108 18 98 164 288 222 131 192 180 179 176 115 38 119 40 20 220 165 263 175 101 155 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 176</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_lptmr.c</name>
       <outputs>
         <tool>
@@ -644,20 +1309,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 218</file>
+=======
+      <name>$PROJ_DIR$\..\..\Lib\FatFs\diskio.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 173</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 354</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 98 100 107 114 108 94 84 80 111 99 90 112 53 113 106 116 120 77 0 88 44 75 91 85 93 87 82 121 110 83 136 140 129 132</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 120</file>
+=======
+          <file> 226 288 146 131 192 180 98 164 222 105 185 142 63 218 190 104 64 175 101 155 215 115 38 119 40 20 220 165 263 108 18 179 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 215 185 105</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_flash.c</name>
       <outputs>
         <tool>
@@ -667,38 +1356,98 @@
         <tool>
           <name>ICCARM</name>
           <file> 211</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_can.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 158</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 326</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 108 94 84 110 80 53 107 98 100 111 99 90 112 83 77 0 88 44 75 91 85 93 87 82 121 113 106 114 116 292 136 140 129 132</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 292 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99</file>
+=======
+          <file> 164 263 98 222 216 288 146 131 226 192 180 70 52 53 142 63 218 190 104 64 18 155 115 38 119 40 20 220 165 256 175 108 101 179</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 53</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_PIT.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
           <file> 269</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_adc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 152</file>
         </tool>
         <tool>
           <name>ICCARM</name>
+          <file> 89</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 333</file>
+>>>>>>> master
+        </tool>
+        <tool>
+<<<<<<< HEAD
+          <name>ICCARM</name>
           <file> 203</file>
+=======
+          <name>BICOMP</name>
+          <file> 164 98 222 288 146 131 226 192 180 18 142 63 218 190 104 64 216 70 52 263 166 115 38 119 40 20 220 165 256 175 108 101 179 155</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
+<<<<<<< HEAD
           <name>BICOMP</name>
           <file> 84 99 111 90 53 112 94 114 107 98 108 100 80 113 106 116 79 77 0 88 44 75 91 85 93 87 82 121 110 83 136 140 129 132</file>
         </tool>
+=======
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 166</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_gpio.c</name>
+      <outputs>
+>>>>>>> master
+        <tool>
+          <name>BICOMP</name>
+          <file> 191</file>
+        </tool>
         <tool>
           <name>ICCARM</name>
+<<<<<<< HEAD
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 79</file>
         </tool>
       </inputs>
@@ -713,20 +1462,63 @@
         <tool>
           <name>ICCARM</name>
           <file> 196</file>
+=======
+          <file> 3</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 345</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+          <file> 226 288 146 131 192 180 70 52 98 164 222 216 263 30 142 63 218 190 104 64 18 155 115 38 119 40 20 220 165 256 175 108 101 179 116</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_i2c.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 149</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 57</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 322</file>
+>>>>>>> master
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 108 84 80 107 98 100 111 99 90 112 53 83 140 132 118 77 0 88 44 75 91 85 93 87 82 121 136 114 129 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 118</file>
+=======
+          <file> 192 220 115 20 146 263 226 25 38 119 40 165 142 175 101 155 98 164 63 288 218 222 190 131 104 64 180 108 18 179 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 25</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_usb.c</name>
       <outputs>
         <tool>
@@ -736,20 +1528,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 220</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_dma.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 124</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 208</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 346</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 108 94 84 80 107 98 100 114 128 111 99 90 112 53 113 106 116 109 77 0 88 44 75 91 85 93 87 82 121 110 83 136 140 129 132 148 150</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 109 148 150 128</file>
+=======
+          <file> 98 222 175 164 288 146 131 226 192 180 30 142 63 218 190 104 64 256 155 135 115 38 119 40 20 220 165 263 216 70 18 52 116 108 101 179</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 135</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_spi.c</name>
       <outputs>
         <tool>
@@ -759,20 +1575,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 214</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_DWT.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 132</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 126</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 330</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 121 84 93 90 44 94 77 0 91 136 114 102 80 88 75 85 87 82 129 132 111 107 98 108 99 112 100 53 83 140 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 102</file>
+=======
+          <file> 220 146 192 256 115 20 263 226 38 119 40 165 142 175 98 164 63 288 218 222 190 131 104 64 180 216 70 18 52 108 101 179 155</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_gpio.c</name>
       <outputs>
         <tool>
@@ -782,20 +1622,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 208</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_flexbus.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 139</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 8</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 321</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 44 84 93 90 121 106 116 77 0 91 113 53 123 80 88 75 85 87 82 114 132 111 107 98 108 99 112 100 110 83 136 140 129 146</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146</file>
+=======
+          <file> 218 104 263 142 190 216 63 146 226 64 70 52 98 164 288 222 131 192 180 18 91 115 38 119 40 20 220 165 256 175 108 101 179 155</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 91</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_sdhc.c</name>
       <outputs>
         <tool>
@@ -805,20 +1669,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 207</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_mcg.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 118</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 177</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 331</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 140 111 99 90 112 84 53 83 132 107 98 108 100 80 122 77 0 88 44 75 91 85 93 87 82 121 136 114 129 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 122</file>
+=======
+          <file> 146 288 226 131 192 180 18 98 164 222 61 142 63 218 190 104 64 216 70 52 263 20 115 38 119 40 220 165 256 175 108 101 179 155</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 61</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_dac.c</name>
       <outputs>
         <tool>
@@ -828,20 +1716,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 200</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_spi.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 204</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 342</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 107 98 100 108 94 84 80 111 99 90 112 53 83 140 132 143 77 0 88 44 75 91 85 93 87 82 121 136 114 129 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 143</file>
+=======
+          <file> 180 146 131 192 288 226 98 164 222 108 18 37 142 63 218 190 104 64 179 155 115 38 119 40 20 220 165 263 175 101 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 37</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_mcg.c</name>
       <outputs>
         <tool>
@@ -851,43 +1763,103 @@
         <tool>
           <name>ICCARM</name>
           <file> 201</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_PIT.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 58</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 178</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 341</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 84 44 94 93 90 121 114 77 0 91 120 80 88 75 85 87 82 113 106 116 53 99 111 107 98 108 112 100 110 83 136 140 129 132</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 120</file>
+=======
+          <file> 146 20 115 192 263 220 226 18 38 119 40 165 142 216 70 52 31 98 164 63 288 218 222 190 131 104 64 180 256 175 108 101 179 155</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 31</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_rtc.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
           <file> 276</file>
-        </tool>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\IAR\startup_MK60DZ10.s</name>
+      <outputs>
         <tool>
+          <name>AARM</name>
+          <file> 55</file>
+>>>>>>> master
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_lptmr.c</name>
+      <outputs>
+        <tool>
+<<<<<<< HEAD
           <name>ICCARM</name>
           <file> 216</file>
+=======
+          <name>BICOMP</name>
+          <file> 207</file>
+>>>>>>> master
+        </tool>
+        <tool>
+<<<<<<< HEAD
+          <name>BICOMP</name>
+          <file> 85 82 94 88 84 80 75 87 136 114 77 0 44 91 93 90 121 129 147 111 107 98 108 99 112 100 53 83 140 132 113 110 106 116</file>
+=======
+          <name>ICCARM</name>
+          <file> 159</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 336</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
+<<<<<<< HEAD
+          <name>ICCARM</name>
+          <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 147</file>
+=======
           <name>BICOMP</name>
-          <file> 85 82 94 88 84 80 75 87 136 114 77 0 44 91 93 90 121 129 147 111 107 98 108 99 112 100 53 83 140 132 113 110 106 116</file>
+          <file> 119 165 38 18 40 226 146 142 115 20 192 220 263 216 70 52 61 98 164 63 288 218 222 190 131 104 64 180 256 175 108 101 179 155</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 147</file>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 61</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_adc.c</name>
       <outputs>
         <tool>
@@ -897,20 +1869,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 215</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_port.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 48</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 332</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 0 77 91 44 84 93 94 90 121 114 80 88 75 85 87 82 113 106 116 53 119 111 107 98 108 99 112 100 110 83 136 140 129 132</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 119</file>
+=======
+          <file> 146 256 226 115 20 192 220 263 38 119 40 165 142 175 155 98 164 63 288 218 222 190 131 104 64 180 216 70 18 52 108 101 179</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_can.c</name>
       <outputs>
         <tool>
@@ -920,20 +1916,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 204</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_dac.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 184</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 340</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 0 53 77 91 113 44 84 93 94 90 121 106 116 130 80 88 75 85 87 82 114 132 111 107 98 108 99 112 100 110 83 136 140 129</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 130</file>
+=======
+          <file> 38 119 165 40 226 146 142 115 20 192 220 263 175 101 155 169 98 164 63 288 218 222 190 131 104 64 180 108 18 179 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 169</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_port.c</name>
       <outputs>
         <tool>
@@ -943,20 +1963,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 213</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_ftm.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 170</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 318</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 84 110 94 111 99 90 112 53 107 98 108 100 80 83 132 77 0 88 44 75 91 85 93 87 82 121 113 106 114 116 136 140 129</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99</file>
+=======
+          <file> 226 115 20 192 220 146 263 256 38 119 40 165 142 175 228 98 164 63 288 218 222 190 131 104 64 180 216 70 18 52 108 101 179 155</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 228</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\IAR\system_MK60DZ10.c</name>
       <outputs>
         <tool>
@@ -966,20 +2010,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 190</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_sdhc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 233</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 9</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 337</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 107 143 148 98 100 141 123 108 94 84 129 144 6 154 118 111 99 90 112 121 83 140 132 53 138 128 142 145 151 152 95 86 80 77 0 88 44 75 91 85 93 87 82 136 114 146 131 147 130 134 133 135 139 40 37 150 124 127 153 76 113 110 106 116 120 102 79 119 101 122 81 117 103 89 96 115 97 3 42 7 125 109 78 104 126 92 149 105 137</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 118 86 123 146 95 120 131 102 138 79 147 119 143 101 130 122 128 109 148 150 81 134 117 144 103 133 124 78 104 76 126 127 92 151 149 153 152 142 105 154 89 135 96 137 141 115 139 97 145 3 40 42 6 7 37 125</file>
+=======
+          <file> 226 101 115 20 192 220 146 263 175 155 38 119 40 165 142 215 98 164 63 288 218 222 190 131 104 64 180 108 18 179 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 215</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\vectors.c</name>
       <outputs>
         <tool>
@@ -989,20 +2057,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 191</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_wdog.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 140</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 69</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 352</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 84 77 91 110 0 44 93 94 90 121 53 80 88 75 85 87 82 83 45 111 107 98 108 99 112 100 113 106 114 116 293 136 140 129 132</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 293 45 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99</file>
+=======
+          <file> 164 98 222 288 146 131 226 192 180 142 63 218 190 104 64 175 101 155 90 115 38 119 40 20 220 165 263 108 18 179 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 90</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_i2c.c</name>
       <outputs>
         <tool>
@@ -1012,20 +2104,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 217</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\IAR\system_MK60DZ10.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 79</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 351</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 90 112 111 99 84 53 94 131 107 98 108 100 80 83 140 132 77 0 88 44 75 91 85 93 87 82 121 136 114 129 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 131</file>
+=======
+          <file> 38 62 64 196 210 119 165 18 135 263 160 30 40 226 146 61 13 199 33 115 20 192 220 216 70 52 90 31 186 72 197 36 15 183 11 81 142 98 164 63 288 218 222 190 131 104 180 256 175 37 166 215 88 217 167 291 54 134 223 105 108 101 179 155 116 25 228 176 169 53 76 110 151 59 56 73 147 74 284 198 293 129 7 112 66 122 144 91 182</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 33 90 30 116 81 61 25 37 228 31 176 166 169 135 53 215 76 36 129 7 186 183 88 110 13 151 112 11 134 210 62 66 223 122 15 144 91 59 105 182 72 56 217 160 73 196 147 167 74 197 284 291 198 199 293 54</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_flexbus.c</name>
       <outputs>
         <tool>
@@ -1035,20 +2151,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 212</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_flash.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 86</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 344</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 75 87 53 80 85 113 88 84 94 82 106 116 77 0 44 91 93 90 121 114 152 111 107 98 108 99 112 100 110 83 136 140 129 132</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 152</file>
+=======
+          <file> 40 226 146 256 142 263 38 119 165 115 20 192 220 175 98 164 63 288 218 222 190 131 104 64 180 216 70 18 52 188 108 101 179 155</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 188 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Lib\FatFs\diskio.c</name>
       <outputs>
         <tool>
@@ -1058,20 +2198,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 192</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_uart.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 87</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 319</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 44 84 93 90 121 77 0 91 105 291 80 88 75 85 87 82 83 140 132 122 111 107 98 108 99 112 100 53 136 114 129 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 122 291 105</file>
+=======
+          <file> 226 40 146 142 38 119 165 115 20 192 220 263 175 101 155 33 98 164 63 288 218 222 190 131 104 64 180 108 18 179 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 33</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\App\OLED.c</name>
       <outputs>
         <tool>
@@ -1081,20 +2245,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 163</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_TSL1401.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 95</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 154</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 324</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 129 122 0 97 102 76 125 77 91 84 151 118 119 117 96 42 44 94 82 114 152 53 95 86 120 79 101 81 103 89 115 3 7 80 88 75 85 87 136 148 154 48 123 131 138 147 143 130 128 134 144 133 142 135 141 139 145 40 6 37 111 107 98 108 99 90 93 121 83 140 132 146 150 124 127 153 112 100 113 110 106 116 109 78 104 126 92 149 105 137</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 95 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 86 123 146 118 120 131 102 138 79 147 119 143 101 130 122 128 109 148 150 81 134 117 144 103 133 124 78 104 76 126 127 92 151 149 153 152 142 105 154 89 135 96 137 141 115 139 97 145 3 40 42 6 7 37 125 48</file>
+=======
+          <file> 98 222 116 164 18 30 288 146 131 226 192 180 85 31 142 63 218 190 104 64 108 52 263 155 166 72 115 38 119 40 20 220 165 175 216 256 70 101 179</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 166 31 72</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\App\system.c</name>
       <outputs>
         <tool>
@@ -1104,20 +2292,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 167</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_LED.C</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 193</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 75</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 327</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 76 102 125 77 91 94 122 97 0 140 123 95 118 119 117 96 42 44 84 93 90 121 83 132 153 86 120 79 101 81 103 89 115 3 7 80 88 75 85 87 82 146 150 53 124 127 152 144 40 129 131 138 147 143 130 128 134 133 142 135 141 139 145 6 37 111 107 98 108 99 112 100 136 114 148 151 154 113 110 106 116 109 78 104 126 92 149 105 137</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 95 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 86 123 146 118 120 131 102 138 79 147 119 143 101 130 122 128 109 148 150 81 134 117 144 103 133 124 78 104 76 126 127 92 151 149 153 152 142 105 154 89 135 96 137 141 115 139 97 145 3 40 42 6 7 37 125</file>
+=======
+          <file> 226 142 190 218 104 101 63 146 64 175 155 30 98 164 288 222 131 192 180 186 115 38 119 40 20 220 165 263 108 18 179 216 256 70 52 116</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 186</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_camera.c</name>
       <outputs>
         <tool>
@@ -1127,20 +2339,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 171</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\Vcan_touch.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 172</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 339</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 91 77 84 110 0 44 93 94 90 121 80 88 75 85 87 82 83 111 107 98 108 99 112 100 53 113 106 114 116 136 140 129 132</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99</file>
+=======
+          <file> 226 190 64 91 63 146 210 142 218 104 108 18 122 30 98 164 288 222 131 192 180 179 155 37 167 115 38 119 40 20 220 165 263 175 101 66 144 216 256 70 52 116 62 223 15</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 37 210 62 66 223 122 15 144 91 167</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\App\PositionControl.c</name>
       <outputs>
         <tool>
@@ -1150,20 +2386,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 157</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_ST7735R.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 174</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 311</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 99 144 84 129 6 111 90 148 143 141 112 53 138 128 142 145 94 136 114 154 3 123 131 147 130 134 133 135 139 40 37 107 98 108 100 82 151 152 95 86 118 120 102 79 119 101 122 81 117 103 76 89 96 115 97 42 7 125 80 77 0 88 44 75 91 85 93 87 121 83 140 132 146 150 124 127 153 113 110 106 116 109 78 104 126 92 149 105 137</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 95 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 86 123 146 118 120 131 102 138 79 147 119 143 101 130 122 128 109 148 150 81 134 117 144 103 133 124 78 104 76 126 127 92 151 149 153 152 142 105 154 89 135 96 137 141 115 139 97 145 3 40 42 6 7 37 125</file>
+=======
+          <file> 226 91 144 101 115 20 192 220 146 263 175 155 122 38 119 40 165 142 116 210 66 30 98 164 63 288 218 222 190 131 104 64 180 108 18 179 216 256 70 52 62 223 15</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 122 210 62 66 223 15 144 91</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_computer.c</name>
       <outputs>
         <tool>
@@ -1173,20 +2433,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 177</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_key.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 141</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 312</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 75 87 80 85 94 88 84 82 83 145 77 0 44 91 93 90 121 110 118 111 107 98 108 99 112 100 53 113 106 114 116 136 140 129 132</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 118 145</file>
+=======
+          <file> 226 115 20 192 220 146 263 256 30 38 119 40 165 142 175 155 183 98 164 63 288 218 222 190 131 104 64 180 216 70 18 52 116 108 101 179</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 183</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\App\peripheral.c</name>
       <outputs>
         <tool>
@@ -1196,20 +2480,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 173</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_ST7735S.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 2</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 302</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 76 94 104 102 125 77 91 84 122 97 0 106 116 109 118 119 117 96 42 44 93 90 113 53 105 107 86 120 79 101 81 103 89 115 3 7 80 88 75 85 87 114 78 92 51 123 129 131 138 147 143 130 128 134 144 133 142 135 141 139 145 40 6 37 111 98 108 99 112 100 110 83 126 149 137 95 82 121 136 140 132 146 148 150 124 127 151 153 152 154</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 95 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 86 123 146 118 120 131 102 138 79 147 119 143 101 130 122 128 109 148 150 81 134 117 144 103 133 124 78 104 76 126 127 92 151 149 153 152 142 105 154 89 135 96 137 141 115 139 97 145 3 40 42 6 7 37 125 51</file>
+=======
+          <file> 226 91 144 101 115 20 192 220 146 263 175 155 223 38 119 40 165 142 116 210 66 30 98 164 63 288 218 222 190 131 104 64 180 108 18 179 122 216 256 70 52 62 15</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 223 210 62 66 122 15 144 91</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_ASCII.c</name>
       <outputs>
         <tool>
@@ -1219,6 +2527,17 @@
         <tool>
           <name>ICCARM</name>
           <file> 161</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\vcan_sd_app.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 211</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 94</file>
+>>>>>>> master
         </tool>
       </outputs>
     </file>
@@ -1226,26 +2545,40 @@
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_BMP.c</name>
       <outputs>
         <tool>
+<<<<<<< HEAD
           <name>BICOMP</name>
           <file> 230</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 170</file>
+=======
+          <name>__cstat</name>
+          <file> 338</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 100 152 98 153 107 108 94 84 80 114 142 111 99 90 112 53 113 106 116 127 141 76 77 0 88 44 75 91 85 93 87 82 121 110 83 154 151 123 136 140 129 132 105 126 92 149 146</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 141 142 105 154 76 126 127 92 123 146 151 149 153 152</file>
+=======
+          <file> 91 218 104 144 142 190 175 63 146 226 64 59 98 164 288 222 131 192 180 256 263 66 147 210 115 38 119 40 20 220 165 216 70 18 52 182 122 30 108 101 179 155 105 62 223 15 116</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 147 59 105 182 210 62 66 223 30 116 122 15 144 91</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_MMA7455.c</name>
       <outputs>
         <tool>
@@ -1255,20 +2588,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 169</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_ILI9341.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 227</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 153</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 310</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 80 94 84 108 114 107 98 100 131 111 99 90 112 53 113 106 116 132 117 77 0 88 44 75 91 85 93 87 82 121 110 83 136 140 129</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 131 117</file>
+=======
+          <file> 146 226 288 131 192 180 101 15 210 98 164 222 175 155 62 142 63 218 190 104 64 116 91 30 115 38 119 40 20 220 165 263 108 18 179 223 216 256 70 52 66 122 144</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 62 210 66 223 122 15 144 91</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_key.c</name>
       <outputs>
         <tool>
@@ -1278,20 +2635,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 187</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_UI_VAR.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 107</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 111</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 325</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 111 99 90 112 84 53 110 123 107 98 108 100 80 83 132 134 77 0 88 44 75 91 85 93 87 82 121 113 106 114 116 146 136 140 129</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 134</file>
+=======
+          <file> 146 179 288 226 223 131 192 180 210 98 164 222 18 160 142 63 218 190 104 64 108 217 115 38 119 40 20 220 165 263 175 101 155 62 15 110 216 256 70 52 66 122 144 91 30 116</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 210 62 66 223 30 116 122 15 144 91 160 217 110</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_UI_VAR.c</name>
       <outputs>
         <tool>
@@ -1301,20 +2682,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 176</file>
+=======
+      <name>$PROJ_DIR$\..\..\Chip\src\misc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 137</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 163</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 329</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 84 129 44 94 92 93 90 121 76 77 0 91 114 137 80 88 75 85 87 82 136 96 111 107 98 108 99 112 100 53 83 140 132 126 149 144 113 110 106 116 127 151 153 152 123 146</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 76 126 127 92 123 146 151 149 153 152 137 96 144</file>
+=======
+          <file> 226 40 146 142 38 119 165 115 20 192 220 263 175 101 155 33 98 164 63 288 218 222 190 131 104 64 180 108 18 179 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 33</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_key_event.c</name>
       <outputs>
         <tool>
@@ -1324,20 +2729,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 178</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_RTC_count.C</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 156</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 335</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 84 88 114 85 94 82 134 80 75 87 129 77 0 44 91 93 90 121 136 137 53 111 107 98 108 99 112 100 83 140 132 135 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 135 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 134 137</file>
+=======
+          <file> 63 179 146 190 226 64 142 218 104 18 98 164 288 222 131 192 180 108 13 115 38 119 40 20 220 165 263 175 101 155 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 13</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_CH.c</name>
       <outputs>
         <tool>
@@ -1347,20 +2776,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 186</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_camera.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 106</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 315</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 80 94 84 114 108 107 98 100 127 152 123 142 111 99 90 112 53 113 106 116 153 76 77 0 88 44 75 91 85 93 87 82 121 110 83 151 146 105 136 140 129 132 126 92 149 154</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 76 126 127 92 123 146 151 149 153 152 142 105 154</file>
+=======
+          <file> 222 98 146 256 164 288 131 226 192 180 142 63 218 190 104 64 175 115 38 119 40 20 220 165 263 216 70 18 52 108 101 179 155</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_RTC_count.C</name>
       <outputs>
         <tool>
@@ -1370,20 +2823,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 166</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_computer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 187</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 10</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 301</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 88 129 84 85 94 82 80 75 87 114 77 0 44 91 93 90 121 136 103 111 107 98 108 99 112 100 53 83 140 132 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 103</file>
+=======
+          <file> 218 104 142 190 226 63 146 64 175 74 98 164 288 222 131 192 180 256 33 115 38 119 40 20 220 165 263 216 70 18 52 108 101 179 155</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 33 74</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\vcan_img2sd.c</name>
       <outputs>
         <tool>
@@ -1393,20 +2870,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 165</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_LCD.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 206</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 309</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 100 98 107 114 105 108 94 84 80 142 111 99 90 112 53 113 106 116 115 133 77 0 88 44 75 91 85 93 87 82 121 110 83 124 136 140 129 132 154 78 104</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 115 142 105 154 133 124 78 104</file>
+=======
+          <file> 226 210 40 146 142 18 38 119 165 179 223 115 20 192 220 263 108 98 164 63 288 218 222 190 131 104 64 180 175 101 155 62 15 216 256 70 52 66 122 144 91 30 116</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 210 62 66 223 30 116 122 15 144 91</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_TSL1401.c</name>
       <outputs>
         <tool>
@@ -1416,20 +2917,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 172</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_BMP.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 224</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 305</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 77 91 146 0 114 123 44 84 93 94 90 121 289 79 80 88 75 85 87 82 136 116 53 132 119 89 111 107 98 108 99 112 100 83 113 110 106 140 129</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 119 79 89</file>
+=======
+          <file> 165 91 119 144 38 40 226 146 142 18 59 115 20 192 220 263 216 70 52 66 73 210 98 164 63 288 218 222 190 131 104 64 180 256 175 182 122 30 108 101 179 155 105 62 223 15 116</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 73 59 105 182 210 62 66 223 30 116 122 15 144 91</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\Vcan_touch.c</name>
       <outputs>
         <tool>
@@ -1439,20 +2964,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 168</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\vcan_img2sd.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 148</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 307</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 85 82 152 88 84 76 80 75 87 136 114 151 123 77 0 44 91 93 90 121 129 132 102 97 111 107 98 108 99 112 100 53 83 140 127 153 113 110 106 116 146 126 92 149</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 102 76 126 127 92 151 149 153 152 97</file>
+=======
+          <file> 165 119 38 18 105 40 226 146 142 59 115 20 192 220 263 216 70 52 196 151 98 164 63 288 218 222 190 131 104 64 180 256 175 112 108 101 179 155 182 11 134</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 196 59 105 182 151 112 11 134</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_LCD.c</name>
       <outputs>
         <tool>
@@ -1462,20 +3011,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 174</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_key_event.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 49</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 308</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 76 108 84 80 114 107 98 100 129 92 111 99 90 112 53 136 77 0 88 44 75 91 85 93 87 82 121 83 140 132 126 149 113 110 106 116 127 151 153 152 123 146</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 76 126 127 92 123 146 151 149 153 152</file>
+=======
+          <file> 146 63 18 190 226 64 183 142 218 104 179 98 164 288 222 131 192 180 108 160 263 115 38 119 40 20 220 165 175 101 155 56 216 256 70 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 56 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 183 160</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_NRF24L0_MSG.c</name>
       <outputs>
         <tool>
@@ -1485,20 +3058,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 184</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_ILI9325.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 100</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 313</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 114 94 104 133 111 99 90 112 84 53 129 132 96 107 98 108 100 80 136 78 123 102 144 89 77 0 88 44 75 91 85 93 87 82 121 83 140 137 113 110 106 116 146 124</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 102 133 124 78 104 144 96 137 89</file>
+=======
+          <file> 226 146 142 40 101 38 119 165 175 155 122 66 115 20 192 220 263 116 91 30 98 164 63 288 218 222 190 131 104 64 180 108 18 179 144 216 256 70 52 210 62 223 15</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 66 210 62 223 122 15 144 91</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_LED.C</name>
       <outputs>
         <tool>
@@ -1508,20 +3105,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 175</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_MMA7455.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 136</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 209</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 334</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 80 85 75 87 140 88 84 82 83 132 123 77 0 44 91 93 90 121 81 111 107 98 108 99 112 100 53 136 114 129 113 110 106 116 146</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 81</file>
+=======
+          <file> 142 226 146 40 18 38 119 165 25 115 20 192 220 263 216 70 52 155 88 98 164 63 288 218 222 190 131 104 64 180 256 175 108 101 179</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 25 88</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_SCCB.c</name>
       <outputs>
         <tool>
@@ -1531,20 +3152,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 181</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_NRF24L0.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 117</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 343</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 84 44 94 106 116 93 90 121 77 0 91 113 53 124 80 88 75 85 87 82 114 123 111 107 98 108 99 112 100 110 83 136 140 129 132 146</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 124</file>
+=======
+          <file> 104 218 142 190 110 63 146 226 64 30 98 164 288 222 131 192 180 175 101 155 37 115 38 119 40 20 220 165 263 108 18 179 216 256 70 52 116</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 37 110</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_OV7725_Eagle.c</name>
       <outputs>
         <tool>
@@ -1554,20 +3199,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 179</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_CH.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 83</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 121</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 314</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 85 82 53 88 84 113 133 80 75 87 106 116 132 77 0 44 91 93 90 121 114 146 123 101 111 107 98 108 99 112 100 110 83 124 136 140 129 78 104</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 101 133 124 78 104</file>
+=======
+          <file> 142 226 146 18 40 38 119 165 66 91 30 59 115 20 192 220 263 216 70 52 144 210 98 164 63 288 218 222 190 131 104 64 180 256 175 122 116 105 108 101 179 155 62 223 15 182</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 210 62 66 223 30 116 122 15 144 91 59 105 182</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Chip\src\misc.c</name>
       <outputs>
         <tool>
@@ -1577,20 +3246,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 210</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_NRF24L0_MSG.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 150</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 328</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 108 84 80 107 98 100 111 99 90 112 53 83 140 132 118 77 0 88 44 75 91 85 93 87 82 121 136 114 129 113 110 106 116</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 118</file>
+=======
+          <file> 18 226 134 151 115 20 192 220 146 263 179 155 217 38 119 40 165 142 108 11 30 37 110 72 98 164 63 288 218 222 190 131 104 64 180 175 101 160 216 256 70 52 116 112</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 37 151 112 11 134 110 217 160 72</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_ILI9325.c</name>
       <outputs>
         <tool>
@@ -1600,20 +3293,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 182</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_OV7725_Eagle.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 114</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 323</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 84 80 108 140 107 98 100 83 132 151 127 111 99 90 112 53 146 152 123 77 0 88 44 75 91 85 93 87 82 121 136 114 129 153 113 110 106 116 76 126 92 149</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 127 76 126 92 151 149 153 152</file>
+=======
+          <file> 226 190 64 263 63 146 216 151 142 218 104 70 52 155 98 164 288 222 131 192 180 18 116 30 135 115 38 119 40 20 220 165 256 175 112 108 101 179 11 134</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 135 151 112 11 134</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_ST7735S.c</name>
       <outputs>
         <tool>
@@ -1623,20 +3340,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 164</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_OV7725_Wolf.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 157</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 320</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 152 153 140 111 99 90 112 84 53 83 132 92 107 98 108 100 80 146 76 127 123 77 0 88 44 75 91 85 93 87 82 121 136 114 129 151 113 110 106 116 126 149</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 92 76 126 127 151 149 153 152</file>
+=======
+          <file> 192 220 263 115 20 146 216 151 226 70 52 155 38 119 40 165 142 18 116 30 135 98 164 63 288 218 222 190 131 104 64 180 256 175 112 108 101 179 11 134</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 135 151 112 11 134</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_NRF24L0.c</name>
       <outputs>
         <tool>
@@ -1646,20 +3387,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 188</file>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_SCCB.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 19</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 347</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 87 75 80 85 144 88 84 94 82 123 77 0 44 91 93 90 121 83 140 132 102 111 107 98 108 99 112 100 53 136 114 129 113 110 106 116 146</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 102 144</file>
+=======
+          <file> 146 288 226 70 52 131 192 180 98 164 222 216 263 112 142 63 218 190 104 64 18 30 115 38 119 40 20 220 165 256 175 108 101 179 155 116</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 30 116 112</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_OV7725_Wolf.c</name>
       <outputs>
         <tool>
@@ -1669,20 +3434,35 @@
         <tool>
           <name>ICCARM</name>
           <file> 185</file>
-        </tool>
-      </outputs>
-      <inputs>
+=======
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_ASCII.c</name>
+      <outputs>
         <tool>
+          <name>BICOMP</name>
+          <file> 143</file>
+>>>>>>> master
+        </tool>
+        <tool>
+<<<<<<< HEAD
           <name>BICOMP</name>
           <file> 90 112 53 111 99 84 113 133 94 106 116 132 107 98 108 100 80 114 146 123 101 77 0 88 44 75 91 85 93 87 82 121 110 83 124 136 140 129 78 104</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 101 133 124 78 104</file>
+=======
+          <name>ICCARM</name>
+          <file> 181</file>
         </tool>
-      </inputs>
+        <tool>
+          <name>__cstat</name>
+          <file> 304</file>
+>>>>>>> master
+        </tool>
+      </outputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_ILI9341.c</name>
       <outputs>
         <tool>
@@ -1692,20 +3472,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 183</file>
+=======
+      <name>$PROJ_DIR$\..\..\App\system.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 103</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 303</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 84 94 44 93 90 121 140 149 76 77 0 91 83 132 126 80 88 75 85 87 82 146 152 123 111 107 98 108 99 112 100 53 136 114 129 92 113 110 106 116 127 151 153</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 126 76 127 92 151 149 153 152</file>
+=======
+          <file> 52 210 70 37 54 98 222 36 215 167 164 226 146 134 81 33 166 88 217 291 288 131 192 180 216 263 105 90 61 31 135 186 13 72 196 197 199 142 63 218 190 104 64 18 11 223 284 30 179 25 228 176 169 53 76 183 110 151 59 56 73 147 74 198 293 115 38 119 40 20 220 165 256 175 62 15 160 108 101 155 116 129 7 112 66 122 144 91 182</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 81 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 90 30 116 33 61 25 37 228 31 176 166 169 135 53 215 76 36 129 7 186 183 88 110 13 151 112 11 134 210 62 66 223 122 15 144 91 59 105 182 72 56 217 160 73 196 147 167 74 197 284 291 198 199 293 54</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_LCD_ST7735R.c</name>
       <outputs>
         <tool>
@@ -1715,20 +3519,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 180</file>
+=======
+      <name>$PROJ_DIR$\..\..\App\peripheral.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 21</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 113</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 296</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 94 152 153 140 111 99 90 112 84 53 83 132 151 107 98 108 100 80 146 76 127 123 77 0 88 44 75 91 85 93 87 82 121 136 114 129 113 110 106 116 126 92 149</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 123 146 151 76 126 127 92 149 153 152</file>
+=======
+          <file> 88 288 226 33 291 129 166 217 146 131 192 37 215 210 167 54 98 164 222 108 18 182 38 90 61 31 135 186 13 72 196 197 199 142 63 218 190 104 179 122 91 263 81 283 30 25 228 176 169 53 76 183 110 151 59 56 73 147 74 284 198 293 115 119 40 20 220 165 175 101 155 116 7 112 66 144 64 180 216 256 70 52 36 11 134 62 223 15 105 160</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 81 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 90 30 116 33 61 25 37 228 31 176 166 169 135 53 215 76 36 129 7 186 183 88 110 13 151 112 11 134 210 62 66 223 122 15 144 91 59 105 182 72 56 217 160 73 196 147 167 74 197 284 291 198 199 293 54 283</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\..\..\Board\src\vcan_sd_app.c</name>
       <outputs>
         <tool>
@@ -1738,20 +3566,44 @@
         <tool>
           <name>ICCARM</name>
           <file> 189</file>
+=======
+      <name>$PROJ_DIR$\..\..\App\OLED.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 97</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 22</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 298</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
+<<<<<<< HEAD
           <file> 152 75 87 153 80 85 83 88 84 94 82 142 77 0 44 91 93 90 121 110 53 127 139 76 111 107 98 108 99 112 100 113 106 114 116 154 151 123 136 140 129 132 105 126 92 149 146</file>
         </tool>
         <tool>
           <name>ICCARM</name>
           <file> 53 111 94 84 91 112 100 85 93 90 75 80 87 107 77 98 82 83 113 114 106 136 110 121 140 116 0 129 88 108 44 132 99 139 142 105 154 76 126 127 92 123 146 151 149 153 152</file>
+=======
+          <file> 215 164 15 167 226 37 210 54 98 222 146 175 33 166 88 217 291 288 131 192 180 36 30 183 11 263 90 61 31 135 186 13 72 196 197 199 142 63 218 256 62 160 286 179 25 228 176 169 53 76 110 151 59 56 73 147 74 284 198 293 115 38 119 40 20 190 104 64 216 70 18 52 134 223 105 81 220 165 108 101 155 116 129 7 112 66 122 144 91 182</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 81 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 90 30 116 33 61 25 37 228 31 176 166 169 135 53 215 76 36 129 7 186 183 88 110 13 151 112 11 134 210 62 66 223 122 15 144 91 59 105 182 72 56 217 160 73 196 147 167 74 197 284 291 198 199 293 54 286</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>
     <file>
+<<<<<<< HEAD
       <name>$PROJ_DIR$\FN15_Debug\Exe\vcan_Kinetis.out</name>
       <outputs>
         <tool>
@@ -1761,12 +3613,36 @@
         <tool>
           <name>ILINK</name>
           <file> 288</file>
+=======
+      <name>$PROJ_DIR$\..\..\App\PositionControl.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 50</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 306</file>
+>>>>>>> master
         </tool>
       </outputs>
       <inputs>
         <tool>
+<<<<<<< HEAD
           <name>ILINK</name>
           <file> 283 159 162 160 192 195 210 215 204 156 200 197 209 211 212 202 208 217 155 218 201 203 213 216 207 214 219 196 220 205 163 173 157 194 167 190 193 206 161 170 171 177 165 187 178 174 186 182 183 180 164 175 169 188 184 179 185 166 181 189 168 172 176 191 285 287 286 284</file>
+=======
+          <name>BICOMP</name>
+          <file> 13 62 61 199 142 190 210 135 196 218 104 263 160 90 31 186 72 197 63 146 226 256 33 37 166 215 88 217 167 291 54 98 164 288 222 131 192 180 175 36 15 30 183 11 293 179 25 228 176 169 53 76 110 151 59 56 73 147 74 284 198 115 38 119 40 20 220 165 64 216 70 18 52 134 223 105 81 108 101 155 116 129 7 112 66 122 144 91 182</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 81 263 115 226 146 222 220 165 190 131 192 218 142 104 38 98 119 64 175 216 18 70 108 256 180 101 52 164 179 63 40 288 155 20 90 30 116 33 61 25 37 228 31 176 166 169 135 53 215 76 36 129 7 186 183 88 110 13 151 112 11 134 210 62 66 223 122 15 144 91 59 105 182 72 56 217 160 73 196 147 167 74 197 284 291 198 199 293 54</file>
+>>>>>>> master
         </tool>
       </inputs>
     </file>

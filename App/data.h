@@ -11,10 +11,22 @@
 #define StableRange 5  //圆边界大小
 #define StableTimes 5  //在N周期内检测在范围内就认为稳定
 
+<<<<<<< HEAD
 #define MAXW    120
 #define MINW    35
 #define MAXH    102
 #define MINH    16
+=======
+#define MAXW    124
+#define MINW    27
+#define MAXH    105
+#define MINH    1
+
+/*#define MAXW    120
+#define MINW    35
+#define MAXH    100
+#define MINH    18*/
+>>>>>>> master
 
 typedef struct
 {
@@ -47,6 +59,7 @@ typedef struct
 
 extern uint8 imgbuff[CAMERA_SIZE];                             //定义存储接收图像的数组
 extern uint8 img[CAMERA_H][CAMERA_W];
+extern uint8 imgFixed[CAMERA_H][CAMERA_W];
 extern position CurrentAimPosition;
 extern position AimPosition[9];
 extern position path[9];
@@ -77,6 +90,7 @@ typedef struct
   int16 IntergatePosition;						//定义积分速度
   int16 IncrementPosition;						//速度增量
   int16 PIDOutPosition;						//最终输出速度
+  int16 DeltaError;
 }pidbase;
 
 /*============================================
@@ -105,6 +119,7 @@ typedef enum
 typedef struct
 {
   pidbase PidBase;
+  int OutPosition;
 }servo;
 
 extern servo ServoBase[2];
@@ -158,11 +173,13 @@ typedef enum
 	MAX_error
 }Error_Num;
 
+extern char sendflag;
 
 
 extern void PIDControl(servo *Base);
 extern bool AtPosition(position base);
 extern void PIDControlPositional(servo *Base);
 extern void SetPID(servo* Base);
+extern void ConvertImg(uint8 image1[CAMERA_H][CAMERA_W], uint8 image2[CAMERA_H][CAMERA_W]);
 
 #endif //DATA_H

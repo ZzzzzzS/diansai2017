@@ -63,8 +63,9 @@ void GetPosition()
   {
     for(char j=MINW;j<MAXW;j++)
     {
-      if(!img[i][j])
+      if(!imgFixed[i][j])
       {
+        //printf("      %d %d\n",i,j);
         H+=i;
         W+=j;
         count++;
@@ -86,21 +87,17 @@ void GetPosition()
   MainBall.CurrentBallSpeed.W=(MainBall.CurrentBallPosition.W - MainBall.LastBallPosition.W);
 }
 
-void  ConvertImg()
+void  ConvertImg(uint8 image1[CAMERA_H][CAMERA_W], uint8 image2[CAMERA_H][CAMERA_W])
 {
-  /*float k1=0;
-  float k2=0;
-  
-  char x,y;
-  
-  for(char i=0;i<CAMERA_H;i++)
-  {
-    for(char j=0;j<CAMERA_W;j++)
+  int i=0,j=0;
+  int x=0,y=0;
+  float k1=-0.000023,k2=-0.000023;//-0.00000230,k2=-0.00000120;
+  for(i=-60;i<60;i++)
+    for(j=-80;j<80;j++)
     {
-      x=j*(1+k1*(x-40)*(x-40)+k2*(y-30)*(y-30));
-      y=i*(1+k1*(x-40)*(x-40)+k2*(y-30)*(y-30));
-      ImgFixed[j][i]=img[x+40][y+30];
-      
-    }
-  }*/
+      x=(int)(i*(1+k1*i*i+k2*j*j))+60;
+      y=(int)(j*(1+k1*i*i+k2*j*j))+80;
+      //*(*(image2+(i+60)*160)+(j+80))=*(*(image1+x*160)+y);
+      image2[i+60][j+80]=image1[x][y];
+    }      
 }

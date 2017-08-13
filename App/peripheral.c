@@ -10,7 +10,7 @@
 
 void uart4_handler(void)
 {
-    static char buff[20];
+    static char buff[10];
     static char count=0;
 
     if(uart_query    (UART4) == 1)   //接收数据寄存器满
@@ -36,60 +36,68 @@ void uart4_handler(void)
       path[CurrentPath].W=*(i+2);
     }
     
-    else if(hasData("WP"))
+    else if(hasData("P"))
     {
-      char* i;
-      i=strstr(buff,"WP");
-      int p=(*(i+2)-'0')*10+(*(i+3)-'0');
-      ServoBase[W].PidBase.PSet=p;
-      printf("Current WP%d\n",(int)ServoBase[W].PidBase.PSet);
+      ServoBase[W].PidBase.PSet++;
+      ServoBase[H].PidBase.PSet++;
+      printf("Current P%d\n",(int)ServoBase[W].PidBase.PSet);
+      count=0;
       memset(buff,0,sizeof(buff));
     }
-    else if(hasData("HP"))
+    else if(hasData("p"))
     {
-      char* i;
-      i=strstr(buff,"HP");
-      int p=(*(i+2)-'0')*10+(*(i+3)-'0');
-      ServoBase[H].PidBase.PSet=p;
-      printf("Current HP%d\n",(int)ServoBase[H].PidBase.PSet);
-      memset(buff,0,sizeof(buff));
-    }
-    else if(hasData("WD"))
-    {
-      char* i;
-      i=strstr(buff,"WD");
-      int p=(*(i+2)-'0')*10+(*(i+3)-'0');
-      ServoBase[W].PidBase.DSet=p;
-      printf("Current WD%d\n",(int)ServoBase[W].PidBase.DSet);
-      memset(buff,0,sizeof(buff));
-    }
-    else if(hasData("HD"))
-    {
-      char* i;
-      i=strstr(buff,"HD");
-      int p=(*(i+2)-'0')*10+(*(i+3)-'0');
-      ServoBase[H].PidBase.DSet=p;
-      printf("Current HD%d\n",(int)ServoBase[H].PidBase.DSet);
-      memset(buff,0,sizeof(buff));
-    }
-    else if(hasData("PP"))
-    {
-      char* i;
-      i=strstr(buff,"P");
-      int p=(*(i+1)-'0')*10+(*(i+2)-'0');
-      ServoBase[H].PidBase.PSet=p;
-      ServoBase[W].PidBase.PSet=p;
+      ServoBase[H].PidBase.PSet--;
+      ServoBase[W].PidBase.PSet--;
       printf("Current P%d\n",(int)ServoBase[H].PidBase.PSet);
+      count=0;
       memset(buff,0,sizeof(buff));
     }
-    else if(hasData("DD"))
+    else if(hasData("D"))
     {
-      char* i;
-      i=strstr(buff,"DD");
-      int p=(*(i+1)-'0')*10+(*(i+2)-'0');
-      ServoBase[H].PidBase.DSet=p;
-      ServoBase[W].PidBase.DSet=p;
+      ServoBase[W].PidBase.DSet+=5;
+      ServoBase[H].PidBase.DSet+=5;
+      printf("Current D%d\n",(int)ServoBase[W].PidBase.DSet);
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("d"))
+    {
+      ServoBase[H].PidBase.DSet-=5;
+      ServoBase[W].PidBase.DSet-=5;
       printf("Current D%d\n",(int)ServoBase[H].PidBase.DSet);
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("w"))
+    {
+      CurrentAimPosition.H+=5;
+      printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
+    }
+    else if(hasData("s"))
+    {
+      CurrentAimPosition.H-=5;
+      printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
+    }
+    else if(hasData("f"))
+    {
+      CurrentAimPosition.W+=5;
+      printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
+    }
+    else if(hasData("a"))
+    {
+      CurrentAimPosition.W-=5;
+      printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
+    }
+    else if(hasData("H"))
+    {
+      sendflag=1;
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("h"))
+    {
+      sendflag=0;
+      count=0;
       memset(buff,0,sizeof(buff));
     }
           
