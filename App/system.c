@@ -29,7 +29,6 @@ void GetSystemReady()
   MainBall.CurrentBallPosition=CurrentAimPosition;
   MainBall.LastBallPosition=CurrentAimPosition;
   OLED_Interface();											//设置用户参数
-  //DELAY_MS(2000);
   OLED_CLS();
   enable_irq(LPTMR_IRQn);
 }
@@ -55,32 +54,13 @@ void SystemUpdate()
 
 void MainLoop()
 {
-  static char count=0;
-  switch(count)
-  {
-  case 0:
     GetPosition();
     SetAimPosition();
     CalculatePosition();
     PIDControlPositional(&ServoBase[W]);
     PIDControlPositional(&ServoBase[H]);
-    ServoBase[W].OutPosition=ServoBase[W].PidBase.PIDOutPosition*0.33;
-    ServoBase[H].OutPosition=ServoBase[H].PidBase.PIDOutPosition*0.33;
-    ControlOut();
-  case 1:
-    ServoBase[W].OutPosition=ServoBase[W].PidBase.PIDOutPosition*0.66;
-    ServoBase[H].OutPosition=ServoBase[H].PidBase.PIDOutPosition*0.66;
-    ControlOut();
-  case 2:
     ServoBase[W].OutPosition=ServoBase[W].PidBase.PIDOutPosition;
     ServoBase[H].OutPosition=ServoBase[H].PidBase.PIDOutPosition;
     ControlOut();
-    
-  }
-  count++;
-  if(count>=3)
-    count=0;
-  
-  
   LPTMR_Flag_Clear();	
 }

@@ -52,6 +52,9 @@ void CalculatePosition()
   ServoBase[W].PidBase.ErrorPosition[Now_Error]=ServoBase[W].PidBase.AimPosition-ServoBase[W].PidBase.NowPosition;
   ServoBase[H].PidBase.ErrorPosition[Now_Error]=ServoBase[H].PidBase.AimPosition-ServoBase[H].PidBase.NowPosition;
   
+  ServoBase[W].PidBase.DeltaError=ServoBase[W].PidBase.ErrorPosition[Now_Error]-ServoBase[W].PidBase.ErrorPosition[last_Error];
+  ServoBase[H].PidBase.DeltaError=ServoBase[H].PidBase.ErrorPosition[Now_Error]-ServoBase[H].PidBase.ErrorPosition[last_Error];
+  
   ServoBase[W].PidBase.P=ServoBase[W].PidBase.PSet;
   ServoBase[W].PidBase.I=ServoBase[W].PidBase.ISet;
   ServoBase[W].PidBase.D=ServoBase[W].PidBase.DSet;

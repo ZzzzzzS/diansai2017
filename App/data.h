@@ -77,6 +77,7 @@ typedef struct
   int16 IntergatePosition;						//定义积分速度
   int16 IncrementPosition;						//速度增量
   int16 PIDOutPosition;						//最终输出速度
+  int16 DeltaError;
 }pidbase;
 
 /*============================================
