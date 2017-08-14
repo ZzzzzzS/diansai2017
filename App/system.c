@@ -68,9 +68,9 @@ void GetSystemReady()
     
   }
   ftm_pwm_duty(Servo_FTM, Servo_W_FTM, 300);
-  DELAY_MS(20);
+  DELAY_MS(40);
   ftm_pwm_duty(Servo_FTM, Servo_W_FTM, 1080);
-  DELAY_MS(20);
+  DELAY_MS(40);
   ftm_pwm_duty(Servo_FTM, Servo_W_FTM, ServoBase[W].Middle);
   CurrentAimPosition.H=AimPosition[Line1Right].H;
   CurrentAimPosition.W=AimPosition[Line1Right].W;
@@ -89,8 +89,6 @@ void SystemUpdate()
   ConvertImg(img,imgFixed);
   //vcan_sendimg(imgbuff, sizeof(imgbuff));
   //vcan_sendimg(imgFixed, sizeof(imgFixed));
-  printf("%d %d %d\n", mpu6050_ACCEL_X_data(), mpu6050_ACCEL_Y_data(),mpu6050_ACCEL_Y_data());
-  printf("Mid%d %d",ServoBase[H].Middle,ServoBase[W].Middle);
   if(sendflag)
   {
   printf("position: %d %d  ",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
