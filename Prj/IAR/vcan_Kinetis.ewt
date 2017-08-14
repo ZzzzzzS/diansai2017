@@ -6971,6 +6971,12 @@
       <name>$PROJ_DIR$\..\..\App\Inc\MK60_it.h</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\App\mpu6050.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\App\mpu6050.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\App\OLED.c</name>
     </file>
     <file>

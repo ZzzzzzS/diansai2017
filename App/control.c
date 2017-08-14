@@ -21,8 +21,10 @@ void PIDInit()
 }
 void ControlInit()
 {
-  ftm_pwm_init(Servo_FTM,Servo_W_FTM,Serv0_HZ,MIDDLE_W);//舵机初始化，这个0待定
-  ftm_pwm_init(Servo_FTM,Servo_H_FTM,Serv0_HZ,MIDDLE_H);
+  ServoBase[W].Middle=750;
+  ServoBase[H].Middle=680;
+  ftm_pwm_init(Servo_FTM,Servo_W_FTM,Serv0_HZ,ServoBase[W].Middle);//舵机初始化，这个0待定
+  ftm_pwm_init(Servo_FTM,Servo_H_FTM,Serv0_HZ,ServoBase[H].Middle);
 }
 
 
@@ -76,11 +78,16 @@ void PIDControlPositional(servo *Base)
 void ControlOut()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   int OutW=MIDDLE_W-ServoBase[W].PidBase.PIDOutPosition;
   int OutH=MIDDLE_H+ServoBase[H].PidBase.PIDOutPosition;
 =======
   int OutW=MIDDLE_W-ServoBase[W].OutPosition;
   int OutH=MIDDLE_H+ServoBase[H].OutPosition;
+>>>>>>> master
+=======
+  int OutW=ServoBase[W].Middle-ServoBase[W].OutPosition;
+  int OutH=ServoBase[H].Middle+ServoBase[H].OutPosition;
 >>>>>>> master
   
   if(OutW>=MAX_POSITION_W)

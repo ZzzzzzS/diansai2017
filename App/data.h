@@ -1,5 +1,5 @@
-#ifndef DATA_H
-#define DATA_H
+#ifndef DATA_H__
+#define DATA_H__
 
 #include "common.h"
 #include "include.h"
@@ -109,8 +109,11 @@ typedef enum
 #define MIN_POSITION_W  300
 #define MIN_POSITION_H  300
 
+<<<<<<< HEAD
 #define MIDDLE_W 690
 #define MIDDLE_H 700
+=======
+>>>>>>> master
 #define Servo_FTM FTM2
 #define Servo_W_FTM FTM_CH1
 #define Servo_H_FTM FTM_CH0
@@ -120,6 +123,7 @@ typedef struct
 {
   pidbase PidBase;
   int OutPosition;
+  int Middle;
 }servo;
 
 extern servo ServoBase[2];
