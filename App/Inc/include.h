@@ -52,6 +52,7 @@
 #include "control.h"
 #include "PositionControl.h"
 #include "touch.h"
+#include "mpu6050.h"
 
 
 #endif  //__INCLUDE_H__
