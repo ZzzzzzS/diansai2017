@@ -34,7 +34,7 @@ void main(void){};
  *  @author     飞思卡尔公司
  *  @note       此函数是系统启动初期由汇编函数调用，然后执行main函数
  */
-void start(void)
+void start()
 {
 #if MK60F15
 
@@ -51,7 +51,7 @@ void start(void)
     SRART_CHECK();
 
     gpio_init(PTA4,GPO,1);  //初始化为输出1，即 禁用了 NMI 中断
-
+    
     led_init(LED0);
     led(LED0,0);
     SystemInit();
@@ -62,6 +62,11 @@ void start(void)
       SystemUpdate();
     }
 }
+
+
+
+
+
 
 /*!
  *  @brief      系统初始化，设置系统频率，初始化printf端口

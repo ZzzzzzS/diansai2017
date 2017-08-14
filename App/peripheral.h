@@ -10,5 +10,6 @@ extern void init_LED();
 extern void LED_Interface();
 extern void System_Error(char Error_Number);
 extern void UART_Init();
+extern void ResetGyro();
 
 #endif // __PERIPHERAL_H__

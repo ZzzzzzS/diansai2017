@@ -8,18 +8,13 @@
 /*============================================
 位置和摄像头数据结构体
 ==========================================*/
-#define StableRange 5  //圆边界大小
-#define StableTimes 5  //在N周期内检测在范围内就认为稳定
+#define StableRange 3  //圆边界大小
+#define StableTimes 180  //在N周期内检测在范围内就认为稳定
 
 #define MAXW    127
 #define MINW    24
 #define MAXH    105
 #define MINH    0
-
-/*#define MAXW    120
-#define MINW    35
-#define MAXH    100
-#define MINH    18*/
 
 typedef struct
 {
