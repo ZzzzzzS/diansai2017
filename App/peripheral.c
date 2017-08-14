@@ -12,7 +12,7 @@ void uart4_handler(void)
 {
     static char buff[10];
     static char count=0;
-
+    static char positionflag=0;
     if(uart_query    (UART4) == 1)   //接收数据寄存器满
     {
         //用户需要处理接收数据
@@ -70,23 +70,15 @@ void uart4_handler(void)
     }
     else if(hasData("w"))
     {
-      CurrentAimPosition.H+=5;
-      printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
+      positionflag++;
+      CurrentAimPosition=AimPosition[positionflag];
+      printf("AimPosition %d\n",positionflag);
     }
     else if(hasData("s"))
     {
-      CurrentAimPosition.H-=5;
-      printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
-    }
-    else if(hasData("f"))
-    {
-      CurrentAimPosition.W+=5;
-      printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
-    }
-    else if(hasData("a"))
-    {
-      CurrentAimPosition.W-=5;
-      printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
+      positionflag--;
+      CurrentAimPosition=AimPosition[positionflag];
+      printf("AimPosition %d\n",positionflag);
     }
     else if(hasData("H"))
     {

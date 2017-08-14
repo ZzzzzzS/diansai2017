@@ -127,7 +127,7 @@ bool AtPosition(position base)
 
 void SetAimPosition()
 {
-  CurrentAimPosition=AimPosition[Line1Middle];
+  //CurrentAimPosition=AimPosition[Line1Middle];
   return;
   
   static int flag=0;

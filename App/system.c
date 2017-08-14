@@ -32,19 +32,19 @@ void GetSystemReady()
   }*/
   int16 yData;
   int16 xData;
-   while(1)
+  while(1)
   {
     yData=mpu6050_ACCEL_Y_data();
     xData=mpu6050_ACCEL_X_data();
     DELAY_MS(50);
-    if(yData>-20)
+    if(yData>-180)
       ServoBase[W].Middle--;
-    else if(yData<-70)
+    else if(yData<-200)
       ServoBase[W].Middle++;
     
-    if(xData>730)
+    if(xData>1350)
       ServoBase[H].Middle--;
-    else if(xData<670)
+    else if(xData<1300)
       ServoBase[H].Middle++;
     
     if(ServoBase[W].Middle>=MAX_POSITION_W)
@@ -60,21 +60,25 @@ void GetSystemReady()
     ftm_pwm_duty(Servo_FTM, Servo_W_FTM, ServoBase[W].Middle);
     ftm_pwm_duty(Servo_FTM, Servo_H_FTM, ServoBase[H].Middle);
     printf("%d %d\n", xData, yData);
-    if((yData<-20)&&(yData>-70) && (xData<730)&&(xData>670))
+    if((yData<-180)&&(yData>-200) && (xData<1350)&&(xData>1300))
     {
       printf("MPU6050 OK!\n");
       break;
     }
     
   }
-  //while(1){printf("%d %d\n", xData, yData);};
+  ftm_pwm_duty(Servo_FTM, Servo_W_FTM, 300);
+  DELAY_MS(20);
+  ftm_pwm_duty(Servo_FTM, Servo_W_FTM, 1080);
+  DELAY_MS(20);
+  ftm_pwm_duty(Servo_FTM, Servo_W_FTM, ServoBase[W].Middle);
   CurrentAimPosition.H=AimPosition[Line1Right].H;
   CurrentAimPosition.W=AimPosition[Line1Right].W;
   ServoBase[W].PidBase.NowPosition=CurrentAimPosition.W;
   ServoBase[H].PidBase.NowPosition=CurrentAimPosition.H;
   MainBall.CurrentBallPosition=CurrentAimPosition;
   MainBall.LastBallPosition=CurrentAimPosition;
-  OLED_Interface();											//设置用户参数
+  OLED_Interface();
   OLED_CLS();
   enable_irq(LPTMR_IRQn);
 }
