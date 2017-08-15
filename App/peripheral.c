@@ -2,12 +2,13 @@
 #include "peripheral.h"
 #include "stdlib.h"
 #include "string.h"
+
+void AdvanceFunction2ConfigInterface();
+
 /*============================================
 函数名：Receive_Data()
 作用：蓝牙串口接收
 ==========================================*/
-
-
 void uart4_handler(void)
 {
     static char buff[10];
@@ -99,10 +100,17 @@ void UART_Init()
 
 void Init_Key()
 {
-	gpio_init(Key1, GPI, 0);
-	gpio_init(Key2, GPI, 0);
-	gpio_init(Key3, GPI, 0);
-	gpio_init(Key4, GPI, 0);
+  gpio_init(Key1, GPI, 0);
+  gpio_init(Key2, GPI, 0);
+  gpio_init(Key3, GPI, 0);
+  gpio_init(Key4, GPI, 0);
+}
+
+void PushButtonUsersCallBack(PTXn_e ptxn)
+{
+  printf("OK");
+  
+  
 }
 
 /*============================================
@@ -112,28 +120,226 @@ void Init_Key()
 
 void OLED_Interface()
 {
-  OLED_Print(Position(Line1), "HIT WH");
-  OLED_Print(Position(Line1), "718Lab");
-  OLED_Print(Position(Line1), "Untitled");
-  OLED_Print(Position(Line4), "System Loading...");
-  PathBase.Function=UserControl;
+  OLED_Print(Position(Line1), "哈尔滨工业大学");
+  OLED_Print(Position(Line2), "718实验室");
+  OLED_Print(Position(Line3), "当前路径:");
+  //OLED_Print(Position(Line4), "基本1");
+  /*PathBase.Function=UserControl;
   PathBase.StoredPath[UserControl][0]=PathBase.AimPosition[Line1Left];
   PathBase.StoredPath[UserControl][1]=PathBase.AimPosition[Line2Left];
   PathBase.StoredPath[UserControl][2]=PathBase.AimPosition[Line3Right];
   PathBase.StoredPath[UserControl][3]=PathBase.AimPosition[Line1Middle];
   PathBase.StoredPath[UserControl][4]=PathBase.AimPosition[Line3Middle];
   PathBase.StoredPath[UserControl][5]=PathBase.AimPosition[Line1Right];
-  PathBase.StoredPath[UserControl][6]=PathBase.AimPosition[Line3Left];
+  PathBase.StoredPath[UserControl][6]=PathBase.AimPosition[Line3Left];*/
+  while(true)
+  {
+    DELAY_MS(20);
+    switch(PathBase.Function)
+    {
+    case BasicFunction1:
+      OLED_Print(Position(Line4), "基本功能1");
+      break;
+      
+    case BasicFunction2:
+      OLED_Print(Position(Line4), "基本功能2");
+      break;
+      
+    case BasicFunction3:
+      OLED_Print(Position(Line4), "基本功能3");
+      break;
+      
+    case BasicFunction4:
+      OLED_Print(Position(Line4), "基本功能4");
+      break;
+      
+    case AdvanceFunction1:
+      OLED_Print(Position(Line4), "发挥功能1");
+      break;
+      
+    case AdvanceFunction2:
+      OLED_Print(Position(Line4), "发挥功能2");
+      break;
+      
+    case AdvanceFunction3:
+      OLED_Print(Position(Line4), "发挥功能3");
+      break;
+      
+    case UserControl:
+      OLED_Print(Position(Line4), "自定路径 ");
+      break;
+    }
+    
+    if(gpio_get(Key1))
+    {
+      DELAY_MS(10);
+      if(gpio_get(Key1))
+      {
+        PathBase.Function++;
+        if(PathBase.Function==MAXFunction)
+          PathBase.Function--;
+       while(gpio_get(Key1)); 
+      }
+    }
+    
+    if(gpio_get(Key2))
+    {
+      DELAY_MS(10);
+      if(gpio_get(Key2))
+      {
+        PathBase.Function--;
+        if(PathBase.Function<BasicFunction1)
+          PathBase.Function++;
+        while(gpio_get(Key2));
+      }
+    }
+    
+    if(gpio_get(Key3))
+    {
+      DELAY_MS(10);
+      if(gpio_get(Key3))
+      {
+        if(PathBase.Function==AdvanceFunction2)
+        {
+          while(gpio_get(Key3));
+          AdvanceFunction2ConfigInterface();
+        }
+        while(gpio_get(Key3));
+        return;
+      }
+    }
+  }
 }
 
+
+void AdvanceFunction2ConfigInterface()
+{
+  char count=0;
+  char temp[10];
+  char NowPosition=0;
+  OLED_CLS();
+  OLED_Print(Position(Line1), "路径");
+  OLED_Print(Position(Line3), "当前点");
+  while(true)
+  {
+    sprintf(temp,"%d",count);
+    OLED_Print(Position(Line2), temp);
+    
+    switch(NowPosition)
+    {
+    case 0:
+      OLED_Print(Position(Line4), "1号点");
+      PathBase.StoredPath[AdvanceFunction2][count]=PathBase.AimPosition[Line1Left];
+      break;
+      
+    case 1:
+      OLED_Print(Position(Line4), "2号点");
+      PathBase.StoredPath[AdvanceFunction2][count]=PathBase.AimPosition[Line1Middle];
+      break;
+      
+    case 2:
+      OLED_Print(Position(Line4), "3号点");
+      PathBase.StoredPath[AdvanceFunction2][count]=PathBase.AimPosition[Line1Right];
+      break;
+      
+    case 3:
+      OLED_Print(Position(Line4), "4号点");
+      PathBase.StoredPath[AdvanceFunction2][count]=PathBase.AimPosition[Line2Left];
+      break;
+      
+    case 4:
+      OLED_Print(Position(Line4), "5号点");
+      PathBase.StoredPath[AdvanceFunction2][count]=PathBase.AimPosition[Line2Middle];
+      break;
+      
+    case 5:
+      OLED_Print(Position(Line4), "6号点");
+      PathBase.StoredPath[AdvanceFunction2][count]=PathBase.AimPosition[Line2Right];
+      break;
+      
+    case 6:
+      OLED_Print(Position(Line4), "7号点");
+      PathBase.StoredPath[AdvanceFunction2][count]=PathBase.AimPosition[Line3Left];
+      break;
+      
+    case 7:
+      OLED_Print(Position(Line4), "8号点");
+      PathBase.StoredPath[AdvanceFunction2][count]=PathBase.AimPosition[Line3Middle];
+      break;
+      
+    case 8:
+      OLED_Print(Position(Line4), "9号点");
+      PathBase.StoredPath[AdvanceFunction2][count]=PathBase.AimPosition[Line3Right];
+      break;
+      
+    default:
+      NowPosition=0;
+      break;
+    }
+    
+    
+    if(gpio_get(Key1))
+    {
+      DELAY_MS(10);
+      if(gpio_get(Key1))
+      {
+        NowPosition++;
+        if(NowPosition>8)
+          NowPosition=8;
+        while(gpio_get(Key1));
+      }
+    }
+    
+    if(gpio_get(Key2))
+    {
+      DELAY_MS(10);
+      if(gpio_get(Key2))
+      {
+        NowPosition--;
+        if(NowPosition<0)
+          NowPosition=0;
+        while(gpio_get(Key2));
+      }
+    }
+    
+    if(gpio_get(Key3))
+    {
+      DELAY_MS(10);
+      if(gpio_get(Key3))
+      {
+        count++;
+        while(gpio_get(Key3));
+      }
+      
+    }
+    
+    if(gpio_get(Key4))
+    {
+      DELAY_MS(10);
+      if(gpio_get(Key4))
+      {
+        while(gpio_get(Key4));
+        return;
+      }
+    }
+  }
+}
 /*============================================
 函数名：DeBug_Interface()
 作用：OLED显示调试时界面
 ==========================================*/
 
-void DeBug_Interface()
+void System_Interface()
 {
-  
+  char temp[20];
+  sprintf(temp, "当前位置:%d %d",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
+  OLED_Print(Position(Line1), temp);
+  sprintf(temp, "目标位置:%d %d",MainBall.CurrentAimPosition.H,MainBall.CurrentAimPosition.W);
+  OLED_Print(Position(Line2), temp);
+  sprintf(temp, "当前用时:%d",MainBall.AimTime.S);
+  OLED_Print(Position(Line3), temp);
+  sprintf(temp, "总共用时:%d",MainBall.AllTime.S);
+  OLED_Print(Position(Line4), temp);
 }
 
 /*============================================
@@ -144,14 +350,14 @@ void DeBug_Interface()
 void System_Error(char Error_Number)
 {
 	disable_irq(LPTMR_IRQn);
-        ServoBase[W].PidBase.PIDOutPosition=0;
-        ServoBase[H].PidBase.PIDOutPosition=0;
+        ServoBase[W].PidBase.PIDOutPosition=ServoBase[W].Middle;
+        ServoBase[H].PidBase.PIDOutPosition=ServoBase[H].Middle;
         ControlOut();
 	switch (Error_Number)
 	{
 	case PathFinish:
 		OLED_Init();
-		OLED_Print(Position(Line1), "motor error");
+		OLED_Print(Position(Line1), "到达终点");
 		break;
 
 	case Taget_Lost:
@@ -214,16 +420,7 @@ void init_LED()
 
 void LED_Interface()
 {
-	/*if (Speed.Left.Out_Speed > Speed.Right.Out_Speed)
-	{
-		led(LED3, LED_ON);
-		led(LED0, LED_OFF);
-	}
-	else if (Speed.Right.Out_Speed > Speed.Left.Out_Speed)
-	{
-		led(LED3, LED_OFF);
-		led(LED0, LED_ON);
-	}*/
+	
 }
 
 void ResetGyro()
@@ -269,5 +466,22 @@ void ResetGyro()
   ftm_pwm_duty(Servo_FTM, Servo_W_FTM, 1080);
   DELAY_MS(30);
   ftm_pwm_duty(Servo_FTM, Servo_W_FTM, ServoBase[W].Middle);
+  
+}
+
+void SystemReset()
+{
+  
+}
+
+void TimeAddMS(time Base,int16 MS)
+{
+  Base.MS+=MS;
+  
+  if(Base.MS>1000)
+  {
+    Base.S+=Base.MS/1000;
+    Base.MS%=1000;
+  }
   
 }

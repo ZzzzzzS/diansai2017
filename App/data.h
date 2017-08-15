@@ -22,6 +22,13 @@ typedef struct
   char W;
 }position;
 
+typedef struct
+{
+  int16 S;
+  int16 MS;
+}time;
+
+
 typedef enum
 {
   Line1Left,
@@ -54,6 +61,9 @@ typedef struct
   position CurrentBallSpeed;
   position LastBallSpeed;
   position CurrentAimPosition;
+  
+  time AllTime;
+  time AimTime;
 }ball;
 
 extern uint8 imgbuff[CAMERA_SIZE];                             //定义存储接收图像的数组
@@ -95,7 +105,7 @@ typedef enum
 typedef struct
 {
   position AimPosition[20];
-  unsigned char Function;
+  char Function;
   position StoredPath[8][40];
   unsigned char CurrentPositionCounter;
   unsigned char TransPointFlag;
@@ -163,10 +173,10 @@ extern servo ServoBase[2];
 OLED显示相关定义
 ==========================================*/
 						//OLED相关宏定义
-#define DC	PTC3
-#define RESET	PTC2						//OLED相关宏定义
-#define D1	PTC1						//OLED相关宏定义
-#define D0	PTC0						//OLED相关宏定义
+#define DC	PTC13
+#define RESET	PTC12						//OLED相关宏定义
+#define D1	PTC9						//OLED相关宏定义
+#define D0	PTC8						//OLED相关宏定义
 
 #define Position(OLED_Line)		0,(OLED_Line)	//坐标定义
 
@@ -217,5 +227,6 @@ extern void PIDControlPositional(servo *Base);
 extern void SetPID(servo* Base);
 extern void ConvertImg(uint8 image1[CAMERA_H][CAMERA_W], uint8 image2[CAMERA_H][CAMERA_W]);
 extern bool AtPositionNonBlocking(position base);
+extern void TimeAddMS(time Base,int16 MS);
 
 #endif //DATA_H

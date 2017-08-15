@@ -196,6 +196,8 @@ bool AtPosition(position base)
   
   if(counter>StableTimes)
   {
+    MainBall.AimTime.MS=0;
+    MainBall.AimTime.S=0;
     gpio_set(PTA8,1);
     return true;
   }
@@ -222,6 +224,9 @@ void SetAimPosition()
     AtPosition(MainBall.CurrentAimPosition);
     return;
   }
+  
+  TimeAddMS(MainBall.AllTime,50);
+  TimeAddMS(MainBall.AimTime,50);
   
   if(PathBase.Function==AdvanceFunction3)
   {
