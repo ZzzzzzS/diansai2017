@@ -115,7 +115,7 @@ typedef struct
 {
   position AimPosition[20];
   unsigned char Function;
-  position StoredPath[8][9];
+  position StoredPath[8][40];
   unsigned char CurrentPositionCounter;
   unsigned char TransPointFlag;
 }path;

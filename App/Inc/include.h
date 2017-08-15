@@ -53,6 +53,7 @@
 #include "PositionControl.h"
 #include "touch.h"
 #include "mpu6050.h"
+#include "peripheral.h"
 
 
 #endif  //__INCLUDE_H__
