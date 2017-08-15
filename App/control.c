@@ -38,7 +38,7 @@ void PIDControl(servo* Base)
   else
     IFlag=1;
   
-  Base->PidBase.IncrementPosition=(Base->PidBase.P)*(Base->PidBase.ErrorPosition[Now_Error]);
+  Base->PidBase.IncrementPosition=(int)(Base->PidBase.P)*(Base->PidBase.ErrorPosition[Now_Error]);
   Base->PidBase.IncrementPosition+=IFlag*(Base->PidBase.I)*(Base->PidBase.ErrorPosition[Now_Error]+Base->PidBase.ErrorPosition[last_Error]);
   Base->PidBase.IncrementPosition+=(Base->PidBase.D)*(Base->PidBase.ErrorPosition[Now_Error]-2*Base->PidBase.ErrorPosition[last_Error]+Base->PidBase.ErrorPosition[lastest_Error]);
   
@@ -53,14 +53,14 @@ void PIDControlPositional(servo *Base)
 {
   if((Base->PidBase.ErrorPosition[Now_Error]<10&&Base->PidBase.ErrorPosition[Now_Error]>1)||(Base->PidBase.ErrorPosition[Now_Error]>-10&&Base->PidBase.ErrorPosition[Now_Error]<-1))
     Base->PidBase.IntergatePosition+=Base->PidBase.ErrorPosition[Now_Error];
-  else
-    Base->PidBase.IntergatePosition=0;
+  //else
+    //Base->PidBase.IntergatePosition=0;
   
   Base->PidBase.DeltaError=Base->PidBase.ErrorPosition[Now_Error]-Base->PidBase.ErrorPosition[last_Error];
   Base->PidBase.ErrorPosition[last_Error]=Base->PidBase.ErrorPosition[Now_Error];
   
-  Base->PidBase.PIDOutPosition=Base->PidBase.P*Base->PidBase.ErrorPosition[Now_Error];
-  Base->PidBase.PIDOutPosition+=Base->PidBase.D*Base->PidBase.DeltaError;
+  Base->PidBase.PIDOutPosition=(int)Base->PidBase.P*Base->PidBase.ErrorPosition[Now_Error];
+  Base->PidBase.PIDOutPosition+=(int)Base->PidBase.D*Base->PidBase.DeltaError;
   
   Base->PidBase.PIDOutPosition+=Base->PidBase.IntergatePosition*Base->PidBase.I;
     

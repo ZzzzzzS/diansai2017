@@ -58,26 +58,26 @@ void AimPositionInit()
   PathBase.AimPosition[TransPoint3L].H=70;
   PathBase.AimPosition[TransPoint3L].W=56;
     
-  PathBase.AimPosition[TransPoint3R].H=71;
-  PathBase.AimPosition[TransPoint3R].W=92;
+  PathBase.AimPosition[TransPoint3R].H=65;
+  PathBase.AimPosition[TransPoint3R].W=90;
     
-  PathBase.AimPosition[TransPoint1L].H=37;
+  PathBase.AimPosition[TransPoint1L].H=41;
   PathBase.AimPosition[TransPoint1L].W=59;
     
-  PathBase.AimPosition[TransPoint1R].H=38;
-  PathBase.AimPosition[TransPoint1R].W=95;
+  PathBase.AimPosition[TransPoint1R].H=42;
+  PathBase.AimPosition[TransPoint1R].W=91;
   
-  PathBase.AimPosition[TransPoint2R].H=38;
-  PathBase.AimPosition[TransPoint2R].W=95;
+  PathBase.AimPosition[TransPoint2R].H=54;
+  PathBase.AimPosition[TransPoint2R].W=99;
   
-  PathBase.AimPosition[TransPoint2L].H=38;
-  PathBase.AimPosition[TransPoint2L].W=95;
+  PathBase.AimPosition[TransPoint2L].H=54;
+  PathBase.AimPosition[TransPoint2L].W=51;
   
-  PathBase.AimPosition[TransPoint1M].H=38;
-  PathBase.AimPosition[TransPoint1M].W=95;
+  PathBase.AimPosition[TransPoint1M].H=28;
+  PathBase.AimPosition[TransPoint1M].W=75;
   
-  PathBase.AimPosition[TransPoint3M].H=38;
-  PathBase.AimPosition[TransPoint3M].W=95;
+  PathBase.AimPosition[TransPoint3M].H=75;
+  PathBase.AimPosition[TransPoint3M].W=75;
   
 }
 
@@ -111,9 +111,36 @@ void PathInit()
   PathBase.StoredPath[AdvanceFunction1][4].W=0;
   
   PathBase.StoredPath[AdvanceFunction3][0]=PathBase.AimPosition[Line2Left];
-  PathBase.StoredPath[AdvanceFunction3][1]=PathBase.AimPosition[Line3Right];
-  PathBase.StoredPath[AdvanceFunction3][2].H=0;
-  PathBase.StoredPath[AdvanceFunction3][2].W=0;
+  PathBase.StoredPath[AdvanceFunction3][1]=PathBase.AimPosition[TransPoint1L];
+  PathBase.StoredPath[AdvanceFunction3][2]=PathBase.AimPosition[TransPoint1M];
+  PathBase.StoredPath[AdvanceFunction3][3]=PathBase.AimPosition[TransPoint1R];
+  PathBase.StoredPath[AdvanceFunction3][4]=PathBase.AimPosition[TransPoint2R];
+  PathBase.StoredPath[AdvanceFunction3][5]=PathBase.AimPosition[TransPoint3R];
+  PathBase.StoredPath[AdvanceFunction3][6]=PathBase.AimPosition[TransPoint3M];
+  PathBase.StoredPath[AdvanceFunction3][7]=PathBase.AimPosition[TransPoint3L];
+  PathBase.StoredPath[AdvanceFunction3][8]=PathBase.AimPosition[TransPoint2L];
+  PathBase.StoredPath[AdvanceFunction3][9]=PathBase.AimPosition[TransPoint1L];
+  PathBase.StoredPath[AdvanceFunction3][10]=PathBase.AimPosition[TransPoint1M];
+  PathBase.StoredPath[AdvanceFunction3][11]=PathBase.AimPosition[TransPoint1R];
+  PathBase.StoredPath[AdvanceFunction3][12]=PathBase.AimPosition[TransPoint2R];
+  PathBase.StoredPath[AdvanceFunction3][13]=PathBase.AimPosition[TransPoint3R];
+  PathBase.StoredPath[AdvanceFunction3][14]=PathBase.AimPosition[TransPoint3M];
+  PathBase.StoredPath[AdvanceFunction3][15]=PathBase.AimPosition[TransPoint3L];
+  PathBase.StoredPath[AdvanceFunction3][16]=PathBase.AimPosition[TransPoint2L];
+  PathBase.StoredPath[AdvanceFunction3][17]=PathBase.AimPosition[TransPoint1L];
+  PathBase.StoredPath[AdvanceFunction3][18]=PathBase.AimPosition[TransPoint1M];
+  PathBase.StoredPath[AdvanceFunction3][19]=PathBase.AimPosition[TransPoint1R];
+  PathBase.StoredPath[AdvanceFunction3][20]=PathBase.AimPosition[TransPoint2R];
+  PathBase.StoredPath[AdvanceFunction3][21]=PathBase.AimPosition[TransPoint3R];
+  PathBase.StoredPath[AdvanceFunction3][22]=PathBase.AimPosition[TransPoint3M];
+  PathBase.StoredPath[AdvanceFunction3][23]=PathBase.AimPosition[TransPoint3L];
+  PathBase.StoredPath[AdvanceFunction3][24]=PathBase.AimPosition[TransPoint2L];
+  PathBase.StoredPath[AdvanceFunction3][25]=PathBase.AimPosition[TransPoint1L];
+  PathBase.StoredPath[AdvanceFunction3][26]=PathBase.AimPosition[TransPoint1M];
+  PathBase.StoredPath[AdvanceFunction3][27]=PathBase.AimPosition[TransPoint1R];
+  PathBase.StoredPath[AdvanceFunction3][28]=PathBase.AimPosition[Line3Right];
+  PathBase.StoredPath[AdvanceFunction1][29].H=0;
+  PathBase.StoredPath[AdvanceFunction1][29].W=0;
 }
 
 void CalculatePosition()
@@ -195,6 +222,31 @@ void SetAimPosition()
     AtPosition(MainBall.CurrentAimPosition);
     return;
   }
+  
+  if(PathBase.Function==AdvanceFunction3)
+  {
+    if(PathBase.CurrentPositionCounter==0)
+    {
+      if(AtPosition(MainBall.CurrentAimPosition))
+      {
+      PathBase.TransPointFlag=false;
+      PathBase.CurrentPositionCounter++;
+      MainBall.CurrentAimPosition=PathBase.StoredPath[PathBase.Function][PathBase.CurrentPositionCounter];
+      }  
+    }
+    else
+    {
+      if(AtPositionNonBlocking(MainBall.CurrentAimPosition))
+      {
+        PathBase.TransPointFlag=false;
+        PathBase.CurrentPositionCounter++;
+        MainBall.CurrentAimPosition=PathBase.StoredPath[PathBase.Function][PathBase.CurrentPositionCounter];
+      }
+    }
+    return;
+  }
+  
+  
   if(PathBase.TransPointFlag==true)
   {
     if(AtPositionNonBlocking(MainBall.CurrentAimPosition))

@@ -12,7 +12,6 @@ void uart4_handler(void)
 {
     static char buff[10];
     static char count=0;
-    static char positionflag=0;
     if(uart_query    (UART4) == 1)   //接收数据寄存器满
     {
         //用户需要处理接收数据
@@ -120,9 +119,11 @@ void OLED_Interface()
   PathBase.Function=UserControl;
   PathBase.StoredPath[UserControl][0]=PathBase.AimPosition[Line1Left];
   PathBase.StoredPath[UserControl][1]=PathBase.AimPosition[Line2Left];
-  PathBase.StoredPath[UserControl][2]=PathBase.AimPosition[Line1Right];
+  PathBase.StoredPath[UserControl][2]=PathBase.AimPosition[Line3Right];
   PathBase.StoredPath[UserControl][3]=PathBase.AimPosition[Line1Middle];
   PathBase.StoredPath[UserControl][4]=PathBase.AimPosition[Line3Middle];
+  PathBase.StoredPath[UserControl][5]=PathBase.AimPosition[Line1Right];
+  PathBase.StoredPath[UserControl][6]=PathBase.AimPosition[Line3Left];
 }
 
 /*============================================
@@ -132,14 +133,7 @@ void OLED_Interface()
 
 void DeBug_Interface()
 {
-  for(char i=0;i<CAMERA_H;i++)
-    for(char j=0;j<CAMERA_W;j++)
-    {
-      if(img[i][j])
-      {
-        OLED_PutPixel(j, i);
-      }
-    }
+  
 }
 
 /*============================================
