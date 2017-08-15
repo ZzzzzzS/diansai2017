@@ -1,9 +1,34 @@
 #include "include.h"
 #include "PositionControl.h"
 #include "data.h"
+#include "math.h"
+
+char GetType(position Aim,position Current)
+{
+  if(((Aim.H-Current.H<45)&&(Aim.H-Current.H>-45)) && ((Aim.W-Current.W<45)&&(Aim.W-Current.W>-45)))
+    return BasicType;
+  
+  else if(((Aim.H-Current.H>65)||(Aim.H-Current.H<-65)) && ((Aim.W-Current.W>65)||(Aim.W-Current.W<-65)))
+    return BiagonalType;
+  
+  else if(((Aim.H-Current.H<20)&&(Aim.H-Current.H>-20)) && (Aim.W-Current.W>65))
+    return GapWType;
+  
+  else if(((Aim.H-Current.H<20)&&(Aim.H-Current.H>-20)) && (Aim.W-Current.W<-65))
+    return GapWFType;
+ 
+  else if(((Aim.W-Current.W<20)&&(Aim.W-Current.W>-20)) && (Aim.H-Current.H>65))
+    return GapHType;
+  
+  else if(((Aim.W-Current.W<20)&&(Aim.W-Current.W>-20)) && (Aim.H-Current.H<-65))
+    return GapHFType;
+  else 
+    return BasicType;
+}
 
 void AimPositionInit()
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
   AimPosition[Line1Left].H=94;
   AimPosition[Line1Left].W=43;
@@ -34,46 +59,106 @@ void AimPositionInit()
 =======
   AimPosition[Line1Left].H=89;
   AimPosition[Line1Left].W=39;
+=======
+  PathBase.AimPosition[Line3Left].H=89;
+  PathBase.AimPosition[Line3Left].W=40;
+>>>>>>> master
   
-  AimPosition[Line1Middle].H=90;
-  AimPosition[Line1Middle].W=75;
+  PathBase.AimPosition[Line3Middle].H=90;
+  PathBase.AimPosition[Line3Middle].W=75;
   
-  AimPosition[Line1Right].H=90;
-  AimPosition[Line1Right].W=112;
+  PathBase.AimPosition[Line3Right].H=90;
+  PathBase.AimPosition[Line3Right].W=112;
   
-  AimPosition[Line2Left].H=52;
-  AimPosition[Line2Left].W=39;
+  PathBase.AimPosition[Line2Left].H=53;
+  PathBase.AimPosition[Line2Left].W=39;
   
-  AimPosition[Line2Middle].H=52;
-  AimPosition[Line2Middle].W=76;
+  PathBase.AimPosition[Line2Middle].H=53;
+  PathBase.AimPosition[Line2Middle].W=75;
   
-  AimPosition[Line2Right].H=52;
-  AimPosition[Line2Right].W=112;
+  PathBase.AimPosition[Line2Right].H=53;
+  PathBase.AimPosition[Line2Right].W=113;
   
-  AimPosition[Line3Left].H=16;
-  AimPosition[Line3Left].W=39;
+  PathBase.AimPosition[Line1Left].H=16;
+  PathBase.AimPosition[Line1Left].W=39;
   
-  AimPosition[Line3Middle].H=16;
-  AimPosition[Line3Middle].W=77;
+  PathBase.AimPosition[Line1Middle].H=16;
+  PathBase.AimPosition[Line1Middle].W=75;
   
+  PathBase.AimPosition[Line1Right].H=17;
+  PathBase.AimPosition[Line1Right].W=112;
+
+  PathBase.AimPosition[TransPoint3L].H=70;
+  PathBase.AimPosition[TransPoint3L].W=56;
+    
+  PathBase.AimPosition[TransPoint3R].H=71;
+  PathBase.AimPosition[TransPoint3R].W=92;
+    
+  PathBase.AimPosition[TransPoint1L].H=37;
+  PathBase.AimPosition[TransPoint1L].W=59;
+    
+  PathBase.AimPosition[TransPoint1R].H=38;
+  PathBase.AimPosition[TransPoint1R].W=95;
+  
+  PathBase.AimPosition[TransPoint2R].H=38;
+  PathBase.AimPosition[TransPoint2R].W=95;
+  
+<<<<<<< HEAD
   AimPosition[Line3Right].H=16;
   AimPosition[Line3Right].W=112;
+>>>>>>> master
+=======
+  PathBase.AimPosition[TransPoint2L].H=38;
+  PathBase.AimPosition[TransPoint2L].W=95;
+  
+  PathBase.AimPosition[TransPoint1M].H=38;
+  PathBase.AimPosition[TransPoint1M].W=95;
+  
+  PathBase.AimPosition[TransPoint3M].H=38;
+  PathBase.AimPosition[TransPoint3M].W=95;
 >>>>>>> master
   
 }
 
 void PathInit()
 {
-  path[0]=AimPosition[Line2Middle];
-  path[1]=AimPosition[Line3Right];
-  path[2].H=0;
-  path[2].W=0;
+  PathBase.StoredPath[BasicFunction1][0]=PathBase.AimPosition[Line1Middle];
+  PathBase.StoredPath[BasicFunction1][1].H=0;
+  PathBase.StoredPath[BasicFunction1][1].W=0;
+  
+  PathBase.StoredPath[BasicFunction2][0]=PathBase.AimPosition[Line1Left];
+  PathBase.StoredPath[BasicFunction2][1]=PathBase.AimPosition[Line2Middle];
+  PathBase.StoredPath[BasicFunction2][2].H=0;
+  PathBase.StoredPath[BasicFunction2][2].W=0;
+  
+  PathBase.StoredPath[BasicFunction3][0]=PathBase.AimPosition[Line1Left];
+  PathBase.StoredPath[BasicFunction3][1]=PathBase.AimPosition[Line2Left];
+  PathBase.StoredPath[BasicFunction3][2]=PathBase.AimPosition[Line2Middle];
+  PathBase.StoredPath[BasicFunction3][3].H=0;
+  PathBase.StoredPath[BasicFunction3][3].W=0;
+  
+  PathBase.StoredPath[BasicFunction4][0]=PathBase.AimPosition[Line1Left];
+  PathBase.StoredPath[BasicFunction4][1]=PathBase.AimPosition[Line3Right];
+  PathBase.StoredPath[BasicFunction4][2].H=0;
+  PathBase.StoredPath[BasicFunction4][2].W=0;
+  
+  PathBase.StoredPath[AdvanceFunction1][0]=PathBase.AimPosition[Line1Left];
+  PathBase.StoredPath[AdvanceFunction1][1]=PathBase.AimPosition[Line1Middle];
+  PathBase.StoredPath[AdvanceFunction1][2]=PathBase.AimPosition[Line2Right];
+  PathBase.StoredPath[AdvanceFunction1][3]=PathBase.AimPosition[Line3Right];
+  PathBase.StoredPath[AdvanceFunction1][4].H=0;
+  PathBase.StoredPath[AdvanceFunction1][4].W=0;
+  
+  PathBase.StoredPath[AdvanceFunction3][0]=PathBase.AimPosition[Line2Left];
+  PathBase.StoredPath[AdvanceFunction3][1]=PathBase.AimPosition[Line3Right];
+  PathBase.StoredPath[AdvanceFunction3][2].H=0;
+  PathBase.StoredPath[AdvanceFunction3][2].W=0;
 }
 
 void CalculatePosition()
 {
-  ServoBase[W].PidBase.AimPosition=CurrentAimPosition.W;
-  ServoBase[H].PidBase.AimPosition=CurrentAimPosition.H;
+  ServoBase[W].PidBase.AimPosition=MainBall.CurrentAimPosition.W;
+  ServoBase[H].PidBase.AimPosition=MainBall.CurrentAimPosition.H;
   
   ServoBase[W].PidBase.NowPosition=MainBall.CurrentBallPosition.W;
   ServoBase[H].PidBase.NowPosition=MainBall.CurrentBallPosition.H;
@@ -90,33 +175,9 @@ void CalculatePosition()
   ServoBase[H].PidBase.P=ServoBase[H].PidBase.PSet;
   ServoBase[H].PidBase.I=ServoBase[H].PidBase.ISet;
   ServoBase[H].PidBase.D=ServoBase[H].PidBase.DSet;
-  
-  /*if(ServoBase[W].PidBase.ErrorPosition[Now_Error]<5&&ServoBase[W].PidBase.ErrorPosition[Now_Error]>-5)
-  {
-    ServoBase[W].PidBase.D=ServoBase[W].PidBase.PSet/2;
-  }
-    
-  
-  if(ServoBase[H].PidBase.ErrorPosition[Now_Error]<5&&ServoBase[H].PidBase.ErrorPosition[Now_Error]>-5)
-  {
-    ServoBase[H].PidBase.D=ServoBase[H].PidBase.PSet/2;
-  }
-  
-  if(ServoBase[W].PidBase.ErrorPosition[Now_Error]>0)
-    ServoBase[W].PidBase.P=ServoBase[W].PidBase.PSet*ServoBase[W].PidBase.ErrorPosition[Now_Error]*0.02;
-  else
-    ServoBase[W].PidBase.P=-ServoBase[W].PidBase.PSet*ServoBase[W].PidBase.ErrorPosition[Now_Error]*0.02;
-  
-  if(ServoBase[H].PidBase.ErrorPosition[Now_Error]>0)
-    ServoBase[H].PidBase.P=ServoBase[H].PidBase.PSet*ServoBase[H].PidBase.ErrorPosition[Now_Error]*0.02;
-  else
-    ServoBase[H].PidBase.P=-ServoBase[H].PidBase.PSet*ServoBase[H].PidBase.ErrorPosition[Now_Error]*0.02;
-  */
-  
+
   SetPID(&ServoBase[W]);
   SetPID(&ServoBase[H]);
-  
-  
 }
 
 void SetPID(servo* Base)
@@ -134,10 +195,9 @@ void SetPID(servo* Base)
 
 bool AtPosition(position base)
 {
-  static char counter=0;
+  static unsigned char counter=0;
   
-  
-  if((((base.H-MainBall.CurrentBallPosition.H)*(base.H-MainBall.CurrentBallPosition.H))+(base.W-MainBall.CurrentBallPosition.W)*(base.W-MainBall.CurrentBallPosition.W))<=(StableRange*StableRange))
+  if((ServoBase[W].PidBase.ErrorPosition[Now_Error]<4&&ServoBase[W].PidBase.ErrorPosition[Now_Error]>-4) && (ServoBase[H].PidBase.ErrorPosition[Now_Error]<4&&ServoBase[H].PidBase.ErrorPosition[Now_Error]>-4))
   {
     counter++;
   }
@@ -148,35 +208,108 @@ bool AtPosition(position base)
   
   if(counter>StableTimes)
   {
+    gpio_set(PTA8,1);
     return true;
   }
-
+    gpio_set(PTA8,0);
   return false;
+}
+
+bool AtPositionNonBlocking(position base)
+{
+  if((ServoBase[W].PidBase.ErrorPosition[Now_Error]<7&&ServoBase[W].PidBase.ErrorPosition[Now_Error]>-7) && (ServoBase[H].PidBase.ErrorPosition[Now_Error]<7&&ServoBase[H].PidBase.ErrorPosition[Now_Error]>-7))
+  {
+    gpio_set(PTA8,1);
+    return true;
+  }
+    gpio_set(PTA8,0);
+    return false;
+  
 }
 
 void SetAimPosition()
 {
-  CurrentAimPosition=AimPosition[Line1Middle];
-  return;
-  
-  static int flag=0;
-  if(path[CurrentPath+1].H==0&&path[CurrentPath+1].W==0)//没有下一个点就停止规划新的路径
+  if(PathBase.StoredPath[PathBase.Function][PathBase.CurrentPositionCounter+1].H==0)
   {
+    AtPosition(MainBall.CurrentAimPosition);
     return;
   }
-  
-  if(flag!=0)
+  if(PathBase.TransPointFlag==true)
   {
-    flag++;
-    if(flag>=400)
+    if(AtPositionNonBlocking(MainBall.CurrentAimPosition))
     {
-      CurrentPath++;
-      flag=0;
+      PathBase.TransPointFlag=false;
+      PathBase.CurrentPositionCounter++;
+      MainBall.CurrentAimPosition=PathBase.StoredPath[PathBase.Function][PathBase.CurrentPositionCounter];
+      
     }
   }
-  
-  if(AtPosition(path[CurrentPath]))
+  else if(PathBase.TransPointFlag==false)
   {
-    flag=1;
-  }
+    if(AtPosition(MainBall.CurrentAimPosition))
+    {
+      char type=GetType(MainBall.CurrentAimPosition,PathBase.StoredPath[PathBase.Function][PathBase.CurrentPositionCounter+1]);
+      
+      if(type==BasicType)
+      {
+          PathBase.TransPointFlag=false;
+          PathBase.CurrentPositionCounter++;
+          MainBall.CurrentAimPosition=PathBase.StoredPath[PathBase.Function][PathBase.CurrentPositionCounter];
+      }
+      
+      else if(type==BiagonalType)
+      {
+          PathBase.TransPointFlag=true;
+          if((MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line1Left].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line1Left].W)||
+             (MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line3Right].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line3Right].W))
+              MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint3L];
+          else 
+              MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint3R];
+      }
+      
+      else if(type==GapWType)
+      {
+         PathBase.TransPointFlag=true;
+         if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line1Left].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line1Left].W)
+           MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint1M];
+         else if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line2Left].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line2Left].W)
+           MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint1M];
+         else if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line3Left].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line3Left].W)
+           MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint3M];
+      }
+      
+      else if(type==GapWFType)
+      {
+        PathBase.TransPointFlag=true;
+         if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line1Right].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line1Right].W)
+           MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint1M];
+         else if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line2Right].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line2Right].W)
+           MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint1M];
+         else if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line3Right].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line3Right].W)
+           MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint3M];
+      }
+      
+      else if(type==GapHType)
+      {
+        PathBase.TransPointFlag=true;
+         if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line3Right].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line3Right].W)
+           MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint2R];
+         else if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line3Middle].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line3Middle].W)
+           MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint2R];
+         else if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line3Left].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line3Left].W)
+           MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint2L];
+      }
+         
+      else if(type==GapHFType) 
+      {
+        PathBase.TransPointFlag=true;
+         if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line1Right].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line1Right].W)
+           MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint2R];
+         else if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line1Middle].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line1Middle].W)
+           MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint2R];
+         else if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line1Left].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line1Left].W)
+           MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint2L];
+      }
+    }
+  } 
 }

@@ -91,7 +91,7 @@ void  ConvertImg(uint8 image1[CAMERA_H][CAMERA_W], uint8 image2[CAMERA_H][CAMERA
 {
   int i=0,j=0;
   int x=0,y=0;
-  float k1=-0.000023,k2=-0.000023;//-0.00000230,k2=-0.00000120;
+  float k1=-0.000023,k2=-0.000025;//-0.00000230,k2=-0.00000120;
   for(i=-60;i<60;i++)
     for(j=-80;j<80;j++)
     {

@@ -12,7 +12,7 @@ void uart4_handler(void)
 {
     static char buff[10];
     static char count=0;
-
+    static char positionflag=0;
     if(uart_query    (UART4) == 1)   //接收数据寄存器满
     {
         //用户需要处理接收数据
@@ -26,14 +26,6 @@ void uart4_handler(void)
     if (hasData("STOP"))
     {
       System_Error(user_Stop);
-    }
-
-    else if(hasData("L"))
-    {
-      char* i;
-      i=strstr(buff,"L");
-      path[CurrentPath].H=*(i+1);
-      path[CurrentPath].W=*(i+2);
     }
     
     else if(hasData("P"))
@@ -68,26 +60,18 @@ void uart4_handler(void)
       count=0;
       memset(buff,0,sizeof(buff));
     }
-    else if(hasData("w"))
+    /*else if(hasData("w"))
     {
-      CurrentAimPosition.H+=5;
-      printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
+      positionflag++;
+      CurrentAimPosition=AimPosition[positionflag];
+      printf("AimPosition %d\n",positionflag);
     }
     else if(hasData("s"))
     {
-      CurrentAimPosition.H-=5;
-      printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
-    }
-    else if(hasData("f"))
-    {
-      CurrentAimPosition.W+=5;
-      printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
-    }
-    else if(hasData("a"))
-    {
-      CurrentAimPosition.W-=5;
-      printf("AimPosition %d %d\n",CurrentAimPosition.H,CurrentAimPosition.W);
-    }
+      positionflag--;
+      CurrentAimPosition=AimPosition[positionflag];
+      printf("AimPosition %d\n",positionflag);
+    }*/
     else if(hasData("H"))
     {
       sendflag=1;
@@ -129,10 +113,16 @@ void Init_Key()
 
 void OLED_Interface()
 {
-	OLED_Print(Position(Line1), "HIT WH");
-        OLED_Print(Position(Line1), "718Lab");
-        OLED_Print(Position(Line1), "Untitled");
-	OLED_Print(Position(Line4), "System Loading...");
+  OLED_Print(Position(Line1), "HIT WH");
+  OLED_Print(Position(Line1), "718Lab");
+  OLED_Print(Position(Line1), "Untitled");
+  OLED_Print(Position(Line4), "System Loading...");
+  PathBase.Function=UserControl;
+  PathBase.StoredPath[UserControl][0]=PathBase.AimPosition[Line1Left];
+  PathBase.StoredPath[UserControl][1]=PathBase.AimPosition[Line2Left];
+  PathBase.StoredPath[UserControl][2]=PathBase.AimPosition[Line1Right];
+  PathBase.StoredPath[UserControl][3]=PathBase.AimPosition[Line1Middle];
+  PathBase.StoredPath[UserControl][4]=PathBase.AimPosition[Line3Middle];
 }
 
 /*============================================
@@ -165,7 +155,7 @@ void System_Error(char Error_Number)
         ControlOut();
 	switch (Error_Number)
 	{
-	case Motor_Stop:
+	case PathFinish:
 		OLED_Init();
 		OLED_Print(Position(Line1), "motor error");
 		break;
@@ -240,4 +230,50 @@ void LED_Interface()
 		led(LED3, LED_OFF);
 		led(LED0, LED_ON);
 	}*/
+}
+
+void ResetGyro()
+{
+  int16 yData;
+  int16 xData;
+  while(1)
+  {
+    yData=mpu6050_ACCEL_Y_data();
+    xData=mpu6050_ACCEL_X_data();
+    DELAY_MS(25);
+    if(yData>-250)
+      ServoBase[W].Middle--;
+    else if(yData<-300)
+      ServoBase[W].Middle++;
+    
+    if(xData>1320)
+      ServoBase[H].Middle--;
+    else if(xData<1280)
+      ServoBase[H].Middle++;
+    
+    if(ServoBase[W].Middle>=MAX_POSITION_W)
+      ServoBase[W].Middle=MAX_POSITION_W;
+    else if(ServoBase[W].Middle<=MIN_POSITION_W)
+      ServoBase[W].Middle=MIN_POSITION_W;
+  
+    if(ServoBase[H].Middle>=MAX_POSITION_H)
+      ServoBase[H].Middle=MAX_POSITION_H;
+    else if(ServoBase[H].Middle<=MIN_POSITION_H)
+      ServoBase[H].Middle=MIN_POSITION_H;
+    
+    ftm_pwm_duty(Servo_FTM, Servo_W_FTM, ServoBase[W].Middle);
+    ftm_pwm_duty(Servo_FTM, Servo_H_FTM, ServoBase[H].Middle);
+    printf("%d %d\n", xData, yData);
+    if((yData<-250)&&(yData>-300) && (xData<1320)&&(xData>1280))
+    {
+      printf("MPU6050 OK!\n");
+      break;
+    }
+  }
+  ftm_pwm_duty(Servo_FTM, Servo_W_FTM, 300);
+  DELAY_MS(30);
+  ftm_pwm_duty(Servo_FTM, Servo_W_FTM, 1080);
+  DELAY_MS(30);
+  ftm_pwm_duty(Servo_FTM, Servo_W_FTM, ServoBase[W].Middle);
+  
 }
