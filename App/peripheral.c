@@ -27,14 +27,6 @@ void uart4_handler(void)
     {
       System_Error(user_Stop);
     }
-
-    else if(hasData("L"))
-    {
-      char* i;
-      i=strstr(buff,"L");
-      path[CurrentPath].H=*(i+1);
-      path[CurrentPath].W=*(i+2);
-    }
     
     else if(hasData("P"))
     {
@@ -121,10 +113,16 @@ void Init_Key()
 
 void OLED_Interface()
 {
-	OLED_Print(Position(Line1), "HIT WH");
-        OLED_Print(Position(Line1), "718Lab");
-        OLED_Print(Position(Line1), "Untitled");
-	OLED_Print(Position(Line4), "System Loading...");
+  OLED_Print(Position(Line1), "HIT WH");
+  OLED_Print(Position(Line1), "718Lab");
+  OLED_Print(Position(Line1), "Untitled");
+  OLED_Print(Position(Line4), "System Loading...");
+  PathBase.Function=UserControl;
+  PathBase.StoredPath[UserControl][0]=PathBase.AimPosition[Line1Left];
+  PathBase.StoredPath[UserControl][1]=PathBase.AimPosition[Line2Left];
+  PathBase.StoredPath[UserControl][2]=PathBase.AimPosition[Line1Right];
+  PathBase.StoredPath[UserControl][3]=PathBase.AimPosition[Line1Middle];
+  PathBase.StoredPath[UserControl][4]=PathBase.AimPosition[Line3Middle];
 }
 
 /*============================================
@@ -157,7 +155,7 @@ void System_Error(char Error_Number)
         ControlOut();
 	switch (Error_Number)
 	{
-	case Motor_Stop:
+	case PathFinish:
 		OLED_Init();
 		OLED_Print(Position(Line1), "motor error");
 		break;

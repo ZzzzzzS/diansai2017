@@ -5,8 +5,8 @@
 
 void PIDInit()
 {
-  ServoBase[W].PidBase.AimPosition=AimPosition[Line2Middle].W;
-  ServoBase[H].PidBase.AimPosition=AimPosition[Line2Middle].H;
+  ServoBase[W].PidBase.AimPosition=PathBase.AimPosition[Line2Middle].W;
+  ServoBase[H].PidBase.AimPosition=PathBase.AimPosition[Line2Middle].H;
   
   ServoBase[W].PidBase.NowPosition=ServoBase[W].PidBase.AimPosition;
   ServoBase[H].PidBase.NowPosition=ServoBase[H].PidBase.AimPosition;
@@ -61,16 +61,8 @@ void PIDControlPositional(servo *Base)
   
   Base->PidBase.PIDOutPosition=Base->PidBase.P*Base->PidBase.ErrorPosition[Now_Error];
   Base->PidBase.PIDOutPosition+=Base->PidBase.D*Base->PidBase.DeltaError;
-  /*if(err_Delta>=0)
-  {
-    Base->PidBase.PIDOutPosition+=Base->PidBase.D*Base->PidBase.DeltaError*Base->PidBase.DeltaError;
-  }
-  else
-  {
-    Base->PidBase.PIDOutPosition-=Base->PidBase.D*Base->PidBase.DeltaError*Base->PidBase.DeltaError;
-  }*/
   
-    Base->PidBase.PIDOutPosition+=Base->PidBase.IntergatePosition*Base->PidBase.I;
+  Base->PidBase.PIDOutPosition+=Base->PidBase.IntergatePosition*Base->PidBase.I;
     
   
   Base->OutPosition=Base->PidBase.PIDOutPosition;

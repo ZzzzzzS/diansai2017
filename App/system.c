@@ -16,7 +16,7 @@ void SystemInit()
   CheckInit();
   gpio_init(PTA8,GPO,0);
   while(!mpu6050_init());
-  lptmr_timing_ms(10);
+  lptmr_timing_ms(50);
   set_vector_handler(LPTMR_VECTORn, MainLoop);
   EnableInterrupts;
   disable_irq(LPTMR_IRQn);
@@ -25,21 +25,27 @@ void SystemInit()
 void GetSystemReady()
 {
   
-  DELAY_MS(1000);
+  OLED_Print(Position(Line1),"GYRO Loading...");
   /*while(1)
   {
     printf("%d %d %d\n", mpu6050_ACCEL_X_data(), mpu6050_ACCEL_Y_data(),mpu6050_ACCEL_Z_data());
     
   }*/
   ResetGyro();
-  CurrentAimPosition.H=AimPosition[Line1Right].H;
-  CurrentAimPosition.W=AimPosition[Line1Right].W;
-  ServoBase[W].PidBase.NowPosition=CurrentAimPosition.W;
-  ServoBase[H].PidBase.NowPosition=CurrentAimPosition.H;
-  MainBall.CurrentBallPosition=CurrentAimPosition;
-  MainBall.LastBallPosition=CurrentAimPosition;
-  OLED_Interface();
   OLED_CLS();
+  OLED_Print(Position(Line1),"GYRO OK!");
+  OLED_Interface();
+  MainBall.CurrentAimPosition=PathBase.StoredPath[PathBase.Function][PathBase.CurrentPositionCounter];
+  MainBall.CurrentBallPosition.H=0;
+  OLED_Print(Position(Line1),"System Ready!");
+  while(MainBall.CurrentBallPosition.H==0)
+  {
+    GetDeta();
+    ConvertImg(img,imgFixed);
+    GetPosition();
+  }
+  OLED_CLS();
+  OLED_Print(Position(Line1),"Start!");
   enable_irq(LPTMR_IRQn);
 }
 

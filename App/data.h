@@ -9,7 +9,7 @@
 位置和摄像头数据结构体
 ==========================================*/
 #define StableRange 3  //圆边界大小
-#define StableTimes 180  //在N周期内检测在范围内就认为稳定
+#define StableTimes 40  //在N周期内检测在范围内就认为稳定
 
 #define MAXW    127
 #define MINW    24
@@ -34,6 +34,16 @@ typedef enum
   Line3Middle,
   Line3Right,
   
+  TransPoint1L,
+  TransPoint1R,
+  TransPoint3L,
+  TransPoint3R,
+  
+  TransPoint1M,
+  TransPoint2L,
+  TransPoint2R,
+  TransPoint3M,
+  
   MAX_Position
 }Aim_Position;
 
@@ -43,16 +53,55 @@ typedef struct
   position LastBallPosition;
   position CurrentBallSpeed;
   position LastBallSpeed;
+  position CurrentAimPosition;
 }ball;
 
 extern uint8 imgbuff[CAMERA_SIZE];                             //定义存储接收图像的数组
 extern uint8 img[CAMERA_H][CAMERA_W];
 extern uint8 imgFixed[CAMERA_H][CAMERA_W];
-extern position CurrentAimPosition;
-extern position AimPosition[9];
-extern position path[9];
-extern int CurrentPath;//当前位置
+
 extern ball MainBall;
+
+/*============================================
+路径控制结构体
+==========================================*/
+typedef enum
+{
+  BasicFunction1,
+  BasicFunction2,
+  BasicFunction3,
+  BasicFunction4,
+  AdvanceFunction1,
+  AdvanceFunction2,
+  AdvanceFunction3,
+  
+  UserControl,
+  
+  MAXFunction
+}function;
+
+typedef enum
+{
+  BasicType,
+  BiagonalType,
+  GapWType,
+  GapWFType,
+  GapHType,
+  GapHFType,
+  
+  MAXType
+}RoadType;
+
+typedef struct
+{
+  position AimPosition[20];
+  unsigned char Function;
+  position StoredPath[8][9];
+  unsigned char CurrentPositionCounter;
+  unsigned char TransPointFlag;
+}path;
+
+extern path PathBase;
 
 /*============================================
 PID相关数据结构体
@@ -90,7 +139,6 @@ typedef enum
   H,
   MAX
 }servo_enum;
-
 
 #define MAX_POSITION_W  1080
 #define MAX_POSITION_H  1080
@@ -150,7 +198,7 @@ extern char BlueToothReceiveAera[20];
 
 typedef enum	
 {
-	Motor_Stop,
+	PathFinish,
 	Taget_Lost,
 	Car_Stop,
 	No_Mode,
@@ -168,5 +216,6 @@ extern bool AtPosition(position base);
 extern void PIDControlPositional(servo *Base);
 extern void SetPID(servo* Base);
 extern void ConvertImg(uint8 image1[CAMERA_H][CAMERA_W], uint8 image2[CAMERA_H][CAMERA_W]);
+extern bool AtPositionNonBlocking(position base);
 
 #endif //DATA_H
