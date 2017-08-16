@@ -332,14 +332,90 @@ void AdvanceFunction2ConfigInterface()
 void System_Interface()
 {
   char temp[20];
-  sprintf(temp, "当前位置:%d %d",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
+  sprintf(temp, "当前位置:%d %d ",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
   OLED_Print(Position(Line1), temp);
-  sprintf(temp, "目标位置:%d %d",MainBall.CurrentAimPosition.H,MainBall.CurrentAimPosition.W);
+  sprintf(temp, "目标位置:%d %d ",MainBall.CurrentAimPosition.H,MainBall.CurrentAimPosition.W);
   OLED_Print(Position(Line2), temp);
-  sprintf(temp, "当前用时:%d",MainBall.AimTime.S);
-  OLED_Print(Position(Line3), temp);
-  sprintf(temp, "总共用时:%d",MainBall.AllTime.S);
-  OLED_Print(Position(Line4), temp);
+  if(PathBase.Function!=UserControl)
+  {
+    sprintf(temp, "当前用时:%d",MainBall.AimTime.S);
+    OLED_Print(Position(Line3), temp);
+    sprintf(temp, "总共用时:%d",MainBall.AllTime.S);
+    OLED_Print(Position(Line4), temp);
+  }
+  
+  if(gpio_get(Key4))
+    {
+      DELAY_MS(10);
+      if(gpio_get(Key4))
+      {
+        OLED_CLS();
+        OLED_Print(Position(Line4), "正在重置...");
+        while(gpio_get(Key4));
+        SystemReset();
+      }
+      
+    }
+  
+  if(PathBase.Function==UserControl)
+  {
+    switch(KeyState)
+    {
+    case Key1Down:
+      if(MainBall.CurrentAimPosition.PositionNumber>=Line2Left)
+        MainBall.CurrentAimPosition=PathBase.AimPosition[MainBall.CurrentAimPosition.PositionNumber-3];
+      KeyState=KeyUp;
+      break;
+      
+    case Key2Down:
+      if(MainBall.CurrentAimPosition.PositionNumber!=Line1Left)
+        MainBall.CurrentAimPosition=PathBase.AimPosition[MainBall.CurrentAimPosition.PositionNumber-1];
+      KeyState=KeyUp;
+      break;
+      
+    case Key3Down:
+      if(MainBall.CurrentAimPosition.PositionNumber!=Line3Right)
+        MainBall.CurrentAimPosition=PathBase.AimPosition[MainBall.CurrentAimPosition.PositionNumber+1];
+      KeyState=KeyUp;
+      break;
+      
+    case Key4Down:
+      if(MainBall.CurrentAimPosition.PositionNumber<=Line2Right)
+        MainBall.CurrentAimPosition=PathBase.AimPosition[MainBall.CurrentAimPosition.PositionNumber+3];
+      KeyState=KeyUp;
+      break;
+      
+    }
+    
+    switch(RemoteKeyState)
+    {
+    case Key1Down:
+      if(MainBall.CurrentAimPosition.PositionNumber>=Line2Left)
+        MainBall.CurrentAimPosition=PathBase.AimPosition[MainBall.CurrentAimPosition.PositionNumber-3];
+      RemoteKeyState=KeyUp;
+      break;
+      
+    case Key2Down:
+      if(MainBall.CurrentAimPosition.PositionNumber!=Line1Left)
+        MainBall.CurrentAimPosition=PathBase.AimPosition[MainBall.CurrentAimPosition.PositionNumber-1];
+      RemoteKeyState=KeyUp;
+      break;
+      
+    case Key3Down:
+      if(MainBall.CurrentAimPosition.PositionNumber!=Line3Right)
+        MainBall.CurrentAimPosition=PathBase.AimPosition[MainBall.CurrentAimPosition.PositionNumber+1];
+      RemoteKeyState=KeyUp;
+      break;
+      
+    case Key4Down:
+      if(MainBall.CurrentAimPosition.PositionNumber<=Line2Right)
+        MainBall.CurrentAimPosition=PathBase.AimPosition[MainBall.CurrentAimPosition.PositionNumber+3];
+      RemoteKeyState=KeyUp;
+      break;
+      
+    }
+    
+  }
 }
 
 /*============================================
@@ -471,7 +547,19 @@ void ResetGyro()
 
 void SystemReset()
 {
-  
+  disable_irq(LPTMR_IRQn);
+  MainBall.AimTime.MS=0;
+  MainBall.AllTime.S=0;
+  MainBall.AimTime.S=0;
+  MainBall.AllTime.MS=0;
+  MainBall.CurrentBallPosition.H=0;
+  MainBall.CurrentBallPosition.W=0;
+  MainBall.LastBallPosition.H=0;
+  MainBall.LastBallPosition.W=0;
+  PathBase.CurrentPositionCounter=0;
+  PathBase.TransPointFlag=false;
+  PathBase.Function=BasicFunction1;
+  GetSystemReady();
 }
 
 void TimeAddMS(time Base,int16 MS)
@@ -483,5 +571,89 @@ void TimeAddMS(time Base,int16 MS)
     Base.S+=Base.MS/1000;
     Base.MS%=1000;
   }
+}
+
+void GetTouch()
+{
+  touchposition temp=GetCurrentPosition();
+  static char Key=KeyUp;
+  if(temp.x<150&&temp.x>70&&temp.y<124&&temp.y>30)
+  {
+    MainBall.CurrentAimPosition.H=(150-temp.x)*1.2;
+    MainBall.CurrentAimPosition.W=temp.y*1;
+    MainBall.CurrentAimPosition.PositionNumber=Line2Middle;
+  }
+  
+  if(temp.x<150&&temp.x>130&&temp.y<180&&temp.y>150)
+  {
+    Key=Key1Down;
+  }
+  else if(temp.x<120&&temp.x>90&&temp.y<148&&temp.y>130)
+  {
+    Key=Key2Down;
+  }
+  else if(temp.x<120&&temp.x>90&&temp.y<185&&temp.y>180)
+  {
+    Key=Key3Down;
+  }
+  else if(temp.x<80&&temp.x>60&&temp.y<180&&temp.y>150)
+  {
+    Key=Key4Down;
+  }
+  else
+  {
+    if(Key==Key1Down)
+      KeyState=Key1Down;
+    if(Key==Key2Down)
+      KeyState=Key2Down;
+    if(Key==Key3Down)
+      KeyState=Key3Down;
+    if(Key==Key4Down)
+      KeyState=Key4Down;
+    Key=KeyUp;
+  }
+}
+
+void GetRemoteControl()
+{
+  static char Key=KeyUp;
+  if(gpio_get(RemoteKey1))
+  {
+    Key=Key1Down;
+  }
+  else if(gpio_get(RemoteKey2))
+  {
+    Key=Key2Down;
+  }
+  else if(gpio_get(RemoteKey3))
+  {
+    Key=Key3Down;
+  }
+  if(gpio_get(RemoteKey4))
+  {
+    Key=Key4Down;
+  }
+  else
+  {
+    if(Key==Key1Down)
+      RemoteKeyState=Key1Down;
+    if(Key==Key2Down)
+      RemoteKeyState=Key2Down;
+    if(Key==Key3Down)
+      RemoteKeyState=Key3Down;
+    if(Key==Key4Down)
+      RemoteKeyState=Key4Down;
+    Key=KeyUp;
+    
+  }
+  
+}
+
+void RemoteControlInit()
+{
+  gpio_init(RemoteKey1, GPI, 0);
+  gpio_init(RemoteKey2, GPI, 0);
+  gpio_init(RemoteKey3, GPI, 0);
+  gpio_init(RemoteKey4, GPI, 0);
   
 }

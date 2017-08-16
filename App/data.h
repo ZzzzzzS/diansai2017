@@ -20,6 +20,7 @@ typedef struct
 {
   char H;
   char W;
+  char PositionNumber;
 }position;
 
 typedef struct
@@ -61,7 +62,6 @@ typedef struct
   position CurrentBallSpeed;
   position LastBallSpeed;
   position CurrentAimPosition;
-  
   time AllTime;
   time AimTime;
 }ball;
@@ -201,6 +201,10 @@ typedef enum OLED_Line			//定义OLED显示位置
 #define Key2   PTE25		//按键管脚定义
 #define Key3   PTE24		//按键管脚定义
 #define Key4   PTA9		//按键管脚定义
+#define RemoteKey1 PTA9
+#define RemoteKey2 PTA9
+#define RemoteKey3 PTA9
+#define RemoteKey4 PTA9
 
 
 extern char BlueToothReceiveAera[20];
@@ -218,8 +222,26 @@ typedef enum
 	MAX_error
 }Error_Num;
 
+typedef enum
+{
+  KeyUp=0x00,
+  Key1Down=0x01,
+  Key2Down=0x02,
+  Key3Down=0x04,
+  Key4Down=0x08,
+  Key5Down=0x10,
+  Key6Down=0x20,
+  Key7Down=0x40,
+  Key8Down=0x80
+  
+}KeyStates;
+
+
+
 extern char sendflag;
 
+extern volatile char KeyState;
+extern volatile char RemoteKeyState;
 
 extern void PIDControl(servo *Base);
 extern bool AtPosition(position base);

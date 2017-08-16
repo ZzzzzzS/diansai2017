@@ -6,34 +6,41 @@ void MainLoop();
 void SystemInit()
 {
   DisableInterrupts;
+  OLED_Init();
+  //CheckInit();
+  OLED_Print(Position(Line1),"摄像头初始化完成");
   AimPositionInit();
   PIDInit();
   ControlInit();
+  OLED_Print(Position(Line2),"电机初始化完成");
   init_LED();
-  OLED_Init();
   Init_Key();
   PathInit();
   UART_Init();
-  //CheckInit();
   gpio_init(PTA8,GPO,0);
   //while(!mpu6050_init());
+  OLED_Print(Position(Line2),"陀螺仪初始化完成");
   lptmr_timing_ms(50);
   set_vector_handler(LPTMR_VECTORn, MainLoop);
   EnableInterrupts;
   disable_irq(LPTMR_IRQn);
+  OLED_Print(Position(Line1),"正在水平校准");
+  //ResetGyro();
+  OLED_CLS();
+  OLED_Print(Position(Line4),"校准完成");
+  
+  
+  
 }
 
 void GetSystemReady()
 {
-  OLED_Print(Position(Line1),"正在水平校准");
   /*while(1)
   {
     printf("%d %d %d\n", mpu6050_ACCEL_X_data(), mpu6050_ACCEL_Y_data(),mpu6050_ACCEL_Z_data());
     
   }*/
-  //ResetGyro();
-  OLED_CLS();
-  OLED_Print(Position(Line4),"校准完成");
+  
   
   OLED_Interface();
  
@@ -49,6 +56,11 @@ void GetSystemReady()
   }
   OLED_CLS();
   OLED_Print(Position(Line1),"开始!");
+  if(PathBase.Function==UserControl)
+  {
+    OLED_Print(Position(Line3),"请用触摸屏或蓝牙");
+    OLED_Print(Position(Line4),"改变小球目标位置");
+  }
   enable_irq(LPTMR_IRQn);
 }
 
@@ -76,6 +88,11 @@ void MainLoop()
   if(PathBase.Function!=UserControl)
     SetAimPosition();
   LED_Interface();
+  if(PathBase.Function==UserControl)
+  {
+    //GetRemoteControl();
+    GetTouch();
+  }
   System_Interface();
   LPTMR_Flag_Clear();	
 }

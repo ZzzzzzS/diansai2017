@@ -5912,6 +5912,12 @@
     <file>
       <name>$PROJ_DIR$\..\..\App\system.h</name>
     </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\App\touch.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\App\touch.h</name>
+    </file>
   </group>
   <group>
     <name>Board</name>

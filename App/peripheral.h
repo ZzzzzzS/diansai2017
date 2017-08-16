@@ -10,5 +10,8 @@ extern void System_Error(char Error_Number);
 extern void UART_Init();
 extern void ResetGyro();
 extern void SystemReset();
+extern void GetTouch();
+extern void GetRemoteControl();
+extern void RemoteControlInit();
 
 #endif // __PERIPHERAL_H__

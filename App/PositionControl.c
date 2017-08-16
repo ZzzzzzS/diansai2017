@@ -30,54 +30,71 @@ void AimPositionInit()
 {
   PathBase.AimPosition[Line3Left].H=89;
   PathBase.AimPosition[Line3Left].W=40;
+  PathBase.AimPosition[Line3Left].PositionNumber=Line3Left;
   
   PathBase.AimPosition[Line3Middle].H=90;
   PathBase.AimPosition[Line3Middle].W=75;
+  PathBase.AimPosition[Line3Middle].PositionNumber=Line3Middle;
   
   PathBase.AimPosition[Line3Right].H=90;
   PathBase.AimPosition[Line3Right].W=112;
+  PathBase.AimPosition[Line3Right].PositionNumber=Line3Right;
   
   PathBase.AimPosition[Line2Left].H=53;
   PathBase.AimPosition[Line2Left].W=39;
+  PathBase.AimPosition[Line2Left].PositionNumber=Line2Left;
   
   PathBase.AimPosition[Line2Middle].H=53;
   PathBase.AimPosition[Line2Middle].W=75;
+  PathBase.AimPosition[Line2Middle].PositionNumber=Line2Middle;
   
   PathBase.AimPosition[Line2Right].H=53;
   PathBase.AimPosition[Line2Right].W=113;
+  PathBase.AimPosition[Line2Right].PositionNumber=Line2Right;
   
   PathBase.AimPosition[Line1Left].H=16;
   PathBase.AimPosition[Line1Left].W=39;
+  PathBase.AimPosition[Line1Left].PositionNumber=Line1Left;
   
   PathBase.AimPosition[Line1Middle].H=16;
   PathBase.AimPosition[Line1Middle].W=75;
+  PathBase.AimPosition[Line1Middle].PositionNumber=Line1Middle;
   
   PathBase.AimPosition[Line1Right].H=17;
   PathBase.AimPosition[Line1Right].W=112;
+  PathBase.AimPosition[Line1Right].PositionNumber=Line1Right;
 
   PathBase.AimPosition[TransPoint3L].H=70;
   PathBase.AimPosition[TransPoint3L].W=56;
-    
+  PathBase.AimPosition[TransPoint3L].PositionNumber=TransPoint3L;
+  
   PathBase.AimPosition[TransPoint3R].H=65;
   PathBase.AimPosition[TransPoint3R].W=90;
+  PathBase.AimPosition[TransPoint3R].PositionNumber=TransPoint3R;
     
   PathBase.AimPosition[TransPoint1L].H=41;
   PathBase.AimPosition[TransPoint1L].W=59;
+  PathBase.AimPosition[TransPoint1L].PositionNumber=TransPoint1L;
     
   PathBase.AimPosition[TransPoint1R].H=42;
   PathBase.AimPosition[TransPoint1R].W=91;
+  PathBase.AimPosition[TransPoint1R].PositionNumber=TransPoint1R;
   
   PathBase.AimPosition[TransPoint2R].H=54;
   PathBase.AimPosition[TransPoint2R].W=99;
+  PathBase.AimPosition[TransPoint2R].PositionNumber=TransPoint2R;
   
   PathBase.AimPosition[TransPoint2L].H=54;
   PathBase.AimPosition[TransPoint2L].W=51;
+  PathBase.AimPosition[TransPoint2L].PositionNumber=TransPoint2L;
   
   PathBase.AimPosition[TransPoint1M].H=28;
   PathBase.AimPosition[TransPoint1M].W=75;
+  PathBase.AimPosition[TransPoint1M].PositionNumber=TransPoint1M;
   
   PathBase.AimPosition[TransPoint3M].H=75;
   PathBase.AimPosition[TransPoint3M].W=75;
+  PathBase.AimPosition[TransPoint3M].PositionNumber=TransPoint3M;
   
 }
 
