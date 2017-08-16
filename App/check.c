@@ -46,7 +46,7 @@ void CheckInit()
   
   NVIC_SetPriority(PORTA_IRQn,0);
   NVIC_SetPriority(DMA0_IRQn,1);
-  NVIC_SetPriority(LTPMR_IQRn,2);
+  NVIC_SetPriority(LPTMR_IRQn,2);
 
 }
 

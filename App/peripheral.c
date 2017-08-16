@@ -5,6 +5,8 @@
 
 void AdvanceFunction2ConfigInterface();
 
+char button[6]={0xB1,0xB2,0xB3,0xB4,0xB5,0xB6};
+
 /*============================================
 函数名：Receive_Data()
 作用：蓝牙串口接收
@@ -60,18 +62,6 @@ void uart4_handler(void)
       count=0;
       memset(buff,0,sizeof(buff));
     }
-    /*else if(hasData("w"))
-    {
-      positionflag++;
-      CurrentAimPosition=AimPosition[positionflag];
-      printf("AimPosition %d\n",positionflag);
-    }
-    else if(hasData("s"))
-    {
-      positionflag--;
-      CurrentAimPosition=AimPosition[positionflag];
-      printf("AimPosition %d\n",positionflag);
-    }*/
     else if(hasData("H"))
     {
       sendflag=1;
@@ -84,6 +74,47 @@ void uart4_handler(void)
       count=0;
       memset(buff,0,sizeof(buff));
     }
+    else if(hasData("w"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        KeyState=Key1Down;
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("s"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        KeyState=Key4Down;
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("a"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        KeyState=Key2Down;
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("f"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        KeyState=Key3Down;
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+        
           
 }
 
@@ -121,7 +152,7 @@ void PushButtonUsersCallBack(PTXn_e ptxn)
 void OLED_Interface()
 {
   OLED_CLS();
-  OLED_Print(Position(Line1), "哈尔滨工业大学");
+  OLED_Print(Position(Line1), "DianSai2017");
   OLED_Print(Position(Line2), "718实验室");
   OLED_Print(Position(Line3), "当前路径:");
   //OLED_Print(Position(Line4), "基本1");
@@ -591,10 +622,10 @@ void GetTouch()
 {
   touchposition temp=GetCurrentPosition();
   static char Key=KeyUp;
-  if(temp.x<150&&temp.x>70&&temp.y<124&&temp.y>30)
+  if(temp.x<150&&temp.x>70&&temp.y<120&&temp.y>26)
   {
-    MainBall.CurrentAimPosition.H=(150-temp.x)*1.2;
-    MainBall.CurrentAimPosition.W=temp.y*1;
+    MainBall.CurrentAimPosition.W=(150-temp.x)*1.2+30;
+    MainBall.CurrentAimPosition.H=(120-temp.y)*1;
     MainBall.CurrentAimPosition.PositionNumber=Line2Middle;
   }
   
@@ -633,18 +664,22 @@ void GetRemoteControl()
   static char Key=KeyUp;
   if(gpio_get(RemoteKey1))
   {
+    printf("ok1\n");
     Key=Key1Down;
   }
   else if(gpio_get(RemoteKey2))
   {
+    printf("ok2\n");
     Key=Key2Down;
   }
   else if(gpio_get(RemoteKey3))
   {
+    printf("ok3\n");
     Key=Key3Down;
   }
-  if(gpio_get(RemoteKey4))
+  else if(gpio_get(RemoteKey4))
   {
+    printf("ok4\n");
     Key=Key4Down;
   }
   else
@@ -669,6 +704,10 @@ void RemoteControlInit()
   gpio_init(RemoteKey2, GPI, 0);
   gpio_init(RemoteKey3, GPI, 0);
   gpio_init(RemoteKey4, GPI, 0);
+  port_init_NoALT(RemoteKey1,PULLDOWN);
+  port_init_NoALT(RemoteKey2,PULLDOWN);
+  port_init_NoALT(RemoteKey3,PULLDOWN);
+  port_init_NoALT(RemoteKey4,PULLDOWN);
   
 }
 

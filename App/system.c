@@ -63,6 +63,7 @@ void GetSystemReady()
   {
     OLED_Print(Position(Line3),"请用触摸屏或蓝牙");
     OLED_Print(Position(Line4),"改变小球目标位置");
+    MainBall.CurrentAimPosition=PathBase.AimPosition[Line2Middle];
   }
   enable_irq(LPTMR_IRQn);
 }
@@ -71,9 +72,9 @@ void SystemUpdate()
 {
   GetDeta();
   ConvertImg(img,imgFixed);
-  vcan_sendimg(imgbuff, sizeof(imgbuff));
+  //vcan_sendimg(imgbuff, sizeof(imgbuff));
   //vcan_sendimg(imgFixed, sizeof(imgFixed));
-  if(0)
+  if(sendflag)
   {
   printf("position: %d %d  ",MainBall.CurrentBallPosition.H,MainBall.CurrentBallPosition.W);
   printf("Error %d %d  ",ServoBase[H].PidBase.ErrorPosition[Now_Error],ServoBase[W].PidBase.ErrorPosition[Now_Error]);

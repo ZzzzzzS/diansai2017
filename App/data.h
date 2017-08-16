@@ -201,10 +201,10 @@ typedef enum OLED_Line			//定义OLED显示位置
 #define Key2   PTE25		//按键管脚定义
 #define Key3   PTE24		//按键管脚定义
 #define Key4   PTA9		//按键管脚定义
-#define RemoteKey1 PTA9
-#define RemoteKey2 PTA9
-#define RemoteKey3 PTA9
-#define RemoteKey4 PTA9
+#define RemoteKey1 PTE1
+#define RemoteKey2 PTE0
+#define RemoteKey3 PTE4
+#define RemoteKey4 PTD13
 
 
 extern char BlueToothReceiveAera[20];
