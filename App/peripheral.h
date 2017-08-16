@@ -13,5 +13,7 @@ extern void SystemReset();
 extern void GetTouch();
 extern void GetRemoteControl();
 extern void RemoteControlInit();
+extern void StepMotorInit();
+extern void SystemShutDown();
 
 #endif // __PERIPHERAL_H__

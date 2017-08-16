@@ -120,6 +120,7 @@ void PushButtonUsersCallBack(PTXn_e ptxn)
 
 void OLED_Interface()
 {
+  OLED_CLS();
   OLED_Print(Position(Line1), "哈尔滨工业大学");
   OLED_Print(Position(Line2), "718实验室");
   OLED_Print(Position(Line3), "当前路径:");
@@ -304,7 +305,7 @@ void AdvanceFunction2ConfigInterface()
     
     if(gpio_get(Key3))
     {
-      DELAY_MS(10);
+      DELAY_MS(20);
       if(gpio_get(Key3))
       {
         count++;
@@ -353,6 +354,19 @@ void System_Interface()
         OLED_Print(Position(Line4), "正在重置...");
         while(gpio_get(Key4));
         SystemReset();
+      }
+      
+    }
+  
+  if(gpio_get(Key1))
+    {
+      DELAY_MS(10);
+      if(gpio_get(Key1))
+      {
+        OLED_CLS();
+        OLED_Print(Position(Line4), "正在重置...");
+        while(gpio_get(Key1));
+        SystemShutDown();
       }
       
     }
@@ -655,5 +669,33 @@ void RemoteControlInit()
   gpio_init(RemoteKey2, GPI, 0);
   gpio_init(RemoteKey3, GPI, 0);
   gpio_init(RemoteKey4, GPI, 0);
+  
+}
+
+void StepMotorInit()
+{
+  OLED_Print(Position(Line4),"正在载入");
+  gpio_init(PTA5,GPO,1);
+  gpio_init(PTA6,GPO,0);
+  ftm_pwm_init(FTM0, FTM_CH4,200, 80); 
+  while(!gpio_get(Key1));
+  gpio_set(PTA5,0);
+  OLED_CLS();
+  OLED_Print(Position(Line4),"正在加载...");
+  DELAY_MS(1000);
+  ftm_pwm_init(FTM1, FTM_CH0,50, 10); 
+}
+void SystemShutDown()
+{
+  disable_irq(LPTMR_IRQn);
+  OLED_Print(Position(Line1),"正在关闭");
+  gpio_init(PTA5,GPO,1);
+  gpio_init(PTA6,GPO,1);
+  ftm_pwm_init(FTM0, FTM_CH4,200, 80); 
+  while(!gpio_get(Key4));
+  gpio_set(PTA5,0);
+  DELAY_MS(1000);
+  ftm_pwm_init(FTM1, FTM_CH0,50, 5); 
+  OLED_CLS();
   
 }

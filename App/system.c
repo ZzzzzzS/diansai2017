@@ -19,11 +19,13 @@ void SystemInit()
   UART_Init();
   gpio_init(PTA8,GPO,0);
   //while(!mpu6050_init());
-  OLED_Print(Position(Line2),"陀螺仪初始化完成");
+  OLED_Print(Position(Line3),"陀螺仪初始化完成");
   lptmr_timing_ms(50);
   set_vector_handler(LPTMR_VECTORn, MainLoop);
   EnableInterrupts;
   disable_irq(LPTMR_IRQn);
+  StepMotorInit();
+  OLED_CLS();
   OLED_Print(Position(Line1),"正在水平校准");
   //ResetGyro();
   OLED_CLS();
@@ -90,7 +92,7 @@ void MainLoop()
   LED_Interface();
   if(PathBase.Function==UserControl)
   {
-    //GetRemoteControl();
+    GetRemoteControl();
     GetTouch();
   }
   System_Interface();
