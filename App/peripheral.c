@@ -683,7 +683,22 @@ void StepMotorInit()
   OLED_CLS();
   OLED_Print(Position(Line4),"ÕýÔÚ¼ÓÔØ...");
   DELAY_MS(1000);
-  ftm_pwm_init(FTM1, FTM_CH0,50, 10); 
+  /*ftm_pwm_init(FTM1, FTM_CH0,50, 53); 
+  DELAY_MS(20);
+  DELAY_MS(20);
+  ftm_pwm_duty(FTM1, FTM_CH0, 60);
+  DELAY_MS(20);
+  DELAY_MS(20);
+  ftm_pwm_duty(FTM1, FTM_CH0, 65);
+  DELAY_MS(20);
+  DELAY_MS(20);
+  ftm_pwm_duty(FTM1, FTM_CH0, 70);
+  DELAY_MS(20);
+  DELAY_MS(20);
+  ftm_pwm_duty(FTM1, FTM_CH0, 75);
+  DELAY_MS(20);
+  DELAY_MS(20);
+  ftm_pwm_duty(FTM1, FTM_CH0, 80);*/
 }
 void SystemShutDown()
 {
@@ -695,7 +710,19 @@ void SystemShutDown()
   while(!gpio_get(Key4));
   gpio_set(PTA5,0);
   DELAY_MS(1000);
-  ftm_pwm_init(FTM1, FTM_CH0,50, 5); 
+  /*ftm_pwm_init(FTM1, FTM_CH0,50, 75); 
+  DELAY_MS(20);
+  DELAY_MS(20);
+  ftm_pwm_duty(FTM1, FTM_CH0, 70);
+  DELAY_MS(20);
+  DELAY_MS(20);
+  ftm_pwm_duty(FTM1, FTM_CH0, 65);
+  DELAY_MS(20);
+  DELAY_MS(20);
+  ftm_pwm_duty(FTM1, FTM_CH0, 60);
+  DELAY_MS(20);
+  DELAY_MS(20);
+  ftm_pwm_duty(FTM1, FTM_CH0, 53);*/
   OLED_CLS();
   
 }

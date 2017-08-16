@@ -11,10 +11,10 @@
 #define StableRange 3  //圆边界大小
 #define StableTimes 40  //在N周期内检测在范围内就认为稳定
 
-#define MAXW    127
-#define MINW    24
-#define MAXH    105
-#define MINH    0
+#define MAXW    120
+#define MINW    25
+#define MAXH    100
+#define MINH    1
 
 typedef struct
 {

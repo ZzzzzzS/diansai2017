@@ -7,18 +7,17 @@ void SystemInit()
 {
   DisableInterrupts;
   OLED_Init();
-  //CheckInit();
-  OLED_Print(Position(Line1),"摄像头初始化完成");
   AimPositionInit();
   PIDInit();
   ControlInit();
   OLED_Print(Position(Line2),"电机初始化完成");
+  DELAY_MS(500);
   init_LED();
   Init_Key();
   PathInit();
   UART_Init();
   gpio_init(PTA8,GPO,0);
-  //while(!mpu6050_init());
+  while(!mpu6050_init());
   OLED_Print(Position(Line3),"陀螺仪初始化完成");
   lptmr_timing_ms(50);
   set_vector_handler(LPTMR_VECTORn, MainLoop);
@@ -27,7 +26,7 @@ void SystemInit()
   StepMotorInit();
   OLED_CLS();
   OLED_Print(Position(Line1),"正在水平校准");
-  //ResetGyro();
+  ResetGyro();
   OLED_CLS();
   OLED_Print(Position(Line4),"校准完成");
   
@@ -43,16 +42,18 @@ void GetSystemReady()
     
   }*/
   
-  
+  CheckInit();
+  OLED_Print(Position(Line1),"摄像头初始化完成");
+  DELAY_MS(500);
   OLED_Interface();
- 
+  OLED_CLS();
   MainBall.CurrentAimPosition=PathBase.StoredPath[PathBase.Function][PathBase.CurrentPositionCounter];
   MainBall.CurrentBallPosition.H=0;
   OLED_Print(Position(Line1),"系统准备就绪");
   OLED_Print(Position(Line2),"请放置小球");
   while(MainBall.CurrentBallPosition.H==0)
   {
-    //GetDeta();
+    GetDeta();
     ConvertImg(img,imgFixed);
     GetPosition();
   }
@@ -68,9 +69,9 @@ void GetSystemReady()
 
 void SystemUpdate()
 {
-  //GetDeta();
+  GetDeta();
   ConvertImg(img,imgFixed);
-  //vcan_sendimg(imgbuff, sizeof(imgbuff));
+  vcan_sendimg(imgbuff, sizeof(imgbuff));
   //vcan_sendimg(imgFixed, sizeof(imgFixed));
   if(0)
   {

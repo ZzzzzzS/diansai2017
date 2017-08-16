@@ -226,7 +226,7 @@ bool AtPositionNonBlocking(position base)
 {
   if((ServoBase[W].PidBase.ErrorPosition[Now_Error]<7&&ServoBase[W].PidBase.ErrorPosition[Now_Error]>-7) && (ServoBase[H].PidBase.ErrorPosition[Now_Error]<7&&ServoBase[H].PidBase.ErrorPosition[Now_Error]>-7))
   {
-    gpio_set(PTA8,1);
+    //gpio_set(PTA8,1);
     return true;
   }
     gpio_set(PTA8,0);
