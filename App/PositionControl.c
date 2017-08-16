@@ -28,7 +28,7 @@ char GetType(position Aim,position Current)
 
 void AimPositionInit()
 {
-  PathBase.AimPosition[Line3Left].H=89;
+  /*PathBase.AimPosition[Line3Left].H=89;
   PathBase.AimPosition[Line3Left].W=40;
   PathBase.AimPosition[Line3Left].PositionNumber=Line3Left;
   
@@ -94,7 +94,7 @@ void AimPositionInit()
   
   PathBase.AimPosition[TransPoint3M].H=75;
   PathBase.AimPosition[TransPoint3M].W=75;
-  PathBase.AimPosition[TransPoint3M].PositionNumber=TransPoint3M;
+  PathBase.AimPosition[TransPoint3M].PositionNumber=TransPoint3M;*/
   
 }
 
@@ -302,7 +302,7 @@ void SetAimPosition()
               MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint3R];
       }
       
-      else if(type==GapWType)
+      else if(type==GapWFType)
       {
          PathBase.TransPointFlag=true;
          if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line1Left].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line1Left].W)
@@ -313,7 +313,7 @@ void SetAimPosition()
            MainBall.CurrentAimPosition=PathBase.AimPosition[TransPoint3M];
       }
       
-      else if(type==GapWFType)
+      else if(type==GapWType)
       {
         PathBase.TransPointFlag=true;
          if(MainBall.CurrentAimPosition.H==PathBase.AimPosition[Line1Right].H&&MainBall.CurrentAimPosition.W==PathBase.AimPosition[Line1Right].W)
