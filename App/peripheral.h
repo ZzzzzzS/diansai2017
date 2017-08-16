@@ -3,13 +3,17 @@
 
 extern void Init_Key();
 extern void OLED_Interface();
-extern void DeBug_Interface();
-extern void Debug_Init();
-extern char CharAbs(char a);
+extern void System_Interface();
 extern void init_LED();
 extern void LED_Interface();
 extern void System_Error(char Error_Number);
 extern void UART_Init();
 extern void ResetGyro();
+extern void SystemReset();
+extern void GetTouch();
+extern void GetRemoteControl();
+extern void RemoteControlInit();
+extern void StepMotorInit();
+extern void SystemShutDown();
 
 #endif // __PERIPHERAL_H__

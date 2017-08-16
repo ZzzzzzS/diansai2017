@@ -9,3 +9,5 @@ ball MainBall;
 servo ServoBase[2];
 path PathBase;
 char sendflag;
+volatile char KeyState;
+volatile char RemoteKeyState;

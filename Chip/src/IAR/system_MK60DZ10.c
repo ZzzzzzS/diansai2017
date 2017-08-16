@@ -53,7 +53,10 @@ void start()
     gpio_init(PTA4,GPO,1);  //初始化为输出1，即 禁用了 NMI 中断
     
     led_init(LED0);
+    gpio_init(PTA8,GPO,0);
+    gpio_set(PTA8,1);
     led(LED0,LED_ON);
+    gpio_set(PTA8,0);
     SystemInit();
     GetSystemReady();
 

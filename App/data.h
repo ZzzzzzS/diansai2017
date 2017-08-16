@@ -13,6 +13,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define MAXW    120
 #define MINW    35
 #define MAXH    102
@@ -34,12 +35,26 @@
 #define MAXH    105
 #define MINH    0
 >>>>>>> master
+=======
+#define MAXW    125
+#define MINW    27
+#define MAXH    100
+#define MINH    1
+>>>>>>> master
 
 typedef struct
 {
   char H;
   char W;
+  char PositionNumber;
 }position;
+
+typedef struct
+{
+  int16 S;
+  int16 MS;
+}time;
+
 
 typedef enum
 {
@@ -73,6 +88,8 @@ typedef struct
   position CurrentBallSpeed;
   position LastBallSpeed;
   position CurrentAimPosition;
+  time AllTime;
+  time AimTime;
 }ball;
 
 extern uint8 imgbuff[CAMERA_SIZE];                             //定义存储接收图像的数组
@@ -114,7 +131,7 @@ typedef enum
 typedef struct
 {
   position AimPosition[20];
-  unsigned char Function;
+  char Function;
   position StoredPath[8][40];
   unsigned char CurrentPositionCounter;
   unsigned char TransPointFlag;
@@ -187,10 +204,10 @@ extern servo ServoBase[2];
 OLED显示相关定义
 ==========================================*/
 						//OLED相关宏定义
-#define DC	PTC3
-#define RESET	PTC2						//OLED相关宏定义
-#define D1	PTC1						//OLED相关宏定义
-#define D0	PTC0						//OLED相关宏定义
+#define DC	PTC13
+#define RESET	PTC12						//OLED相关宏定义
+#define D1	PTC9						//OLED相关宏定义
+#define D0	PTC8						//OLED相关宏定义
 
 #define Position(OLED_Line)		0,(OLED_Line)	//坐标定义
 
@@ -215,6 +232,10 @@ typedef enum OLED_Line			//定义OLED显示位置
 #define Key2   PTE25		//按键管脚定义
 #define Key3   PTE24		//按键管脚定义
 #define Key4   PTA9		//按键管脚定义
+#define RemoteKey1 PTE1
+#define RemoteKey2 PTE0
+#define RemoteKey3 PTE4
+#define RemoteKey4 PTD13
 
 
 extern char BlueToothReceiveAera[20];
@@ -232,8 +253,26 @@ typedef enum
 	MAX_error
 }Error_Num;
 
+typedef enum
+{
+  KeyUp=0x00,
+  Key1Down=0x01,
+  Key2Down=0x02,
+  Key3Down=0x04,
+  Key4Down=0x08,
+  Key5Down=0x10,
+  Key6Down=0x20,
+  Key7Down=0x40,
+  Key8Down=0x80
+  
+}KeyStates;
+
+
+
 extern char sendflag;
 
+extern volatile char KeyState;
+extern volatile char RemoteKeyState;
 
 extern void PIDControl(servo *Base);
 extern bool AtPosition(position base);
@@ -241,5 +280,6 @@ extern void PIDControlPositional(servo *Base);
 extern void SetPID(servo* Base);
 extern void ConvertImg(uint8 image1[CAMERA_H][CAMERA_W], uint8 image2[CAMERA_H][CAMERA_W]);
 extern bool AtPositionNonBlocking(position base);
+extern void TimeAddMS(time Base,int16 MS);
 
 #endif //DATA_H
