@@ -3,7 +3,7 @@
 #include "data.h"
 
 
-void PIDInit()
+void PIDInit()//PID参数初始化
 {
   ServoBase[W].PidBase.AimPosition=PathBase.AimPosition[Line2Middle].W;
   ServoBase[H].PidBase.AimPosition=PathBase.AimPosition[Line2Middle].H;
@@ -11,24 +11,24 @@ void PIDInit()
   ServoBase[W].PidBase.NowPosition=ServoBase[W].PidBase.AimPosition;
   ServoBase[H].PidBase.NowPosition=ServoBase[H].PidBase.AimPosition;
   
-  ServoBase[W].PidBase.PSet=3;
+  ServoBase[W].PidBase.PSet=3;      //PID调参看这里！！！
   ServoBase[W].PidBase.ISet=0.05;
   ServoBase[W].PidBase.DSet=130;
   
-  ServoBase[H].PidBase.PSet=3;
+  ServoBase[H].PidBase.PSet=3;      //PID调参看这里！！！
   ServoBase[H].PidBase.ISet=0.05;
   ServoBase[H].PidBase.DSet=130;
 }
-void ControlInit()
+void ControlInit()          //舵机初始化
 {
-  ServoBase[W].Middle=750;
+  ServoBase[W].Middle=750;//初始中值
   ServoBase[H].Middle=680;
-  ftm_pwm_init(Servo_FTM,Servo_W_FTM,Serv0_HZ,ServoBase[W].Middle);//舵机初始化，这个0待定
+  ftm_pwm_init(Servo_FTM,Servo_W_FTM,Serv0_HZ,ServoBase[W].Middle);
   ftm_pwm_init(Servo_FTM,Servo_H_FTM,Serv0_HZ,ServoBase[H].Middle);
 }
 
 
-void PIDControl(servo* Base)
+void PIDControl(servo* Base)//增量式
 {
   unsigned char IFlag=1;
   Base->PidBase.ErrorPosition[Now_Error]=Base->PidBase.AimPosition-Base->PidBase.NowPosition;
@@ -49,7 +49,7 @@ void PIDControl(servo* Base)
   
 }
 
-void PIDControlPositional(servo *Base)
+void PIDControlPositional(servo *Base)//位置式
 {
   if((Base->PidBase.ErrorPosition[Now_Error]<10&&Base->PidBase.ErrorPosition[Now_Error]>1)||(Base->PidBase.ErrorPosition[Now_Error]>-10&&Base->PidBase.ErrorPosition[Now_Error]<-1))
     Base->PidBase.IntergatePosition+=Base->PidBase.ErrorPosition[Now_Error];

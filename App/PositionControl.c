@@ -3,7 +3,7 @@
 #include "data.h"
 #include "math.h"
 
-char GetType(position Aim,position Current)
+char GetType(position Aim,position Current)//利用坐标差判断位置类型，其实这样不太好，但是也不想修改了
 {
   if(((Aim.H-Current.H<45)&&(Aim.H-Current.H>-45)) && ((Aim.W-Current.W<45)&&(Aim.W-Current.W>-45)))
     return BasicType;
@@ -96,7 +96,7 @@ void AimPositionInit()
   PathBase.AimPosition[TransPoint3M].W=75;
   PathBase.AimPosition[TransPoint3M].PositionNumber=TransPoint3M;*/
   
-  PathBase.AimPosition[Line3Left].H=91;
+  PathBase.AimPosition[Line3Left].H=91;//初始化9+8个点
   PathBase.AimPosition[Line3Left].W=112;
   PathBase.AimPosition[Line3Left].PositionNumber=Line3Left;
   
@@ -166,7 +166,7 @@ void AimPositionInit()
   
 }
 
-void PathInit()
+void PathInit()//初始化路径
 {
   PathBase.StoredPath[BasicFunction1][0]=PathBase.AimPosition[Line1Middle];
   PathBase.StoredPath[BasicFunction1][1].H=0;
@@ -253,7 +253,7 @@ void CalculatePosition()
   SetPID(&ServoBase[H]);
 }
 
-void SetPID(servo* Base)
+void SetPID(servo* Base)//可以在这个函数里加分段PID
 {
   /*if(Base->PidBase.ErrorPosition[Now_Error]>0)
   {
@@ -270,7 +270,7 @@ bool AtPosition(position base)
 {
   static unsigned char counter=0;
   
-  if((ServoBase[W].PidBase.ErrorPosition[Now_Error]<4&&ServoBase[W].PidBase.ErrorPosition[Now_Error]>-4) && (ServoBase[H].PidBase.ErrorPosition[Now_Error]<4&&ServoBase[H].PidBase.ErrorPosition[Now_Error]>-4))
+  if((ServoBase[W].PidBase.ErrorPosition[Now_Error]<StableRange&&ServoBase[W].PidBase.ErrorPosition[Now_Error]>-StableRange) && (ServoBase[H].PidBase.ErrorPosition[Now_Error]<StableRange&&ServoBase[H].PidBase.ErrorPosition[Now_Error]>-StableRange))
   {
     counter++;
   }
@@ -302,9 +302,9 @@ bool AtPositionNonBlocking(position base)
   
 }
 
-void SetAimPosition()
+void SetAimPosition()//设定目标点
 {
-  if(PathBase.StoredPath[PathBase.Function][PathBase.CurrentPositionCounter+1].H==0)
+  if(PathBase.StoredPath[PathBase.Function][PathBase.CurrentPositionCounter+1].H==0)//如果是最后一个点，就不再继续设点
   {
     AtPosition(MainBall.CurrentAimPosition);
     return;
@@ -313,7 +313,7 @@ void SetAimPosition()
   TimeAddMS(MainBall.AllTime,50);
   TimeAddMS(MainBall.AimTime,50);
   
-  if(PathBase.Function==AdvanceFunction3)
+  if(PathBase.Function==AdvanceFunction3)//如果是发挥功能3就单独处理
   {
     if(PathBase.CurrentPositionCounter==0)
     {
@@ -337,7 +337,7 @@ void SetAimPosition()
   }
   
   
-  if(PathBase.TransPointFlag==true)
+  if(PathBase.TransPointFlag==true)//当前目标点是转移点的情况
   {
     if(AtPositionNonBlocking(MainBall.CurrentAimPosition))
     {
@@ -347,13 +347,13 @@ void SetAimPosition()
       
     }
   }
-  else if(PathBase.TransPointFlag==false)
+  else if(PathBase.TransPointFlag==false)//当前点不是转移点的情况
   {
     if(AtPosition(MainBall.CurrentAimPosition))
     {
       char type=GetType(MainBall.CurrentAimPosition,PathBase.StoredPath[PathBase.Function][PathBase.CurrentPositionCounter+1]);
       
-      if(type==BasicType)
+      if(type==BasicType)//判断出来的不同的目标点类型设计不同的转移点，这一段写得不好。
       {
           PathBase.TransPointFlag=false;
           PathBase.CurrentPositionCounter++;

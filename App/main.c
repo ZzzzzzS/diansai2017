@@ -46,8 +46,7 @@ OLED_Fonts.h:OLED字体库
 mpu6050.c:   陀螺仪库
 touch.c:     触摸屏库*/
 
-    /****数据结构****/
-/*数据主要在data.h中*/
+
 
 
 
