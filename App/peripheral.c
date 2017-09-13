@@ -114,6 +114,96 @@ void uart4_handler(void)
       count=0;
       memset(buff,0,sizeof(buff));
     }
+    else if(hasData("q1"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        MainBall.CurrentAimPosition=PathBase.AimPosition[Line1Left];
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("q2"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        MainBall.CurrentAimPosition=PathBase.AimPosition[Line1Middle];
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("q3"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        MainBall.CurrentAimPosition=PathBase.AimPosition[Line1Right];
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("q4"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        MainBall.CurrentAimPosition=PathBase.AimPosition[Line2Left];
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("q5"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        MainBall.CurrentAimPosition=PathBase.AimPosition[Line2Middle];
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("q6"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        MainBall.CurrentAimPosition=PathBase.AimPosition[Line2Right];
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("q7"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        MainBall.CurrentAimPosition=PathBase.AimPosition[Line3Left];
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("q8"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        MainBall.CurrentAimPosition=PathBase.AimPosition[Line3Middle];
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
+    else if(hasData("q9"))
+    {
+      printf("ok");
+      if(PathBase.Function==UserControl)
+      {
+        MainBall.CurrentAimPosition=PathBase.AimPosition[Line3Right];
+      }
+      count=0;
+      memset(buff,0,sizeof(buff));
+    }
         
           
 }
@@ -717,7 +807,7 @@ void StepMotorInit()
   gpio_init(PTA5,GPO,1);
   gpio_init(PTA6,GPO,0);
   ftm_pwm_init(FTM0, FTM_CH4,200, 80); 
-  while(!gpio_get(Key1));
+  //while(!gpio_get(Key1));
   gpio_set(PTA5,0);
   OLED_CLS();
   OLED_Print(Position(Line4),"ÕýÔÚ¼ÓÔØ...");

@@ -23,7 +23,7 @@ void SystemInit()
   set_vector_handler(LPTMR_VECTORn, MainLoop);//设定中断服务函数
   EnableInterrupts;
   disable_irq(LPTMR_IRQn);    //先关闭中断
-  StepMotorInit();            //步进电机初始化
+  //StepMotorInit();            //步进电机初始化
   OLED_CLS();
   OLED_Print(Position(Line1),"正在水平校准");
   ResetGyro();                //调整水平
