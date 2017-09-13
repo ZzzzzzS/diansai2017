@@ -553,14 +553,14 @@ void ResetGyro()
     yData=mpu6050_ACCEL_Y_data();
     xData=mpu6050_ACCEL_X_data();
     DELAY_MS(25);
-    if(yData>-250)
+    if(yData>-50)
       ServoBase[W].Middle--;
-    else if(yData<-300)
+    else if(yData<-100)
       ServoBase[W].Middle++;
     
-    if(xData>1320)
+    if(xData>290)
       ServoBase[H].Middle--;
-    else if(xData<1280)
+    else if(xData<230)
       ServoBase[H].Middle++;
     
     if(ServoBase[W].Middle>=MAX_POSITION_W)
@@ -576,7 +576,7 @@ void ResetGyro()
     ftm_pwm_duty(Servo_FTM, Servo_W_FTM, ServoBase[W].Middle);
     ftm_pwm_duty(Servo_FTM, Servo_H_FTM, ServoBase[H].Middle);
     printf("%d %d\n", xData, yData);
-    if((yData<-250)&&(yData>-300) && (xData<1320)&&(xData>1280))
+    if((yData<-50)&&(yData>-100) && (xData<290)&&(xData>230))
     {
       printf("MPU6050 OK!\n");
       break;

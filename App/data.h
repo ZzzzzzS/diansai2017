@@ -8,54 +8,30 @@
 /*============================================
 位置和摄像头数据结构体
 ==========================================*/
-#define StableRange 3  //圆边界大小
-#define StableTimes 40  //在N周期内检测在范围内就认为稳定
+#define StableRange 4    //圆边界大小,认为离中心点在这个范围内就认为到达点了
+#define StableTimes 40   //在N周期内检测在范围内就认为稳定,40(周期)X50(毫秒/周期)=2秒
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define MAXW    120
-#define MINW    35
-#define MAXH    102
-#define MINH    16
-=======
-#define MAXW    124
-#define MINW    27
-#define MAXH    105
-#define MINH    1
+#define MAXW    125     //圈定采集的边界     -------> w轴
+#define MINW    27       //                 |
+#define MAXH    100     //                  |
+#define MINH    1      //                   |H轴
 
-/*#define MAXW    120
-#define MINW    35
-#define MAXH    100
-#define MINH    18*/
->>>>>>> master
-=======
-#define MAXW    127
-#define MINW    24
-#define MAXH    105
-#define MINH    0
->>>>>>> master
-=======
-#define MAXW    125
-#define MINW    27
-#define MAXH    100
-#define MINH    1
->>>>>>> master
-
-typedef struct
+//positionl结构体,储存横坐标,纵坐标,以及当前点是属于1~9号点的哪个点,此结构体非常重要
+typedef struct          
 {
   char H;
   char W;
   char PositionNumber;
 }position;
 
+//用于计时的结构体
 typedef struct
 {
   int16 S;
   int16 MS;
 }time;
 
-
+//枚举确定9个目标点和8个过渡点的位置
 typedef enum
 {
   Line1Left,
@@ -81,29 +57,32 @@ typedef enum
   MAX_Position
 }Aim_Position;
 
+
+//ball结构体,储存和球位置有关的信息
 typedef struct
 {
-  position CurrentBallPosition;
-  position LastBallPosition;
-  position CurrentBallSpeed;
-  position LastBallSpeed;
-  position CurrentAimPosition;
-  time AllTime;
-  time AimTime;
+  position CurrentBallPosition;     //球当前位置信息
+  position LastBallPosition;        //上一帧球的位置信息
+  position CurrentBallSpeed;        //当前球的速度
+  position LastBallSpeed;           //上一次球的速度
+  position CurrentAimPosition;      //当前的目标点
+  time AllTime;                     //开机共用时
+  time AimTime;                     //从上一个目标点到现在用时
 }ball;
 
-extern uint8 imgbuff[CAMERA_SIZE];                             //定义存储接收图像的数组
-extern uint8 img[CAMERA_H][CAMERA_W];
-extern uint8 imgFixed[CAMERA_H][CAMERA_W];
+extern uint8 imgbuff[CAMERA_SIZE];         //定义存储接收图像的数组,未解压,山外上位机看这个,选择160*120,二值化图像
+extern uint8 img[CAMERA_H][CAMERA_W];      //接收解压过的图像
+extern uint8 imgFixed[CAMERA_H][CAMERA_W]; //矫正过的图像,张晓冬上位机看这个,选择160*120,灰度图像
 
 extern ball MainBall;
 
 /*============================================
 路径控制结构体
 ==========================================*/
+//枚举定义当前所选择的功能
 typedef enum
 {
-  BasicFunction1,
+  BasicFunction1, //基本功能1
   BasicFunction2,
   BasicFunction3,
   BasicFunction4,
@@ -111,15 +90,16 @@ typedef enum
   AdvanceFunction2,
   AdvanceFunction3,
   
-  UserControl,
+  UserControl,  //自己设定路径,蓝牙控球,触摸控球就选这个
   
   MAXFunction
 }function;
 
-typedef enum
+//枚举定义的道路类型,用于绕过障碍点
+typedef enum 
 {
-  BasicType,
-  BiagonalType,
+  BasicType,    //普通类型,点相邻
+  BiagonalType, //对角线类型
   GapWType,
   GapWFType,
   GapHType,
@@ -128,13 +108,14 @@ typedef enum
   MAXType
 }RoadType;
 
+//定义路径结构体,储存9+8点位置,储存好的路径,用户刚输入的路径等
 typedef struct
 {
-  position AimPosition[20];
-  char Function;
-  position StoredPath[8][40];
+  position AimPosition[20];   //储存9+8个点的位置
+  char Function;              //储存当前所选择的功能
+  position StoredPath[8][40]; //储存不同功能的路径
   unsigned char CurrentPositionCounter;
-  unsigned char TransPointFlag;
+  unsigned char TransPointFlag; //标志位,判断是否在中间转移点上
 }path;
 
 extern path PathBase;
@@ -149,6 +130,8 @@ typedef enum						//PID误差枚举
 	lastest_Error
 }PID_Error;
 
+
+//PID结构体,注意修改参数请修改PSet,修改P是无效的
 typedef struct
 {
   float PSet;
@@ -169,6 +152,7 @@ typedef struct
 /*============================================
 舵机控制结构体
 ==========================================*/
+//枚举定义舵机编号
 typedef enum
 {
   W,
@@ -176,26 +160,23 @@ typedef enum
   MAX
 }servo_enum;
 
-#define MAX_POSITION_W  1080
+#define MAX_POSITION_W  1080    //定义舵机最大最小值
 #define MAX_POSITION_H  1080
 #define MIN_POSITION_W  300
 #define MIN_POSITION_H  300
 
-<<<<<<< HEAD
-#define MIDDLE_W 690
-#define MIDDLE_H 700
-=======
->>>>>>> master
-#define Servo_FTM FTM2
+#define Servo_FTM FTM2          //定义舵机管脚
 #define Servo_W_FTM FTM_CH1
 #define Servo_H_FTM FTM_CH0
 #define Serv0_HZ    50
 
+
+//定义舵机类型结构体控制舵机
 typedef struct
 {
-  pidbase PidBase;
-  int OutPosition;
-  int Middle;
+  pidbase PidBase;  //pid类型用于PID计算
+  int OutPosition;  //最终输出到舵机上的PWM值
+  int Middle;       //舵机中值
 }servo;
 
 extern servo ServoBase[2];

@@ -37,12 +37,12 @@ void DMA0_IRQHandler()
 
 void CheckInit()
 {
-  camera_init(imgbuff);
+  camera_init(imgbuff);//初始化摄像头
   
   set_vector_handler(PORTA_VECTORn , PORTA_IRQHandler);   //设置 PORTA 的中断服务函数为 PORTA_IRQHandler
   set_vector_handler(DMA0_VECTORn , DMA0_IRQHandler);     //设置 DMA0 的中断服务函数为 PORTA_IRQHandler
   
-  NVIC_SetPriorityGrouping(2);
+  NVIC_SetPriorityGrouping(2);//修改中断优先级等,这一行以下几行都勿动
   
   NVIC_SetPriority(PORTA_IRQn,0);
   NVIC_SetPriority(DMA0_IRQn,1);
@@ -52,11 +52,11 @@ void CheckInit()
 
 void GetDeta()
 {
-  camera_get_img(); 
-  img_extract(img, imgbuff, CAMERA_SIZE);
+  camera_get_img(); //采集图像
+  img_extract(img, imgbuff, CAMERA_SIZE);//解压图像
 }
 
-void GetPosition()
+void GetPosition()//重心法寻找目标点
 {
   
   MainBall.LastBallPosition=MainBall.CurrentBallPosition;
@@ -79,7 +79,7 @@ void GetPosition()
     }
   }
   
-  if(count==0)
+  if(count==0)//判断除数为零,既没找到点的特殊情况
   {
     MainBall.CurrentBallPosition=MainBall.LastBallPosition;
   }
@@ -93,11 +93,11 @@ void GetPosition()
   MainBall.CurrentBallSpeed.W=(MainBall.CurrentBallPosition.W - MainBall.LastBallPosition.W);
 }
 
-void  ConvertImg(uint8 image1[CAMERA_H][CAMERA_W], uint8 image2[CAMERA_H][CAMERA_W])
+void  ConvertImg(uint8 image1[CAMERA_H][CAMERA_W], uint8 image2[CAMERA_H][CAMERA_W])//逆透视变换
 {
   int i=0,j=0;
   int x=0,y=0;
-  float k1=-0.000023,k2=-0.000025;//-0.00000230,k2=-0.00000120;
+  float k1=-0.000023,k2=-0.000025;//-0.00000230,k2=-0.00000120;//发现图不对可修改这两个参数来调整
   for(i=-60;i<60;i++)
     for(j=-80;j<80;j++)
     {
