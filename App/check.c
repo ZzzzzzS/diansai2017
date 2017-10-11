@@ -42,7 +42,7 @@ void CheckInit()
   set_vector_handler(PORTA_VECTORn , PORTA_IRQHandler);   //设置 PORTA 的中断服务函数为 PORTA_IRQHandler
   set_vector_handler(DMA0_VECTORn , DMA0_IRQHandler);     //设置 DMA0 的中断服务函数为 PORTA_IRQHandler
   
-  NVIC_SetPriorityGrouping(2);//修改中断优先级等,这一行以下几行都勿动
+  NVIC_SetPriorityGrouping(6);//修改中断优先级等,这一行以下几行都勿动
   
   NVIC_SetPriority(PORTA_IRQn,0);
   NVIC_SetPriority(DMA0_IRQn,1);
